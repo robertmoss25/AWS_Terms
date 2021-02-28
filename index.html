@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="app.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="index.js"></script>
+</head>
+<body>
+<div class="container-fluid right">
+    <div class="accordion" id="accordionExample" style="margin-top: -40px;">
+        <div class="card">
+          <div class="card-header" id="headingTwo">
+            <h2 class="mb-0">
+              <button id="summarybutton" class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Summary
+              </button>
+            </h2>
+          </div>
+          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+            <div class="card-body" id="loadSummary">
+                <script>loadSummaries()</script>
+            </div>
+          </div>
+        </div>
+    </div>
+    <select id="modules" onchange="handleChange()"></select>
+    <table class="table" id="mytable">
+        <thead id="thehead">
+            <script>createHeader()</script>
+        </thead>
+        <tbody id="thebody">
+            <script>createBody()</script>
+        <!-- <tr class="info">
+            <td>Auto Scaling Group (ASG)</td>
+            <td></td>
+            <td>Offers easy horizontal scaling of compute capacity</td>
+            <td>AWS Auto Scaling monitors your applications and automatically adjusts capacity to maintain steady, predictable performance at the lowest possible cost. 
+                Using AWS Auto Scaling, it’s easy to setup application scaling for multiple resources across multiple services in minutes. The service provides a simple, 
+                powerful user interface that lets you build scaling plans for resources including Amazon EC2 instances and Spot Fleets, Amazon ECS tasks, Amazon DynamoDB 
+                tables and indexes, and Amazon Aurora Replicas. AWS Auto Scaling makes scaling simple with recommendations that allow you to optimize performance, costs, 
+                or balance between them. If you’re already using Amazon EC2 Auto Scaling to dynamically scale your Amazon EC2 instances, you can now combine it with AWS 
+                Auto Scaling to scale additional resources for other AWS services. With AWS Auto Scaling, your applications always have the right resources at the right 
+                time. </td>
+            <td></td>
+        </tr>      
+        <tr class="success">
+            <td>Athena</td>
+            <td>Database and Analytics</td>
+            <td>AWS database is fully serverless and has SQL capabilities</td>
+            <td>Amazon Athena is an interactive query service that makes it easy to analyze data in Amazon S3 using standard SQL. Athena is serverless, so there is no 
+                infrastructure to manage, and you pay only for the queries that you run.  </td>
+            <td></td>
+        </tr>
+        <tr class="success">
+            <td>Aurora</td>
+            <td>Database and Analytics</td>
+            <td>proprietary technology from AWS and is cloud-optimized </td>
+            <td>Amazon Athena is an interactive query service that makes it easy to analyze data in Amazon S3 using standard SQL. Athena is serverless, so there is no 
+                infrastructure to manage, and you pay only for the queries that you run.  </td>
+            <td></td>
+        </tr> -->
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

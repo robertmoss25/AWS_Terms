@@ -1,0 +1,834 @@
+[
+    {
+        "AWSComponent": "Amazon Machine Images (AMI)",
+        "URL": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIs.html",
+        "Module": "EC2 Instance Storage",
+        "Comment": "You must use an AMI from the same region as that of the EC2 instance. The region of the AMI has no bearing on the performance of the EC2 instance",
+        "Blurb": "An Amazon Machine Image (AMI) provides the information required to launch an instance. You must specify an AMI when you launch an instance. You can launch multiple instances from a single AMI when you need multiple instances with the same configuration. You can use different AMIs to launch instances when you need instances with different configurations. An AMI includes the following: One or more Amazon Elastic Block Store (Amazon EBS) snapshots, or, for instance-store-backed AMIs, a template for the root volume of the instance (for example, an operating system, an application server, and applications). Launch permissions that control which AWS accounts can use the AMI to launch instances. A block device mapping that specifies the volumes to attach to the instance when it's launched.",
+        "SeeAlso": "Elastic Block Store (EBS)"
+    },
+    {
+        "AWSComponent": "Auto scaling Group (ASG)",
+        "URL": "https://aws.amazon.com/autoscaling/",
+        "Module": "ELB & ASG - Elastic Load Balancing & Auto Scaling Groups",
+        "Comment": "Offers easy horizontal scaling of compute capacity",
+        "Blurb": "AWS Auto Scaling monitors your applications and automatically adjusts capacity to maintain steady, predictable performance at the lowest possible cost. Using AWS Auto Scaling, it’s easy to setup application scaling for multiple resources across multiple services in minutes. The service provides a simple, powerful user interface that lets you build scaling plans for resources including Amazon EC2 instances and Spot Fleets, Amazon ECS tasks, Amazon DynamoDB tables and indexes, and Amazon Aurora Replicas. AWS Auto Scaling makes scaling simple with recommendations that allow you to optimize performance, costs, or balance between them. If you’re already using Amazon EC2 Auto Scaling to dynamically scale your Amazon EC2 instances, you can now combine it with AWS Auto Scaling to scale additional resources for other AWS services. With AWS Auto Scaling, your applications always have the right resources at the right time. ",
+        "SeeAlso": "EC2"
+    },
+    {
+        "AWSComponent": "Athena",
+        "URL": "https://aws.amazon.com/athena/?whats-new-cards.sort-by=item.additionalFields.postDateTime&whats-new-cards.sort-order=desc",
+        "Module": "Databases & Analytics",
+        "Comment": "AWS database is fully serverless and has SQL capabilities",
+        "Blurb": "Amazon Athena is an interactive query service that makes it easy to analyze data in Amazon S3 using standard SQL. Athena is serverless, so there is no infrastructure to manage, and you pay only for the queries that you run. ",
+        "SeeAlso": "Aurora, DynamoDb, ElastiCache, Elastic Map Reduce (EMR)"
+    },
+    {
+        "AWSComponent": "Aurora",
+        "URL": "https://aws.amazon.com/rds/aurora/?aurora-whats-new.sort-by=item.additionalFields.postDateTime&aurora-whats-new.sort-order=desc",
+        "Module": "Databases & Analytics",
+        "Comment": "proprietary technology from AWS and is cloud-optimized ",
+        "Blurb": "Amazon Aurora is a MySQL and PostgreSQL-compatible relational database built for the cloud, that combines the performance and availability of traditional enterprise databases with the simplicity and cost-effectiveness of open source databases.",
+        "SeeAlso": "Athena, DynamoDb, ElastiCache, Elastic Map Reduce (EMR)"
+    },
+    {
+        "AWSComponent": "Availability Zones ",
+        "URL": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html",
+        "Module": "Cloud Computing",
+        "Comment": "One or more discrete data centers with redundant power, networking, and connectivity, and are used to deploy infrastructure",
+        "Blurb": "Each Region has multiple, isolated locations known as Availability Zones. When you launch an instance, you can select an Availability Zone or let us choose one for you. If you distribute your instances across multiple Availability Zones and one instance fails, you can design your application so that an instance in another Availability Zone can handle requests.",
+        "SeeAlso": []
+    },
+    {
+        "AWSComponent": "AWS Marketplace",
+        "URL": "https://aws.amazon.com/marketplace",
+        "Module": "General",
+        "Comment": "Find a third party's AMI so you can use it to launch your EC2 Instance ",
+        "Blurb": "AWS Marketplace is a digital catalog with thousands of software listings from independent software vendors that make it easy to find, test, buy, and deploy software that runs on AWS.",
+        "SeeAlso": []
+    },
+    {
+        "AWSComponent": "Basic Support Plan",
+        "URL": "https://aws.amazon.com/premiumsupport/plans/",
+        "Module": "Account Management, Billing & Support",
+        "Comment": "",
+        "Blurb": "Customer Service and Communities - 24x7 access to customer service, documentation, whitepapers, and support forums.<br><br>AWS Trusted Advisor - Access to the 7 core Trusted Advisor checks and guidance to provision your resources following best practices to increase performance and improve security. <br><br>AWS Personal Health Dashboard - A personalized view of the health of AWS services, and alerts when your resources are impacted.",
+        "SeeAlso": "Business Support Plan, Developer Support Plan, Enterprise Support Plan"
+    },
+    {
+        "AWSComponent": "Billing Dashboard",
+        "URL": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-what-is.html",
+        "Module": "Account Management, Billing & Support",
+        "Comment": "",
+        "Blurb": "AWS Billing and Cost Management is the service that you use to pay your AWS bill, monitor your usage, and analyze and control your costs. <br><br>AWS automatically charges the credit card that you provided when you signed up for a new account with AWS. Charges appear on your monthly credit card bill. You can view or update your credit card information, including designating a different credit card for AWS to charge, on the Payment Methods page in the Billing and Cost Management console.<br><br> AWS Billing and Cost Management provides useful tools to help you gather information related to your cost and usage, analyze your cost drivers and usage trends, and take action to budget your spending. ",
+        "SeeAlso": []
+    },
+    {
+        "AWSComponent": "Budgets",
+        "URL": "https://aws.amazon.com/aws-cost-management/aws-budgets/",
+        "Module": "Account Management, Billing & Support",
+        "Comment": "Predict costs before they have occured.<br><br>Get alerts when your costs and usage are exceeding or are forecasted to exceed your budgeting amount.",
+        "Blurb": "AWS Budgets allows you to set custom budgets to track your cost and usage from the simplest to the most complex use cases. With AWS Budgets, you can choose to be alerted by email or SNS notification when actual or forecasted cost and usage exceed your budget threshold, or when your actual RI and Savings Plans' utilization or coverage drops below your desired threshold. With AWS Budget Actions, you can also configure specific actions to respond to cost and usage status in your accounts, so that if your cost or usage exceeds or is forecasted to exceed your threshold, actions can be executed automatically or with your approval to reduce unintentional over-spending. ",
+        "SeeAlso": "Cost and Usage Report, Cost Explorer"
+    },
+    {
+        "AWSComponent": "Business Support Plan",
+        "URL": "https://aws.amazon.com/premiumsupport/plans/",
+        "Module": "Account Management, Billing & Support",
+        "Comment": "",
+        "Blurb": "Recommended if you have production workloads in AWS. <br>Full set of checks 24x7 phone, email, and chat access to Cloud Support Engineers <br>Unlimited cases / unlimited contacts (IAM supported)  <br>General guidance: <br>< 24 hours System impaired: <br>< 12 hours Production system <br>impaired: < 4 hours <br>Production system down: < 1 hour <br>Contextual to your use-cases <br>AWS Support API <br>Interoperability and configuration guidance and troubleshooting<br> Access to Infrastructure Event Management for additional fee<br> Greater of $100 / month***<br> - or - <br>10% of monthly AWS usage for the first $0–$10K <br>7% of monthly AWS usage from $10K–$80K <br>5% of monthly AWS usage from $80K–$250K <br>3% of monthly AWS usage over $250K",
+        "SeeAlso": "Basic Support Plan, Developer Support Plan, Enterprise Support Plan"
+    },
+    {
+        "AWSComponent": "CloudFormation",
+        "URL": "https://aws.amazon.com/cloudformation/",
+        "Module": "Deployments & Managing Infrastructure at Scale",
+        "Comment": "Free to use, key to Operational Excellence, called the declaration of the AWS resources that make up a stack. deploy any AWS Infrastructure as a Code",
+        "Blurb": "AWS CloudFormation gives you an easy way to model a collection of related AWS and third-party resources, provision them quickly and consistently, and manage them throughout their lifecycles, by treating infrastructure as code. A CloudFormation template describes your desired resources and their dependencies so you can launch and configure them together as a stack. You can use a template to create, update, and delete an entire stack as a single unit, as often as you need to, instead of managing resources individually. You can manage and provision stacks across multiple AWS accounts and AWS Regions.",
+        "SeeAlso": ""
+    },
+    {
+        "AWSComponent": "CloudFront",
+        "URL": "https://aws.amazon.com/cloudfront/",
+        "Module": "Leveraging the AWS Global Infrastructure",
+        "Comment": "Pricing is not the same in every geographic region, cache content in edge locations ",
+        "Blurb": "Amazon CloudFront is a fast content delivery network (CDN) service that securely delivers data, videos, applications, and APIs to customers globally with low latency, high transfer speeds, all within a developer-friendly environment. CloudFront offers the most advanced security capabilities, including field level encryption and HTTPS support, seamlessly integrated with AWS Shield, AWS Web Application Firewall and Route 53 to protect against multiple types of attacks including network and application layer DDoS attacks. These services co-reside at edge networking locations – globally scaled and connected via the AWS network backbone – providing a more secure, performant, and available experience for your users. CloudFront works seamlessly with any AWS origin, such as Amazon S3, Amazon EC2, Elastic Load Balancing, or with any custom HTTP origin. You can customize your content delivery through CloudFront using the secure and programmable edge computing feature AWS Lambda@Edge.",
+        "SeeAlso": ""
+    },
+    {
+        "AWSComponent": "CloudHSM",
+        "URL": "https://aws.amazon.com/cloudhsm/",
+        "Module": "Security and Compliance",
+        "Comment": "Dedicated Hardward security module",
+        "Blurb": "AWS CloudHSM is a cloud-based hardware security module (HSM) that enables you to easily generate and use your own encryption keys on the AWS Cloud. With CloudHSM, you can manage your own encryption keys using FIPS 140-2 Level 3 validated HSMs. CloudHSM offers you the flexibility to integrate with your applications using industry-standard APIs, such as PKCS#11, Java Cryptography Extensions (JCE), and Microsoft CryptoNG (CNG) libraries. CloudHSM is standards-compliant and enables you to export all of your keys to most other commercially-available HSMs, subject to your configurations. It is a fully-managed service that automates time-consuming administrative tasks for you, such as hardware provisioning, software patching, high-availability, and backups. CloudHSM also enables you to scale quickly by adding and removing HSM capacity on-demand, with no up-front costs. ",
+        "SeeAlso": ""
+    },
+    {
+        "AWSComponent": "CloudTrail",
+        "URL": "https://aws.amazon.com/cloudtrail/",
+        "Module": "Cloud Monitoring",
+        "Comment": "Resource is deleted in AWS, this service should be used to investigate first. Inspect, audit, and record events and API calls made within your AWS account.<br><br>Log, monitor and retain account activity related to actions across your AWS infrastructure.",
+        "Blurb": "AWS CloudTrail is a service that enables governance, compliance, operational auditing, and risk auditing of your AWS account. With CloudTrail, you can log, continuously monitor, and retain account activity related to actions across your AWS infrastructure. CloudTrail provides event history of your AWS account activity, including actions taken through the AWS Management Console, AWS SDKs, command line tools, and other AWS services. This event history simplifies security analysis, resource change tracking, and troubleshooting. In addition, you can use CloudTrail to detect unusual activity in your AWS accounts. These capabilities help simplify operational analysis and troubleshooting. ",
+        "SeeAlso": ""
+    },
+    {
+        "AWSComponent": "CloudWatch",
+        "URL": "https://aws.amazon.com/cloudwatch/",
+        "Module": "Cloud Monitoring",
+        "Comment": "Metrics monitoring for every service in AWS. CloudWatch Alarms is the feature you would use to trigger notifications when a metric reaches a threshold you specify. Similar concept to splunk",
+        "Blurb": "Amazon CloudWatch is a monitoring and observability service built for DevOps engineers, developers, site reliability engineers (SREs), and IT managers. CloudWatch provides you with data and actionable insights to monitor your applications, respond to system-wide performance changes, optimize resource utilization, and get a unified view of operational health. CloudWatch collects monitoring and operational data in the form of logs, metrics, and events, providing you with a unified view of AWS resources, applications, and services that run on AWS and on-premises servers. You can use CloudWatch to detect anomalous behavior in your environments, set alarms, visualize logs and metrics side by side, take automated actions, troubleshoot issues, and discover insights to keep your applications running smoothly. ",
+        "SeeAlso": ""
+    },
+    {
+        "AWSComponent": "CodeCommit",
+        "URL": "https://aws.amazon.com/cloudwatch/",
+        "Module": "Deployments & Managing Infrastructure at Scale",
+        "Comment": "Allows to automate software deployments to a hybrid mix of EC2 Instances and On-Premises servers ",
+        "Blurb": "AWS CodeCommit is a fully-managed source control service that hosts secure Git-based repositories. It makes it easy for teams to collaborate on code in a secure and highly scalable ecosystem. CodeCommit eliminates the need to operate your own source control system or worry about scaling its infrastructure. You can use CodeCommit to securely store anything from source code to binaries, and it works seamlessly with your existing Git tools.",
+        "SeeAlso": "CodeDeploy, CodeStar"
+    },
+    {
+        "AWSComponent": "CodeDeploy",
+        "URL": "https://aws.amazon.com/codecommit/",
+        "Module": "Deployments & Managing Infrastructure at Scale",
+        "Comment": "",
+        "Blurb": "AWS CodeDeploy is a fully managed deployment service that automates software deployments to a variety of compute services such as Amazon EC2, AWS Fargate, AWS Lambda, and your on-premises servers. AWS CodeDeploy makes it easier for you to rapidly release new features, helps you avoid downtime during application deployment, and handles the complexity of updating your applications. You can use AWS CodeDeploy to automate software deployments, eliminating the need for error-prone manual operations. The service scales to match your deployment needs. ",
+        "SeeAlso": "CodeCommit, CodeStar"
+    },
+    {
+        "AWSComponent": "CodeStar",
+        "URL": "https://aws.amazon.com/codestar/",
+        "Module": "Deployments & Managing Infrastructure at Scale",
+        "Comment": "",
+        "Blurb": "AWS CodeStar enables you to quickly develop, build, and deploy applications on AWS. AWS CodeStar provides a unified user interface, enabling you to easily manage your software development activities in one place. With AWS CodeStar, you can set up your entire continuous delivery toolchain in minutes, allowing you to start releasing code faster. AWS CodeStar makes it easy for your whole team to work together securely, allowing you to easily manage access and add owners, contributors, and viewers to your projects. Each AWS CodeStar project comes with a project management dashboard, including an integrated issue tracking capability powered by Atlassian JIRA Software. With the AWS CodeStar project dashboard, you can easily track progress across your entire software development process, from your backlog of work items to teams’ recent code deployments. Visit here to learn more.<br><br>There is no additional charge for using AWS CodeStar. You only pay for the AWS resources that you provision for developing and running your application (for example, Amazon EC2 instances).",
+        "SeeAlso": "CodeCommit, CodeDeploy"
+    },
+    {
+        "AWSComponent": "Cognito",
+        "URL": "https://aws.amazon.com/cognito/",
+        "Module": "Advanced Identity",
+        "Comment": "Create a database of users for your mobile & web applications",
+        "Blurb": "Amazon Cognito lets you add user sign-up, sign-in, and access control to your web and mobile apps quickly and easily. Amazon Cognito scales to millions of users and supports sign-in with social identity providers, such as Apple, Facebook, Google, and Amazon, and enterprise identity providers via SAML 2.0 and OpenID Connect.",
+        "SeeAlso": ""
+    },
+    {
+        "AWSComponent": "Comprehend",
+        "URL": "https://aws.amazon.com/comprehend/",
+        "Module": "Machine Learning",
+        "Comment": "",
+        "Blurb": "Amazon Comprehend is a natural language processing (NLP) service that uses machine learning to find insights and relationships in text. No machine learning experience required.",
+        "SeeAlso": ""
+    },
+    {
+        "AWSComponent": "Config",
+        "URL": "https://aws.amazon.com/config/",
+        "Module": " Security and Compliance",
+        "Comment": "",
+        "Blurb": "AWS Config is a service that enables you to assess, audit, and evaluate the configurations of your AWS resources. Config continuously monitors and records your AWS resource configurations and allows you to automate the evaluation of recorded configurations against desired configurations. With Config, you can review changes in configurations and relationships between AWS resources, dive into detailed resource configuration histories, and determine your overall compliance against the configurations specified in your internal guidelines. This enables you to simplify compliance auditing, security analysis, change management, and operational troubleshooting.",
+        "SeeAlso": ""
+    },
+    {
+        "AWSComponent": "Connect",
+        "URL": "https://aws.amazon.com/connect/",
+        "Module": "Machine Learning",
+        "Comment": "",
+        "Blurb": "Amazon Connect is an easy to use omnichannel cloud contact center that helps you provide superior customer service at a lower cost. Over 10 years ago, Amazon’s retail business needed a contact center that would give our customers personal, dynamic, and natural experiences. We couldn’t find one that met our needs, so we built it. We've now made this available for all businesses, and today thousands of companies ranging from 10 to tens of thousands of agents use Amazon Connect to serve millions of customers daily.",
+        "SeeAlso": ""
+    },
+    {
+        "AWSComponent": "Cost and Usage Report",
+        "URL": "https://aws.amazon.com/aws-cost-management/aws-cost-and-usage-reporting/",
+        "Module": "Account Management, Billing & Support",
+        "Comment": "",
+        "Blurb": "The AWS Cost & Usage Report contains the most comprehensive set of AWS cost and usage data available, including additional metadata about AWS services, pricing, Reserved Instances, and Savings Plans. The AWS Cost & Usage Report itemizes usage at the account or Organization level by product code, usage type and operation. These costs can be further organized by enabling Cost Allocation tags and Cost Categories. The AWS Cost & Usage Report is available at an hourly, daily, or monthly level of granularity.",
+        "SeeAlso": "Budgets,Cost Explorer"
+    },
+    {
+        "AWSComponent": "Cost Explorer",
+        "URL": "https://aws.amazon.com/aws-cost-management/aws-cost-explorer/",
+        "Module": "Account Management, Billing & Support",
+        "Comment": "Explore costs after they have occured.<br<br>Choose the best Savings Plan and forecast its cost in the next 3 months",
+        "Blurb": "AWS Cost Explorer has an easy-to-use interface that lets you visualize, understand, and manage your AWS costs and usage over time. Get started quickly by creating custom reports that analyze cost and usage data. Analyze your data at a high level (for example, total costs and usage across all accounts) or dive deeper into your cost and usage data to identify trends, pinpoint cost drivers, and detect anomalies.",
+        "SeeAlso": "Budgets,Cost and Usage Report"
+    },
+    {
+        "AWSComponent": "Database Migration Service (DMS)",
+        "URL": "https://aws.amazon.com/dms/",
+        "Module": "Databases & Analytics",
+        "Comment": "Migrate databases to AWS while still being able to use the database during the migration",
+        "Blurb": "AWS Database Migration Service helps you migrate databases to AWS quickly and securely. The source database remains fully operational during the migration, minimizing downtime to applications that rely on the database. The AWS Database Migration Service can migrate your data to and from most widely used commercial and open-source databases.",
+        "SeeAlso": ""
+    },
+    {
+        "AWSComponent": "Developer Support Plan",
+        "URL": "https://aws.amazon.com/premiumsupport/plans/",
+        "Module": "Account Management, Billing & Support",
+        "Comment": "",
+        "Blurb": "Recommended if you are experimenting or testing in AWS. <br>7 Core checks Business hours** <br>email access to Cloud Support Associates <br>Unlimited cases <br>1 primary contact General guidance: < 24 hours** <br>System impaired: < 12 hours** ",
+        "SeeAlso": "Business Support Plan, Basic Support Plan, Enterprise Support Plan"
+    },
+    {
+        "AWSComponent": "Direct Connect ",
+        "URL": "https://aws.amazon.com/directconnect/",
+        "Module": "VPC & Networking",
+        "Comment": "needs to have a private, secure and fast connection between its on-premises data centers and the AWS Cloud",
+        "Blurb": "AWS Direct Connect is a cloud service solution that makes it easy to establish a dedicated network connection from your premises to AWS. Using AWS Direct Connect, you can establish private connectivity between AWS and your datacenter, office, or colocation environment, which in many cases can reduce your network costs, increase bandwidth throughput, and provide a more consistent network experience than Internet-based connections. ",
+        "SeeAlso": ""
+    },
+    {
+        "AWSComponent": "Directory Services",
+        "URL": "https://aws.amazon.com/directoryservice/",
+        "Module": "Advanced Identity",
+        "Comment": "Use their on-premises Microsoft Active Directory to connect to its AWS resources",
+        "Blurb": "AWS Directory Service for Microsoft Active Directory, also known as AWS Managed Microsoft Active Directory (AD), enables your directory-aware workloads and AWS resources to use managed Active Directory (AD) in AWS. AWS Managed Microsoft AD is built on actual Microsoft AD and does not require you to synchronize or replicate data from your existing Active Directory to the cloud. You can use the standard AD administration tools and take advantage of the built-in AD features, such as Group Policy and single sign-on. With AWS Managed Microsoft AD, you can easily join Amazon EC2 and Amazon RDS for SQL Server instances to your domain, and use AWS End User Computing (EUC) services, such as Amazon WorkSpaces, with AD users and groups.",
+        "SeeAlso": ""
+    },
+    {
+        "AWSComponent": "DynamoDb",
+        "URL": "https://aws.amazon.com/dynamodb/",
+        "Module": "Databases & Analytics",
+        "Comment": "NoSQL database that can scale with no downtime and can handle millions of requests per second.<br><br><strong>choose for a data processing project to store unstructured data</strong>",
+        "Blurb": "Amazon DynamoDB is a key-value and document database that delivers single-digit millisecond performance at any scale. It's a fully managed, multi-region, multi-active, durable database with built-in security, backup and restore, and in-memory caching for internet-scale applications. DynamoDB can handle more than 10 trillion requests per day and can support peaks of more than 20 million requests per second.",
+        "SeeAlso": "Athena, Aurora, ElastiCache, Elastic Map Reduce (EMR)"
+    },
+    {
+        "AWSComponent": "EC2",
+        "URL": "https://aws.amazon.com/ec2/?ec2-whats-new.sort-by=item.additionalFields.postDateTime&ec2-whats-new.sort-order=desc",
+        "Module": "EC2 - Elastic Compute Cloud",
+        "Comment": "Scheduled Instances<br> Convertible Instances<br> Dedicated Hosts<br> Spot Instances <br>– Cheapest Infrastructure as a service Uses EBS to store data Uses ELB to distribute load Scales using ASG Uses Security Group for firewall rules<br><br><strong>There is a one-minute minimum charge for Linux based EC2 instances.</strong>",
+        "Blurb": "Amazon Elastic Compute Cloud (Amazon EC2) is a web service that provides secure, resizable compute capacity in the cloud. It is designed to make web-scale cloud computing easier for developers. Amazon EC2’s simple web service interface allows you to obtain and configure capacity with minimal friction. It provides you with complete control of your computing resources and lets you run on Amazon’s proven computing environment.",
+        "SeeAlso": "EC2 Instance, Elastic Block Store (EBS)"
+    },
+    {
+        "AWSComponent": "EC2 Instance Storage",
+        "URL": "https://docs.aws.amazon.com/whitepapers/latest/aws-storage-services-overview/amazon-ec2-instance-storage.html",
+        "Module": "EC2 Instance Storage",
+        "Comment": "Lose data if EC2 Instance is stopped",
+        "Blurb": "Amazon EC2 instance store volumes (also called ephemeral drives) provide temporary block-level storage for many EC2 instance types. This storage consists of a preconfigured and pre-attached block of disk storage on the same physical server that hosts the EC2 instance for which the block provides storage. The amount of the disk storage provided varies by EC2 instance type. In the EC2 instance families that provide instance storage, larger instances tend to provide both more and larger instance store volumes. ",
+        "SeeAlso": "EC2"
+    },
+    {
+        "AWSComponent": "Elastic Beanstalk",
+        "URL": "https://aws.amazon.com/elasticbeanstalk/",
+        "Module": "Deployments & Managing Infrastructure at Scale",
+        "Comment": "Free to use. referred to as a Platform as a Service (PaaS)",
+        "Blurb": "AWS Elastic Beanstalk is an easy-to-use service for deploying and scaling web applications and services developed with Java, .NET, PHP, Node.js, Python, Ruby, Go, and Docker on familiar servers such as Apache, Nginx, Passenger, and IIS.",
+        "SeeAlso": ""
+    },
+    {
+        "AWSComponent": "Elastic Block Store (EBS)",
+        "URL": "https://aws.amazon.com/ebs/?ebs-whats-new.sort-by=item.additionalFields.postDateTime&ebs-whats-new.sort-order=desc",
+        "Module": "EC2 Instance Storage",
+        "Comment": "EBS Snapshot is an EBS Volume at a point in time. Can be attached to EC2, Disk size can be changed, but not automatically",
+        "Blurb": "Amazon Elastic Block Store (EBS) is an easy to use, high-performance, block-storage service designed for use with Amazon Elastic Compute Cloud (EC2) for both throughput and transaction intensive workloads at any scale. A broad range of workloads, such as relational and non-relational databases, enterprise applications, containerized applications, big data analytics engines, file systems, and media workflows are widely deployed on Amazon EBS. ",
+        "SeeAlso": "EC2, EBS Volume"
+    },
+    {
+        "AWSComponent": "EBS Volume",
+        "URL": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volumes.html",
+        "Module": "EC2 Instance Storage",
+        "Comment": "EBS Volume tied to availability zone",
+        "Blurb": "An Amazon EBS volume is a durable, block-level storage device that you can attach to your instances. After you attach a volume to an instance, you can use it as you would use a physical hard drive. EBS volumes are flexible. For current-generation volumes attached to current-generation instance types, you can dynamically increase size, modify the provisioned IOPS capacity, and change volume type on live production volumes.",
+        "SeeAlso": "Elastic Block Store (EBS)"
+    },
+    {
+        "AWSComponent": "ElastiCache",
+        "URL": "https://aws.amazon.com/elasticache/",
+        "Module": "Databases & Analytics",
+        "Comment": "In-memory AWS database can you use to reduce the load off databases and has high performance, low latency ",
+        "Blurb": "Amazon ElastiCache allows you to seamlessly set up, run, and scale popular open-source compatible in-memory data stores in the cloud. Build data-intensive apps or boost the performance of your existing databases by retrieving data from high throughput and low latency in-memory data stores. Amazon ElastiCache is a popular choice for real-time use cases like Caching, Session Stores, Gaming, Geospatial Services, Real-Time Analytics, and Queuing. Amazon ElastiCache offers fully managed Redis, voted the most loved database by developers in the Stack Overflow 2020 Developer Survey, and Memcached for your most demanding applications that require sub-millisecond response times. ",
+        "SeeAlso": "Athena, Aurora, DynamoDB, Elastic Map Reduce (EMR)"
+    },
+    {
+        "AWSComponent": "Elastic Container Registry (ECR)",
+        "URL": "https://aws.amazon.com/ecr/",
+        "Module": "Other Compute Services: ECS, Lambda, Batch, Lightsail",
+        "Comment": "",
+        "Blurb": "Amazon Elastic Container Registry (ECR) is a fully managed container registry that makes it easy to store, manage, share, and deploy your container images and artifacts anywhere. Amazon ECR eliminates the need to operate your own container repositories or worry about scaling the underlying infrastructure. Amazon ECR hosts your images in a highly available and high-performance architecture, allowing you to reliably deploy images for your container applications. You can share container software privately within your organization or publicly worldwide for anyone to discover and download. For example, developers can search the ECR public gallery for an operating system image that is geo-replicated for high availability and faster downloads. Amazon ECR works with Amazon Elastic Kubernetes Service (EKS), Amazon Elastic Container Service (ECS), and AWS Lambda, simplifying your development to production workflow, and AWS Fargate for one-click deployments. Or you can use ECR with your own containers environment. Integration with AWS Identity and Access Management (IAM) provides resource-level control of each repository. With ECR, there are no upfront fees or commitments. You pay only for the amount of data you store in your repositories and data transferred to the Internet. ",
+        "SeeAlso": "Elastic Container Service (ECS)"
+    },
+    {
+        "AWSComponent": "Elastic Container Service (ECS)",
+        "URL": "https://aws.amazon.com/ecs/?whats-new-cards.sort-by=item.additionalFields.postDateTime&whats-new-cards.sort-order=desc&ecs-blogs.sort-by=item.additionalFields.createdDate&ecs-blogs.sort-order=desc",
+        "Module": "Other Compute Services: ECS, Lambda, Batch, Lightsail",
+        "Comment": "Launch Docker containers on AWS, but requires you to provision and maintain the infrastructure.",
+        "Blurb": "Amazon Elastic Container Service (Amazon ECS) is a fully managed container orchestration service. Customers such as Duolingo, Samsung, GE, and Cookpad use ECS to run their most sensitive and mission critical applications because of its security, reliability, and scalability. ",
+        "SeeAlso": "Elastic Container Registry (ECR)"
+    },
+    {
+        "AWSComponent": "Elastic Container Service Instance Store",
+        "URL": "https://docs.aws.amazon.com/whitepapers/latest/aws-storage-services-overview/amazon-ec2-instance-storage.html",
+        "Module": "EC2 Instance Storage",
+        "Comment": "Better IO performance",
+        "Blurb": "Amazon EC2 instance store volumes (also called ephemeral drives) provide temporary block-level storage for many EC2 instance types. This storage consists of a preconfigured and pre-attached block of disk storage on the same physical server that hosts the EC2 instance for which the block provides storage. The amount of the disk storage provided varies by EC2 instance type. In the EC2 instance families that provide instance storage, larger instances tend to provide both more and larger instance store volumes. Note that some instance types, such as the micro instances (t1, t2) and the Compute-optimized c4 instances, use EBS storage only with no instance storage provided. Note also that instances using Amazon EBS for the root device (in other words that boot from Amazon EBS) don’t expose the instance store volumes by default. You can choose to expose the instance store volumes at instance launch time by specifying a block device mapping. For more information, see Block Device Mapping in the Amazon EC2 User Guide. AWS offers two EC2 instance families that are purposely built for storage-centric workloads. Performance specifications of the storage-optimized (i2) and dense-storage (d2) instance families are outlined in the following table. ",
+        "SeeAlso": "Elastic Container Registry (ECR)"
+    },
+    {
+        "AWSComponent": "Elastic File System (EFS)",
+        "URL": "https://aws.amazon.com/efs/",
+        "Module": "EC2 Instance Storage",
+        "Comment": "EC2 Storage would you use to create a shared network file system for your EC2 Instances. Can be attached to EC2, Disk size is elastic.",
+        "Blurb": "Amazon Elastic File System (Amazon EFS) provides a simple, scalable, fully managed elastic NFS file system for use with AWS Cloud services and on-premises resources. It is built to scale on demand to petabytes without disrupting applications, growing and shrinking automatically as you add and remove files, eliminating the need to provision and manage capacity to accommodate growth. ",
+        "SeeAlso": "Elastic Container Registry (ECR)"
+    },
+    {
+        "AWSComponent": "Elastic Load Balancers (ELB)",
+        "URL": "https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/what-is-load-balancing.html",
+        "Module": "ELB & ASG - Elastic Load Balancing & Auto Scaling Groups",
+        "Comment": "Distribute traffic across backend EC2 instances, can be Multi-AZ",
+        "Blurb": "Elastic Load Balancing automatically distributes your incoming traffic across multiple targets, such as EC2 instances, containers, and IP addresses, in one or more Availability Zones. It monitors the health of its registered targets, and routes traffic only to the healthy targets. Elastic Load Balancing scales your load balancer as your incoming traffic changes over time. It can automatically scale to the vast majority of workloads.",
+        "SeeAlso": ""
+    },
+    {
+        "AWSComponent": "Elastic Map Reduce (EMR)",
+        "URL": "https://aws.amazon.com/emr/?whats-new-cards.sort-by=item.additionalFields.postDateTime&whats-new-cards.sort-order=desc",
+        "Module": "Databases & Analytics",
+        "Comment": "Create Hadoop clusters to analyze and process a vast amount of data",
+        "Blurb": "Amazon EMR is the industry-leading cloud big data platform for processing vast amounts of data using open source tools such as Apache Spark, Apache Hive, Apache HBase, Apache Flink, Apache Hudi, and Presto. Amazon EMR makes it easy to set up, operate, and scale your big data environments by automating time-consuming tasks like provisioning capacity and tuning clusters. With EMR you can run petabyte-scale analysis at less than half of the cost of traditional on-premises solutions and over 3x faster than standard Apache Spark. You can run workloads on Amazon EC2 instances, on Amazon Elastic Kubernetes Service (EKS) clusters, or on-premises using EMR on AWS Outposts. ",
+        "SeeAlso": "Athena, Aurora, DynamoDB, ElastiCache"
+    },
+    {
+        "AWSComponent": "EMS",
+        "URL": "https://aws.amazon.com/quickstart/architecture/tibco-ems/",
+        "Module": "General",
+        "Comment": "",
+        "Blurb": "TIBCO EMS implements the Java Message Service (JMS) framework to provide a uniform messaging interface for enterprise applications. It connects other messaging services, such as TIBCO Rendezvous and TIBCO FTL, directly, and integrates with other application types and services by using TIBCO BusinessWorks. AWS extends the capabilities of TIBCO EMS by enabling applications running on different Amazon Elastic Compute Cloud (Amazon EC2) instances to communicate easily. With Amazon EFS, AWS also removes the need to have dedicated hardware or expensive disk arrays (SAN or NAS) for shared storage, while providing a complete fault-tolerant environment for all messages.",
+        "SeeAlso": ""
+    },
+    {
+        "AWSComponent": "Enterprise Support Plan",
+        "URL": "https://aws.amazon.com/premiumsupport/plans/",
+        "Module": "Account Management, Billing & Support",
+        "Comment": "",
+        "Blurb": "Recommended if you have business and/or mission critical workloads in AWS. <br>Full set of checks <br>24x7 phone, email, and chat access to Cloud Support Engineers <br>Unlimited cases / unlimited contacts (IAM supported) <br>General guidance: < 24 hours <br>System impaired: < 12 hours <br>Production system impaired: < 4 hours <br>Production system down: < 1 hour <br>Business-critical system down: < 15 minutes <br>Consultative review and guidance based on your applications <br>AWS Support API <br>Interoperability and configuration guidance and troubleshooting <br>Infrastructure Event Management <br>Well-Architected Reviews <br>Access to proactive reviews, workshops, and deep dives <br>Designated Technical Account Manager (TAM) to proactively monitor your environment and assist with optimization and coordinate access to programs and AWS experts <br>Access to online self-paced labs <br>Concierge Support Team <br>Greater of $15,000 <br>- or - <br>10% of monthly AWS usage for the first $0–$150K <br>7% of monthly AWS usage from $150K–$500K <br>5% of monthly AWS usage from $500K–$1M <br>3% of monthly AWS usage over $1M <br>See pricing detail and example.",
+        "SeeAlso": "Basic Support Plan, Business Support Plan, Developer Support Plan"
+    },
+    {
+        "AWSComponent": "Fargate",
+        "URL": "https://aws.amazon.com/fargate/?whats-new-cards.sort-by=item.additionalFields.postDateTime&whats-new-cards.sort-order=desc&fargate-blogs.sort-by=item.additionalFields.createdDate&fargate-blogs.sort-order=desc",
+        "Module": "Other Compute Services: ECS, Lambda, Batch, Lightsail",
+        "Comment": "Serverless service to launch Docker containers with no infrastructure to provision ",
+        "Blurb": "AWS Fargate is a serverless compute engine for containers that works with both Amazon Elastic Container Service (ECS) and Amazon Elastic Kubernetes Service (EKS). Fargate makes it easy for you to focus on building your applications. Fargate removes the need to provision and manage servers, lets you specify and pay for resources per application, and improves security through application isolation by design. ",
+        "SeeAlso": "Elastic Container Service (ECS)"
+    },
+    {
+        "AWSComponent": "Forecast",
+        "URL": "https://aws.amazon.com/forecast/",
+        "Module": "Machine Learning",
+        "Comment": "",
+        "Blurb": "Amazon Forecast is a fully managed service that uses machine learning to deliver highly accurate forecasts. Amazon Forecast uses machine learning to combine time series data with additional variables to build forecasts. Amazon Forecast requires no machine learning experience to get started. You only need to provide historical data, plus any additional data that you believe may impact your forecasts. For example, the demand for a particular color of a shirt may change with the seasons and store location. This complex relationship is hard to determine on its own, but machine learning is ideally suited to recognize it. Once you provide your data, Amazon Forecast will automatically examine it, identify what is meaningful, and produce a forecasting model capable of making predictions that are up to 50% more accurate than looking at time series data alone. Amazon Forecast is a fully managed service, so there are no servers to provision, and no machine learning models to build, train, or deploy. You pay only for what you use, and there are no minimum fees and no upfront commitments.",
+        "SeeAlso": ""
+    },
+    {
+        "AWSComponent": "Glue",
+        "URL": "https://aws.amazon.com/glue/?whats-new-cards.sort-by=item.additionalFields.postDateTime&whats-new-cards.sort-order=desc",
+        "Module": "Databases & Analytics",
+        "Comment": "Serverless service to prepare data so it can be loaded for analytics ",
+        "Blurb": "AWS Glue is a serverless data integration service that makes it easy to discover, prepare, and combine data for analytics, machine learning, and application development. AWS Glue provides all of the capabilities needed for data integration so that you can start analyzing your data and putting it to use in minutes instead of months. Data integration is the process of preparing and combining data for analytics, machine learning, and application development. It involves multiple tasks, such as discovering and extracting data from various sources; enriching, cleaning, normalizing, and combining data; and loading and organizing data in databases, data warehouses, and data lakes. These tasks are often handled by different types of users that each use different products. AWS Glue provides both visual and code-based interfaces to make data integration easier. Users can easily find and access data using the AWS Glue Data Catalog. Data engineers and ETL (extract, transform, and load) developers can visually create, run, and monitor ETL workflows with a few clicks in AWS Glue Studio. Data analysts and data scientists can use AWS Glue DataBrew to visually enrich, clean, and normalize data without writing code. With AWS Glue Elastic Views, application developers can use familiar Structured Query Language (SQL) to combine and replicate data across different data stores. ",
+        "SeeAlso": "Glue Data Catalog"
+    },
+    {
+        "AWSComponent": "Glue Data Catalog",
+        "URL": "https://docs.aws.amazon.com/glue/latest/dg/components-overview.html",
+        "Module": "Databases & Analytics",
+        "Comment": "Central repository to store structural and operational metadata for data assets in AWS Glue ",
+        "Blurb": "AWS Glue provides a console and API operations to set up and manage your extract, transform, and load (ETL) workload. You can use API operations through several language-specific SDKs and the AWS Command Line Interface (AWS CLI). For information about using the AWS CLI, see AWS CLI Command Reference. ",
+        "SeeAlso": "Glue"
+    },
+    {
+        "AWSComponent": "GuardDuty",
+        "URL": "https://aws.amazon.com/guardduty/",
+        "Module": "Security and Compliance",
+        "Comment": "Threat detection service that continuously monitors for malicious activity and unauthorized behavior to protect your AWS accounts and workloads",
+        "Blurb": "Amazon GuardDuty is a threat detection service that continuously monitors for malicious activity and unauthorized behavior to protect your AWS accounts, workloads, and data stored in Amazon S3. With the cloud, the collection and aggregation of account and network activities is simplified, but it can be time consuming for security teams to continuously analyze event log data for potential threats. With GuardDuty, you now have an intelligent and cost-effective option for continuous threat detection in AWS. The service uses machine learning, anomaly detection, and integrated threat intelligence to identify and prioritize potential threats. GuardDuty analyzes tens of billions of events across multiple AWS data sources, such as AWS CloudTrail event logs, Amazon VPC Flow Logs, and DNS logs. With a few clicks in the AWS Management Console, GuardDuty can be enabled with no software or hardware to deploy or maintain. By integrating with Amazon CloudWatch Events, GuardDuty alerts are actionable, easy to aggregate across multiple accounts, and straightforward to push into existing event management and workflow systems. ",
+        "SeeAlso": ""
+    },
+    {
+        "AWSComponent": "IAM",
+        "URL": "https://aws.amazon.com/iam/#:~:text=AWS%20Identity%20and%20Access%20Management%20(IAM)%20enables%20you%20to%20manage,offered%20at%20no%20additional%20charge.",
+        "Module": "IAM - Identity and Access Management",
+        "Comment": "IAM Policies are JSON Documents to define, users, groups or role permissions. Has a global scope. IAM Permissions should be grant least privilege. Provides Credentials Report ",
+        "Blurb": "AWS Identity and Access Management (IAM) enables you to manage access to AWS services and resources securely. Using IAM, you can create and manage AWS users and groups, and use permissions to allow and deny their access to AWS resources. ",
+        "SeeAlso": "IAM Credentials Report, IAM Roles"
+    },
+    {
+        "AWSComponent": "IAM Credentials Report",
+        "URL": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_getting-report.html",
+        "Module": "IAM - Identity and Access Management",
+        "Comment": "IAM Security Tool",
+        "Blurb": "You can generate and download a credential report that lists all users in your account and the status of their various credentials, including passwords, access keys, and MFA devices. You can get a credential report from the AWS Management Console, the AWS SDKs and Command Line Tools, or the IAM API.",
+        "SeeAlso": "IAM, IAM Roles"
+    },
+    {
+        "AWSComponent": "IAM Roles",
+        "URL": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html",
+        "Module": "IAM - Identity and Access Management",
+        "Comment": "An IAM entity that defines a set of permissions for making AWS service requests, that will be used by AWS services",
+        "Blurb": "An IAM role is an IAM identity that you can create in your account that has specific permissions. An IAM role is similar to an IAM user, in that it is an AWS identity with permission policies that determine what the identity can and cannot do in AWS. However, instead of being uniquely associated with one person, a role is intended to be assumable by anyone who needs it. Also, a role does not have standard long-term credentials such as a password or access keys associated with it. Instead, when you assume a role, it provides you with temporary security credentials for your role session. You can use roles to delegate access to users, applications, or services that don't normally have access to your AWS resources. For example, you might want to grant users in your AWS account access to resources they don't usually have, or grant users in one AWS account access to resources in another account. Or you might want to allow a mobile app to use AWS resources, but not want to embed AWS keys within the app (where they can be difficult to rotate and where users can potentially extract them). Sometimes you want to give AWS access to users who already have identities defined outside of AWS, such as in your corporate directory. Or, you might want to grant access to your account to third parties so that they can perform an audit on your resources. For these scenarios, you can delegate access to AWS resources using an IAM role. This section introduces roles and the different ways you can use them, when and how to choose among approaches, and how to create, manage, switch to (or assume), and delete roles. ",
+        "SeeAlso": "IAM, IAM Credentials Report"
+    },
+    {
+        "AWSComponent": "Infrastructure as a Service (IAAS)",
+        "URL": "https://aws.amazon.com/types-of-cloud-computing/",
+        "Module": "Cloud Computing",
+        "Comment": "EC2 is an example<br>cloud-based services, pay-as-you-go for services such as storage, networking, and virtualization",
+        "Blurb": "Contains the basic building blocks for cloud IT and typically provide access to networking features, computers (virtual or on dedicated hardware), and data storage space. Infrastructure as a Service provides you with the highest level of flexibility and management control over your IT resources and is most similar to existing IT resources that many IT departments and developers are familiar with today. ",
+        "SeeAlso": "Platform as a Service (PAAS), Software as a Service (SAAS)"
+    },
+    {
+        "AWSComponent": "Inspector",
+        "URL": "https://aws.amazon.com/inspector/",
+        "Module": "Security and Compliance",
+        "Comment": "Automate security on EC2 instances to assess security and vulnerabilities in these instances",
+        "Blurb": "Amazon Inspector is an automated security assessment service that helps improve the security and compliance of applications deployed on AWS. Amazon Inspector automatically assesses applications for exposure, vulnerabilities, and deviations from best practices. After performing an assessment, Amazon Inspector produces a detailed list of security findings prioritized by level of severity. These findings can be reviewed directly or as part of detailed assessment reports which are available via the Amazon Inspector console or API. Amazon Inspector security assessments help you check for unintended network accessibility of your Amazon EC2 instances and for vulnerabilities on those EC2 instances. Amazon Inspector assessments are offered to you as pre-defined rules packages mapped to common security best practices and vulnerability definitions. Examples of built-in rules include checking for access to your EC2 instances from the internet, remote root login being enabled, or vulnerable software versions installed. These rules are regularly updated by AWS security researchers.",
+        "SeeAlso": "EC2"
+    },
+    {
+        "AWSComponent": "Internet Gateway",
+        "URL": "https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Internet_Gateway.html",
+        "Module": "VPC & Networking",
+        "Comment": "VPC needs to connect with the Internet",
+        "Blurb": "An internet gateway is a horizontally scaled, redundant, and highly available VPC component that allows communication between your VPC and the internet. <br><br>An internet gateway serves two purposes: to provide a target in your VPC route tables for internet-routable traffic, and to perform network address translation (NAT) for instances that have been assigned public IPv4 addresses. For more information, see Enabling internet access. An internet gateway supports IPv4 and IPv6 traffic. It does not cause availability risks or bandwidth constraints on your network traffic. There's no additional charge for having an internet gateway in your account. ",
+        "SeeAlso": "VPC"
+    },
+    {
+        "AWSComponent": "Key Management System (KMS)",
+        "URL": "https://aws.amazon.com/kms/",
+        "Module": "Security and Compliance",
+        "Comment": "Manage encryption keys, not dedicated to you.",
+        "Blurb": "AWS Key Management Service (KMS) makes it easy for you to create and manage cryptographic keys and control their use across a wide range of AWS services and in your applications. AWS KMS is a secure and resilient service that uses hardware security modules that have been validated under FIPS 140-2, or are in the process of being validated, to protect your keys. AWS KMS is integrated with AWS CloudTrail to provide you with logs of all key usage to help meet your regulatory and compliance needs. ",
+        "SeeAlso": ""
+    },
+    {
+        "AWSComponent": "Lambda",
+        "URL": "https://aws.amazon.com/lambda/",
+        "Module": "Other Compute Services: ECS, Lambda, Batch, Lightsail",
+        "Comment": "Scales out, not up.<br>Serverless<br>Per invocation & per execution time",
+        "Blurb": "AWS Lambda is a serverless compute service that lets you run code without provisioning or managing servers, creating workload-aware cluster scaling logic, maintaining event integrations, or managing runtimes. With Lambda, you can run code for virtually any type of application or backend service - all with zero administration. Just upload your code as a ZIP file or container image, and Lambda automatically and precisely allocates compute execution power and runs your code based on the incoming request or event, for any scale of traffic. You can set up your code to automatically trigger from 140 AWS services or call it directly from any web or mobile app. You can write Lambda functions in your favorite language (Node.js, Python, Go, Java, and more) and use both serverless and container tools, such as AWS SAM or Docker CLI, to build, test, and deploy your functions.",
+        "SeeAlso": ""
+    },
+    {
+        "AWSComponent": "Lex",
+        "URL": "https://aws.amazon.com/lex/",
+        "Module": "Machine Learning",
+        "Comment": "convert speech-to-text and recognize the customers' intentions.",
+        "Blurb": "Amazon Lex is a service for building conversational interfaces into any application using voice and text. Amazon Lex provides the advanced deep learning functionalities of automatic speech recognition (ASR) for converting speech to text, and natural language understanding (NLU) to recognize the intent of the text, to enable you to build applications with highly engaging user experiences and lifelike conversational interactions. With Amazon Lex, the same deep learning technologies that power Amazon Alexa are now available to any developer, enabling you to quickly and easily build sophisticated, natural language, conversational bots (“chatbots”).",
+        "SeeAlso": ""
+    },
+    {
+        "AWSComponent": "Lightsail",
+        "URL": "https://aws.amazon.com/lightsail/",
+        "Module": "Other Compute Services: ECS, Lambda, Batch, Lightsail",
+        "Comment": "Complete cloud beginner should use lightsail create a simple application with predictable pricing.  ",
+        "Blurb": "Lightsail is an easy-to-use cloud platform that offers you everything needed to build an application or website, plus a cost-effective, monthly plan. Whether you’re new to the cloud or looking to get on the cloud quickly with AWS infrastructure you trust, we’ve got you covered. ",
+        "SeeAlso": ""
+    },
+    {
+        "AWSComponent": "Lifecycle Rules",
+        "URL": "https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html",
+        "Module": "S3",
+        "Comment": "define actions to move S3 objects between different storage classes",
+        "Blurb": "To manage your objects so that they are stored cost effectively throughout their lifecycle, configure their Amazon S3 Lifecycle. An S3 Lifecycle configuration is a set of rules that define actions that Amazon S3 applies to a group of objects.<br><br>Transition actions—Define when objects transition to another storage class. For example, you might choose to transition objects to the S3 Standard-IA storage class 30 days after you created them, or archive objects to the S3 Glacier storage class one year after creating them.<br><br>Expiration actions—Define when objects expire. Amazon S3 deletes expired objects on your behalf.",
+        "SeeAlso": ""
+    },
+    {
+        "AWSComponent": "MFA",
+        "URL": "https://aws.amazon.com/iam/features/mfa/",
+        "Module": "IAM - Identity and Access Management",
+        "Comment": "Universal 2nd Factor (U2F) security keys are a type of MFA device that you can use to protect your AWS resources",
+        "Blurb": "AWS Multi-Factor Authentication (MFA) is a simple best practice that adds an extra layer of protection on top of your user name and password. With MFA enabled, when a user signs in to an AWS Management Console, they will be prompted for their user name and password (the first factor—what they know), as well as for an authentication code from their AWS MFA device (the second factor—what they have). Taken together, these multiple factors provide increased security for your AWS account settings and resources. You can enable MFA for your AWS account and for individual IAM users you have created under your account. MFA can be also be used to control access to AWS service APIs. After you've obtained a supported hardware or virtual MFA device, AWS does not charge any additional fees for using MFA. You can also protect cross-account access using MFA. ",
+        "SeeAlso": "IAM"
+    },
+    {
+        "AWSComponent": "NACL",
+        "URL": "https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html",
+        "Module": "VPC & Networking",
+        "Comment": "firewall has both ALLOW and DENY rules and operates at the subnet level",
+        "Blurb": "A network access control list (ACL) is an optional layer of security for your VPC that acts as a firewall for controlling traffic in and out of one or more subnets. You might set up network ACLs with rules similar to your security groups in order to add an additional layer of security to your VPC. For more information about the differences between security groups and network ACLs, see Comparison of security groups and network ACLs. ",
+        "SeeAlso": ""
+    },
+    {
+        "AWSComponent": "NAT Gateways",
+        "URL": "https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html",
+        "Module": "VPC & Networking",
+        "Comment": "Your private subnets need to connect to the Internet while still remaining private.",
+        "Blurb": "You can use a network address translation (NAT) gateway to enable instances in a private subnet to connect to the internet or other AWS services, but prevent the internet from initiating a connection with those instances. For more information about NAT, see NAT. You are charged for creating and using a NAT gateway in your account. NAT gateway hourly usage and data processing rates apply. Amazon EC2 charges for data transfer also apply. For more information, see Amazon VPC Pricing. ",
+        "SeeAlso": ""
+    },
+    {
+        "AWSComponent": "NAT Instances",
+        "URL": "https://docs.aws.amazon.com/vpc/latest/userguide/VPC_NAT_Instance.html",
+        "Module": "VPC & Networking",
+        "Comment": "",
+        "Blurb": "You can use a network address translation (NAT) instance in a public subnet in your VPC to enable instances in the private subnet to initiate outbound IPv4 traffic to the internet or other AWS services, but prevent the instances from receiving inbound traffic initiated by someone on the internet. ",
+        "SeeAlso": ""
+    },
+    {
+        "AWSComponent": "OpsWorks",
+        "URL": "https://aws.amazon.com/opsworks/",
+        "Module": "Deployments & Managing Infrastructure at Scale",
+        "Comment": "allows you to deploy any AWS Infrastructure as a Code",
+        "Blurb": "AWS OpsWorks is a configuration management service that provides managed instances of Chef and Puppet. Chef and Puppet are automation platforms that allow you to use code to automate the configurations of your servers. OpsWorks lets you use Chef and Puppet to automate how servers are configured, deployed, and managed across your Amazon EC2 instances or on-premises compute environments. OpsWorks has three offerings, AWS Opsworks for Chef Automate, AWS OpsWorks for Puppet Enterprise, and AWS OpsWorks Stacks. ",
+        "SeeAlso": "EC2"
+    },
+    {
+        "AWSComponent": "Organizations",
+        "URL": "https://aws.amazon.com/organizations/",
+        "Module": "Account Management, Billing & Support",
+        "Comment": "Help you manage multiple AWS accounts",
+        "Blurb": "AWS Organizations helps you centrally manage and govern your environment as you grow and scale your AWS resources. Using AWS Organizations, you can programmatically create new AWS accounts and allocate resources, group accounts to organize your workflows, apply policies to accounts or groups for governance, and simplify billing by using a single payment method for all of your accounts. <br><br>AWS Organizations is integrated with other AWS services so you can define central configurations, security mechanisms, audit requirements, and resource sharing across accounts in your organization. AWS Organizations is available to all AWS customers at no additional charge.",
+        "SeeAlso": ""
+    },
+    {
+        "AWSComponent": "Pay as you go",
+        "URL": "https://aws.amazon.com/pricing/#:~:text=Read%20more%20%C2%BB-,Save%20when%20you%20reserve,payment%2C%20the%20greater%20the%20discount.",
+        "Module": "Cloud Computing",
+        "Comment": "pricing model of Cloud Computing",
+        "Blurb": "Pay-as-you-go allows you to easily adapt to changing business needs without overcommitting budgets and improving your responsiveness to changes.  With a pay-as-you-go model, you can adapt your business depending on need and not on forecasts, reducing the risk of overpositioning or missing capacity.",
+        "SeeAlso": "Pay less by using more, Save when you reserve"
+    },
+    {
+        "AWSComponent": "Pay less by using more",
+        "URL": "https://aws.amazon.com/pricing/#:~:text=Read%20more%20%C2%BB-,Save%20when%20you%20reserve,payment%2C%20the%20greater%20the%20discount.",
+        "Module": "Cloud Computing",
+        "Comment": "",
+        "Blurb": "With AWS, you can get volume based discounts and realize important savings as your usage increases.  For services such as S3, pricing is tiered, meaning the more you use, the less you pay per GB.  AWS also gives you options to acquire services that help you address your business needs. ",
+        "SeeAlso": "Pay as you go, Save when you reserve"
+    },
+    {
+        "AWSComponent": "Personal Health Dashboard (PHD)",
+        "URL": "https://aws.amazon.com/premiumsupport/technology/personal-health-dashboard/",
+        "Module": "Cloud Monitoring",
+        "Comment": "AWS service provides alerts and remediation guidance when AWS is experiencing events that may impact you",
+        "Blurb": "AWS Personal Health Dashboard provides alerts and remediation guidance when AWS is experiencing events that may impact you. While the Service Health Dashboard displays the general status of AWS services, Personal Health Dashboard gives you a personalized view into the performance and availability of the AWS services underlying your AWS resources. The dashboard displays relevant and timely information to help you manage events in progress, and provides proactive notification to help you plan for scheduled activities. With Personal Health Dashboard, alerts are triggered by changes in the health of AWS resources, giving you event visibility, and guidance to help quickly diagnose and resolve issues. ",
+        "SeeAlso": ""
+    },
+    {
+        "AWSComponent": "Platform as a Service (PAAS)",
+        "URL": "https://aws.amazon.com/types-of-cloud-computing/",
+        "Module": "Cloud Computing",
+        "Comment": "ONLY want to manage Applications and Data.<br><br>Elastic beanstalk is an example<br>hardware and software tools available over the internet",
+        "Blurb": "Platforms as a service remove the need for organizations to manage the underlying infrastructure (usually hardware and operating systems) and allow you to focus on the deployment and management of your applications. This helps you be more efficient as you don’t need to worry about resource procurement, capacity planning, software maintenance, patching, or any of the other undifferentiated heavy lifting involved in running your application. ",
+        "SeeAlso": "Infrastructure as a Service (IAAS), Software as a Service (SAAS)"
+    },
+    {
+        "AWSComponent": "Polly",
+        "URL": "https://aws.amazon.com/polly/",
+        "Module": "Machine Learning",
+        "Comment": "",
+        "Blurb": "Amazon Polly is a service that turns text into lifelike speech, allowing you to create applications that talk, and build entirely new categories of speech-enabled products. Polly's Text-to-Speech (TTS) service uses advanced deep learning technologies to synthesize natural sounding human speech. With dozens of lifelike voices across a broad set of languages, you can build speech-enabled applications that work in many different countries. ",
+        "SeeAlso": "Lex"
+    },
+    {
+        "AWSComponent": "QuickStart",
+        "URL": "https://aws.amazon.com/quickstart/?quickstart-all.sort-by=item.additionalFields.sortDate&quickstart-all.sort-order=desc",
+        "Module": "Deployments & Managing Infrastructure at Scale",
+        "Comment": "Deploying environments quickly, using CloudFormation templates built by AWS",
+        "Blurb": "Quick Starts are built by Amazon Web Services (AWS) solutions architects and partners to help you deploy popular technologies on AWS, based on AWS best practices for security and high availability. These accelerators reduce hundreds of manual procedures into just a few steps, so you can build your production environment quickly and start using it immediately.<br><br>Each Quick Start includes AWS CloudFormation templates that automate the deployment and a guide that discusses the architecture and provides step-by-step deployment instructions.",
+        "SeeAlso": "CloudFormation"
+    },
+    {
+        "AWSComponent": "RedShift",
+        "URL": "https://aws.amazon.com/redshift/?whats-new-cards.sort-by=item.additionalFields.postDateTime&whats-new-cards.sort-order=desc",
+        "Module": "Databases & Analytics",
+        "Comment": "is a data warehouse ",
+        "Blurb": "With Redshift, you can query and combine exabytes of structured and semi-structured data across your data warehouse, operational database, and data lake using standard SQL. Redshift lets you easily save the results of your queries back to your S3 data lake using open formats, like Apache Parquet, so that you can do additional analytics from other analytics services like Amazon EMR, Amazon Athena, and Amazon SageMaker. ",
+        "SeeAlso": ""
+    },
+    {
+        "AWSComponent": "Relational Database Service (RDS)",
+        "URL": "https://aws.amazon.com/redshift/?whats-new-cards.sort-by=item.additionalFields.postDateTime&whats-new-cards.sort-order=desc",
+        "Module": "Databases & Analytics",
+        "Comment": "Managed service with SQL capability suited for Online Transaction Processing (OLTP).<br><br><strong>Read Replica improves database scalability</strong>",
+        "Blurb": "Amazon Relational Database Service (Amazon RDS) makes it easy to set up, operate, and scale a relational database in the cloud. It provides cost-efficient and resizable capacity while automating time-consuming administration tasks such as hardware provisioning, database setup, patching and backups. It frees you to focus on your applications so you can give them the fast performance, high availability, security and compatibility they need. ",
+        "SeeAlso": ""
+    },
+    {
+        "AWSComponent": "Rekognition",
+        "URL": "https://aws.amazon.com/rekognition/?blog-cards.sort-by=item.additionalFields.createdDate&blog-cards.sort-order=desc",
+        "Module": "Machine Learning",
+        "Comment": "You would like to find objects, people, text, or scenes in images and videos",
+        "Blurb": "Amazon Rekognition makes it easy to add image and video analysis to your applications using proven, highly scalable, deep learning technology that requires no machine learning expertise to use. With Amazon Rekognition, you can identify objects, people, text, scenes, and activities in images and videos, as well as detect any inappropriate content. Amazon Rekognition also provides highly accurate facial analysis and facial search capabilities that you can use to detect, analyze, and compare faces for a wide variety of user verification, people counting, and public safety use cases.<br><br>With Amazon Rekognition Custom Labels, you can identify the objects and scenes in images that are specific to your business needs. For example, you can build a model to classify specific machine parts on your assembly line or to detect unhealthy plants. <br><br>Amazon Rekognition Custom Labels takes care of the heavy lifting of model development for you, so no machine learning experience is required. You simply need to supply images of objects or scenes you want to identify, and the service handles the rest. ",
+        "SeeAlso": ""
+    },
+    {
+        "AWSComponent": "Resource Groups",
+        "URL": "https://docs.aws.amazon.com/ARG/latest/userguide/welcome.html",
+        "Module": "IAM",
+        "Comment": "Make it easy to group your resources using the tags that are assigned to the,. You can group resources that share one or more tags",
+        "Blurb": "You can use resource groups to organize your AWS resources. Resource groups make it easier to manage and automate tasks on large numbers of resources at one time. This guide shows you how to create and manage resource groups in AWS Resource Groups. The tasks that you can perform on a resource vary based on the AWS service you're using. For a list of the services that support AWS Resource Groups and a brief description of what each service allows you to do with a resource group",
+        "SeeAlso": ""
+    },
+    {
+        "AWSComponent": "Route53",
+        "URL": "https://aws.amazon.com/route53/",
+        "Module": "Leveraging the AWS Global Infrastructure",
+        "Comment": "Domain Registration<br>DNS<br>Health Checks<br>Routing Policy<br>Route 53 Routing Policies would use weighted routing policy to handle traffic to multiple resources in proportions",
+        "Blurb": "Amazon Route 53 is a highly available and scalable cloud Domain Name System (DNS) web service. It is designed to give developers and businesses an extremely reliable and cost effective way to route end users to Internet applications by translating names like www.example.com into the numeric IP addresses like 192.0.2.1 that computers use to connect to each other. <br><br>Amazon Route 53 is fully compliant with IPv6 as well. Amazon Route 53 effectively connects user requests to infrastructure running in AWS – such as Amazon EC2 instances, Elastic Load Balancing load balancers, or Amazon S3 buckets – and can also be used to route users to infrastructure outside of AWS. You can use Amazon Route 53 to configure DNS health checks to route traffic to healthy endpoints or to independently monitor the health of your application and its endpoints. Amazon Route 53 Traffic Flow makes it easy for you to manage traffic globally through a variety of routing types, including Latency Based Routing, Geo DNS, Geoproximity, and Weighted Round Robin—all of which can be combined with DNS Failover in order to enable a variety of low-latency, fault-tolerant architectures. Using Amazon Route 53 Traffic Flow’s simple visual editor, you can easily manage how your end-users are routed to your application’s endpoints—whether in a single AWS region or distributed around the globe. Amazon Route 53 also offers Domain Name Registration – you can purchase and manage domain names such as example.com and Amazon Route 53 will automatically configure DNS settings for your domains. ",
+        "SeeAlso": ""
+    },
+    {
+        "AWSComponent": "Save when you reserve",
+        "URL": "https://aws.amazon.com/pricing/#:~:text=Read%20more%20%C2%BB-,Save%20when%20you%20reserve,payment%2C%20the%20greater%20the%20discount.",
+        "Module": "Cloud Computing",
+        "Comment": "minimize risks, predictably manage budgets and comply with long-term requirements, and is available for EC2, DynamoDB, ElastiCache, RDS, and Redshift",
+        "Blurb": "For certain services like Amazon EC2 and Amazon RDS, you can invest in reserved capacity.  With Reserved Instances, you can save up to 75% over equivalent on-demand capacity.  When you buy Reserved Instances, the larger the upfront payment, the greater the discount. ",
+        "SeeAlso": "EC2, DynamoDb, Elasticache,Pay as you go, Pay less by using more, Relational Database Service (RDS),Redshift"
+    },
+    {
+        "AWSComponent": "Simple Storage Service (S3)",
+        "URL": "https://aws.amazon.com/s3/",
+        "Module": "S3",
+        "Comment": "",
+        "Blurb": "Amazon Simple Storage Service (Amazon S3) is an object storage service that offers industry-leading scalability, data availability, security, and performance. This means customers of all sizes and industries can use it to store and protect any amount of data for a range of use cases, such as data lakes, websites, mobile applications, backup and restore, archive, enterprise applications, IoT devices, and big data analytics. Amazon S3 provides easy-to-use management features so you can organize your data and configure finely-tuned access controls to meet your specific business, organizational, and compliance requirements. Amazon S3 is designed for 99.999999999% (11 9's) of durability, and stores data for millions of applications for companies all around the world. ",
+        "SeeAlso": ""
+    },
+    {
+        "AWSComponent": "S3 Cross-Region Replication",
+        "URL": "https://docs.aws.amazon.com/AmazonS3/latest/dev/replication.html",
+        "Module": "S3",
+        "Comment": "",
+        "Blurb": "Replication enables automatic, asynchronous copying of objects across Amazon S3 buckets. Buckets that are configured for object replication can be owned by the same AWS account or by different accounts. Object may be replicated to a single destination bucket or multiple destination buckets. Destination buckets can be in different AWS Regions or within the same Region as the source bucket. ",
+        "SeeAlso": "S3"
+    },
+    {
+        "AWSComponent": "S3 Transfer Acceleration",
+        "URL": "https://docs.aws.amazon.com/AmazonS3/latest/dev/transfer-acceleration.html",
+        "Module": "S3",
+        "Comment": "enable fast, easy, and secure transfers of files over long distances on S3",
+        "Blurb": "Amazon S3 Transfer Acceleration enables fast, easy, and secure transfers of files over long distances between your client and an S3 bucket. Transfer Acceleration takes advantage of Amazon CloudFront’s globally distributed edge locations. As the data arrives at an edge location, data is routed to Amazon S3 over an optimized network path. When using Transfer Acceleration, additional data transfer charges may apply. For more information about pricing, see Amazon S3 Pricing. ",
+        "SeeAlso": "CloudFront, S3, Transfer Acceleration"
+    },
+    {
+        "AWSComponent": "Sagemaker",
+        "URL": "https://aws.amazon.com/sagemaker/",
+        "Module": "Machine Learning",
+        "Comment": "developer would like to build, train, and deploy a machine learning model quickly",
+        "Blurb": "Amazon SageMaker helps data scientists and developers to prepare, build, train, and deploy high-quality machine learning (ML) models quickly by bringing together a broad set of capabilities purpose-built for ML. ",
+        "SeeAlso": ""
+    },
+    {
+        "AWSComponent": "Secrets Manager",
+        "URL": "https://aws.amazon.com/secrets-manager/",
+        "Module": "Security and Compliance",
+        "Comment": "",
+        "Blurb": "AWS Secrets Manager helps you protect secrets needed to access your applications, services, and IT resources. The service enables you to easily rotate, manage, and retrieve database credentials, API keys, and other secrets throughout their lifecycle. Users and applications retrieve secrets with a call to Secrets Manager APIs, eliminating the need to hardcode sensitive information in plain text. Secrets Manager offers secret rotation with built-in integration for Amazon RDS, Amazon Redshift, and Amazon DocumentDB. Also, the service is extensible to other types of secrets, including API keys and OAuth tokens. In addition, Secrets Manager enables you to control access to secrets using fine-grained permissions and audit secret rotation centrally for resources in the AWS Cloud, third-party services, and on-premises. ",
+        "SeeAlso": ""
+    },
+    {
+        "AWSComponent": "Security Groups",
+        "URL": "https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html",
+        "Module": "EC2 - Elastic Compute Cloud",
+        "Comment": "network security tool can you use to control traffic in and out of EC2 Instances",
+        "Blurb": "A security group acts as a virtual firewall for your instance to control inbound and outbound traffic. When you launch an instance in a VPC, you can assign up to five security groups to the instance. Security groups act at the instance level, not the subnet level. Therefore, each instance in a subnet in your VPC can be assigned to a different set of security groups. If you launch an instance using the Amazon EC2 API or a command line tool and you don't specify a security group, the instance is automatically assigned to the default security group for the VPC. If you launch an instance using the Amazon EC2 console, you have an option to create a new security group for the instance.<br><br>For each security group, you add rules that control the inbound traffic to instances, and a separate set of rules that control the outbound traffic. This section describes the basic things that you need to know about security groups for your VPC and their rules.<br><br>You might set up network ACLs with rules similar to your security groups in order to add an additional layer of security to your VPC. For more information about the differences between security groups and network ACLs, see Comparison of security groups and network ACLs.",
+        "SeeAlso": "EC2, VPC"
+    },
+    {
+        "AWSComponent": "Service Health Dashboard (SHD)",
+        "URL": "https://status.aws.amazon.com/",
+        "Module": "Cloud Monitoring",
+        "Comment": "Find Ooutages in AWS",
+        "Blurb": "Amazon Web Services publishes our most up-to-the-minute information on service availability in the table below. Check back here any time to get current status information, or subscribe to an RSS feed to be notified of interruptions to each individual service. If you are experiencing a real-time, operational issue with one of our services that is not described below, please inform us by clicking on the Contact Us link to submit a service issue report. All dates and times are Pacific Time (PST/PDT).",
+        "SeeAlso": ""
+    },
+    {
+        "AWSComponent": "Shared Responsibility Model",
+        "URL": "https://aws.amazon.com/compliance/shared-responsibility-model/",
+        "Module": "Security and Compliance",
+        "Comment": "Patch Management customer and AWS responsible.<br><br> AWS - Security of the Cloud.<br><br>Customer - Security in the Cloud.",
+        "Blurb": "Security and Compliance is a shared responsibility between AWS and the customer. This shared model can help relieve the customer’s operational burden as AWS operates, manages and controls the components from the host operating system and virtualization layer down to the physical security of the facilities in which the service operates. The customer assumes responsibility and management of the guest operating system (including updates and security patches), other associated application software as well as the configuration of the AWS provided security group firewall. Customers should carefully consider the services they choose as their responsibilities vary depending on the services used, the integration of those services into their IT environment, and applicable laws and regulations. The nature of this shared responsibility also provides the flexibility and customer control that permits the deployment. As shown in the chart below, this differentiation of responsibility is commonly referred to as Security of the Cloud versus Security in the Cloud.",
+        "SeeAlso": ""
+    },
+    {
+        "AWSComponent": "Shield",
+        "URL": "https://aws.amazon.com/shield/?whats-new-cards.sort-by=item.additionalFields.postDateTime&whats-new-cards.sort-order=desc",
+        "Module": "Security and Compliance",
+        "Comment": "ONLY role is to safeguard running applications from DDoS attacks",
+        "Blurb": "AWS Shield is a managed Distributed Denial of Service (DDoS) protection service that safeguards applications running on AWS. AWS Shield provides always-on detection and automatic inline mitigations that minimize application downtime and latency, so there is no need to engage AWS Support to benefit from DDoS protection. There are two tiers of AWS Shield - Standard and Advanced.",
+        "SeeAlso": ""
+    },
+    {
+        "AWSComponent": "Simple Monthly Calculator (Pricing Calculator)",
+        "URL": "https://calculator.aws/#/",
+        "Module": "Account Management, Billing & Support",
+        "Comment": "Estimate the cost of your architecture solution. Not a comparison tool",
+        "Blurb": "Configure a cost estimate that fits your unique business or personal needs with AWS products and services.",
+        "SeeAlso": ""
+    },
+    {
+        "AWSComponent": "Single Sign On",
+        "URL": "https://aws.amazon.com/single-sign-on/",
+        "Module": "Advanced Identity",
+        "Comment": "Centrally manage access to multiple AWS accounts and business applications.",
+        "Blurb": "AWS Single Sign-On (SSO) makes it easy to centrally manage access to multiple AWS accounts and business applications and provide users with single sign-on access to all their assigned accounts and applications from one place. With AWS SSO, you can easily manage access and user permissions to all of your accounts in AWS Organizations centrally. AWS SSO configures and maintains all the necessary permissions for your accounts automatically, without requiring any additional setup in the individual accounts. You can assign user permissions based on common job functions and customize these permissions to meet your specific security requirements. AWS SSO also includes built-in integrations to many business applications, such as Salesforce, Box, and Microsoft 365. With AWS SSO, you can create and manage user identities in AWS SSO’s identity store, or easily connect to your existing identity source, including Microsoft Active Directory, Okta Universal Directory, and Azure Active Directory (Azure AD). AWS SSO allows you to select user attributes, such as cost center, title, or locale, from your identity source, and then use them for attribute-based access control in AWS.<br><br>It is easy to get started with AWS SSO. With just a few clicks in the AWS SSO management console you can connect AWS SSO to your existing identity source and configure permissions that grant your users access to their assigned AWS Organizations accounts and hundreds of pre-integrated cloud applications, all from a single user portal.",
+        "SeeAlso": ""
+    },
+    {
+        "AWSComponent": "Snowball",
+        "URL": "https://aws.amazon.com/snowball/?whats-new-cards.sort-by=item.additionalFields.postDateTime&whats-new-cards.sort-order=desc",
+        "Module": "S3",
+        "Comment": "",
+        "Blurb": "AWS Snowball, a part of the AWS Snow Family, is an edge computing, data migration, and edge storage device that comes in two options. Snowball Edge Storage Optimized devices provide both block storage and Amazon S3-compatible object storage, and 40 vCPUs. They are well suited for local storage and large scale-data transfer. Snowball Edge Compute Optimized devices provide 52 vCPUs, block and object storage, and an optional GPU for use cases like advanced machine learning and full motion video analysis in disconnected environments. You can use these devices for data collection, machine learning and processing, and storage in environments with intermittent connectivity (like manufacturing, industrial, and transportation) or in extremely remote locations (like military or maritime operations) before shipping them back to AWS. These devices may also be rack mounted and clustered together to build larger temporary installations. Snowball supports specific Amazon EC2 instance types and AWS Lambda functions, so you can develop and test in the AWS Cloud, then deploy applications on devices in remote locations to collect, pre-process, and ship the data to AWS. Common use cases include data migration, data transport, image collation, IoT sensor stream capture, and machine learning. ",
+        "SeeAlso": "S3, Snowball Edge, Snowmobile"
+    },
+    {
+        "AWSComponent": "Snowball Edge",
+        "URL": "https://aws.amazon.com/snowball/?whats-new-cards.sort-by=item.additionalFields.postDateTime&whats-new-cards.sort-order=desc",
+        "Module": "S3",
+        "Comment": "<strong>petabyte-scale</strong> data moving service (as a fleet) in or out of AWS with computing capabilities",
+        "Blurb": "AWS Snowball Edge is a type of Snowball device with on-board storage and compute power for select AWS capabilities. Snowball Edge can do local processing and edge-computing workloads in addition to transferring data between your local environment and the AWS Cloud. Each Snowball Edge device can transport data at speeds faster than the internet. This transport is done by shipping the data in the appliances through a regional carrier. The appliances are rugged, complete with E Ink shipping labels.<br><br>Snowball Edge devices have three options for device configurations—Storage Optimized, Compute Optimized, and Compute Optimized with GPU. When this guide refers to Snowball Edge devices, it's referring to all options of the device. When specific information applies only to one or more optional configurations of devices (such as how the Snowball Edge with GPU has an on-board GPU), it is called out specifically. For more information, see Snowball Edge Device Options.",
+        "SeeAlso": "S3, Snowball, Snowmobile"
+    },
+    {
+        "AWSComponent": "Snowmobile",
+        "URL": "https://aws.amazon.com/snowmobile/#:~:text=AWS%20Snowmobile%20is%20an%20Exabyte,amounts%20of%20data%20to%20AWS.&text=After%20an%20initial%20assessment%2C%20a,as%20a%20network%20storage%20target.",
+        "Module": "S3",
+        "Comment": "<strong>exabytes-scale</strong> data moving service in or out of AWS",
+        "Blurb": "AWS Snowmobile is an Exabyte-scale data transfer service used to move extremely large amounts of data to AWS. You can transfer up to 100PB per Snowmobile, a 45-foot long ruggedized shipping container, pulled by a semi-trailer truck. Snowmobile makes it easy to move massive volumes of data to the cloud, including video libraries, image repositories, or even a complete data center migration. Transferring data with Snowmobile is more secure, fast and cost effective. ",
+        "SeeAlso": "S3, Snowball, Snowball Edge"
+    },
+    {
+        "AWSComponent": "Software as a Service (SAAS)",
+        "URL": "https://aws.amazon.com/types-of-cloud-computing/",
+        "Module": "Cloud Computing",
+        "Comment": "Salesforce is an example of this<br>software that’s available via a third-party over the internet",
+        "Blurb": "Software as a Service provides you with a completed product that is run and managed by the service provider. In most cases, people referring to Software as a Service are referring to end-user applications. With a SaaS offering you do not have to think about how the service is maintained or how the underlying infrastructure is managed; you only need to think about how you will use that particular piece of software. A common example of a SaaS application is web-based email where you can send and receive email without having to manage feature additions to the email product or maintaining the servers and operating systems that the email program is running on. ",
+        "SeeAlso": "Infrastructure as a Service (IAAS),Platform as a Service (PAAS)"
+    },
+    {
+        "AWSComponent": "Storage Gateway ",
+        "URL": "https://aws.amazon.com/storagegateway/?whats-new-cards.sort-by=item.additionalFields.postDateTime&whats-new-cards.sort-order=desc",
+        "Module": "S3",
+        "Comment": "Hybrid AWS service is used to allow on-premises servers to seamlessly use the AWS Cloud at the storage layer. <br<br><strong>Data encryption is automatically enabled</strong>",
+        "Blurb": "AWS Storage Gateway is a hybrid cloud storage service that gives you on-premises access to virtually unlimited cloud storage. Customers use Storage Gateway to simplify storage management and reduce costs for key hybrid cloud storage use cases. These include moving backups to the cloud, using on-premises file shares backed by cloud storage, and providing low latency access to data in AWS for on-premises applications. ",
+        "SeeAlso": "S3"
+    },
+    {
+        "AWSComponent": "Systems Manager",
+        "URL": "https://aws.amazon.com/systems-manager/",
+        "Module": "Deployments & Managing Infrastructure at Scale",
+        "Comment": "unified user interface that gives you visibility, control, and patching capabilities for your EC2 Instances on AWS, as well as for servers running in your on-premises data centers",
+        "Blurb": "AWS Systems Manager gives you visibility and control of your infrastructure on AWS. Systems Manager provides a unified user interface so you can view operational data from multiple AWS services and allows you to automate operational tasks across your AWS resources. With Systems Manager, you can group resources, like Amazon EC2 instances, Amazon EKS clusters, Amazon S3 buckets, or Amazon RDS instances, by application, view operational data for monitoring and troubleshooting, implement pre-approved change work flows, and audit operational changes for your groups of resources. Systems Manager simplifies resource and application management, shortens the time to detect and resolve operational problems, and makes it easy to operate and manage your infrastructure securely at scale. ",
+        "SeeAlso": "EC2"
+    },
+    {
+        "AWSComponent": "Total Cost of Ownership (TCO)",
+        "URL": "https://docs.aws.amazon.com/whitepapers/latest/how-aws-pricing-works/aws-pricingtco-tools.html",
+        "Module": "Account Management, Billing & Support",
+        "Comment": "Company is not sure whether or not it is cost-effective to migrate to the AWS Cloud ",
+        "Blurb": "To get the most out of your estimates, you should have a good idea of your basic requirements. For example, if you're going to try Amazon Elastic Compute Cloud (Amazon EC2), it might help if you know what kind of operating system you need, what your memory requirements are, and how much I/O you need. You should also decide whether you need storage, such as if you're going to run a database and how long you intend to use the servers. You don't need to make these decisions before generating an estimate, though. You can play around with the service configuration and parameters to see which options fit your use case and budget best.",
+        "SeeAlso": ""
+    },
+    {
+        "AWSComponent": "Transcribe",
+        "URL": "https://aws.amazon.com/transcribe/",
+        "Module": "Machine Learning",
+        "Comment": "",
+        "Blurb": "Amazon Transcribe makes it easy for developers to add speech to text capabilities to their applications. Audio data is virtually impossible for computers to search and analyze. Therefore, recorded speech needs to be converted to text before it can be used in applications. Historically, customers had to work with transcription providers that required them to sign expensive contracts and were hard to integrate into their technology stacks to accomplish this task. Many of these providers use outdated technology that does not adapt well to different scenarios, like low-fidelity phone audio common in contact centers, which results in poor accuracy. ",
+        "SeeAlso": ""
+    },
+    {
+        "AWSComponent": "Transit Gateway",
+        "URL": "https://aws.amazon.com/transit-gateway/?whats-new-cards.sort-by=item.additionalFields.postDateTime&whats-new-cards.sort-order=desc",
+        "Module": "VPC & Networking",
+        "Comment": "connect hundreds of VPCs and your on-premises data centers together.",
+        "Blurb": "AWS Transit Gateway connects VPCs and on-premises networks through a central hub. This simplifies your network and puts an end to complex peering relationships. It acts as a cloud router – each new connection is only made once. As you expand globally, inter-Region peering connects AWS Transit Gateways together using the AWS global network. Your data is automatically encrypted, and never travels over the public internet. And, because of its central position, AWS Transit Gateway Network Manager has a unique view over your entire network, even connecting to Software-Defined Wide Area Network (SD-WAN) devices. ",
+        "SeeAlso": ""
+    },
+    {
+        "AWSComponent": "Translate",
+        "URL": "https://aws.amazon.com/translate/",
+        "Module": "Machine Learning",
+        "Comment": "Company would like to convert their documents in different languages, with natural and accurate wording",
+        "Blurb": "Amazon Translate is a neural machine translation service that delivers fast, high-quality, and affordable language translation. Neural machine translation is a form of language translation automation that uses deep learning models to deliver more accurate and more natural sounding translation than traditional statistical and rule-based translation algorithms. With Amazon Translate, you can localize content such as websites and applications for your diverse users, easily translate large volumes of text for analysis, and efficiently enable cross-lingual communication between users.",
+        "SeeAlso": ""
+    },
+    {
+        "AWSComponent": "Trusted Advisor",
+        "URL": "https://aws.amazon.com/premiumsupport/technology/trusted-advisor/",
+        "Module": "Account Management, Billing & Support",
+        "Comment": "recommendations regarding their performance, security, and fault tolerance",
+        "Blurb": "AWS Trusted Advisor is an online tool that provides you real time guidance to help you provision your resources following AWS best practices. <br><br>Trusted Advisor checks help optimize your AWS infrastructure, increase security and performance, reduce your overall costs, and monitor service limits. Whether establishing new workflows, developing applications, or as part of ongoing improvement, take advantage of the recommendations provided by Trusted Advisor on a regular basis to help keep your solutions provisioned optimally. <br><br>AWS Basic Support and AWS Developer Support customers get access to 6 security checks (S3 Bucket Permissions, Security Groups - Specific Ports Unrestricted, IAM Use, MFA on Root Account, EBS Public Snapshots, RDS Public Snapshots) and 50 service limit checks. <br><br>AWS Business Support and AWS Enterprise Support customers get access to all 115 Trusted Advisor checks (14 cost optimization, 17 security, 24 fault tolerance, 10 performance, and 50 service limits) and recommendations. For a complete list of checks and descriptions, explore Trusted Advisor Best Practices.",
+        "SeeAlso": ""
+    },
+    {
+        "AWSComponent": "VPC",
+        "URL": "https://aws.amazon.com/vpc/?vpc-blogs.sort-by=item.additionalFields.createdDate&vpc-blogs.sort-order=desc",
+        "Module": "VPC & Networking",
+        "Comment": "logically isolated section of AWS, where you can launch AWS resources in a private network that you define.<br><br>two VPCs to communicate with each other, use VPC Peering",
+        "Blurb": "Launch AWS resources in a logically isolated virtual network that you define. You have complete control over your virtual networking environment, including selection of your own IP address range, creation of subnets, and configuration of route tables and network gateways. You can use both IPv4 and IPv6 for most resources in your virtual private cloud, helping to ensure secure and easy access to resources and applications, customize your VPC's network configuration. You can create a public-facing subnet for your web servers that have access to the internet. It also lets you place your backend systems, such as databases or application servers, in a private-facing subnet with no internet access. Amazon VPC lets you to use multiple layers of security, including security groups and network access control lists, to help control access to Amazon EC2 instances in each subnet.<br><br>A VPC peering connection is a networking connection between two VPCs that enables you to route traffic between them using private IPv4 addresses or IPv6 addresses. Instances in either VPC can communicate with each other as if they are within the same network. You can create a VPC peering connection between your own VPCs, or with a VPC in another AWS account. The VPCs can be in different regions (also known as an inter-region VPC peering connection).",
+        "SeeAlso": ""
+    },
+    {
+        "AWSComponent": "Web Application Firewall",
+        "URL": "https://aws.amazon.com/waf/",
+        "Module": "Security and Compliance",
+        "Comment": "Protect web applications from common web exploits that may affect availability, compromise security, or consume excessive resources",
+        "Blurb": "AWS WAF is a web application firewall that helps protect your web applications or APIs against common web exploits that may affect availability, compromise security, or consume excessive resources. AWS WAF gives you control over how traffic reaches your applications by enabling you to create security rules that block common attack patterns, such as SQL injection or cross-site scripting, and rules that filter out specific traffic patterns you define. You can get started quickly using Managed Rules for AWS WAF, a pre-configured set of rules managed by AWS or AWS Marketplace Sellers. The Managed Rules for WAF address issues like the OWASP Top 10 security risks. These rules are regularly updated as new issues emerge. AWS WAF includes a full-featured API that you can use to automate the creation, deployment, and maintenance of security rules. With AWS WAF, you pay only for what you use. The pricing is based on how many rules you deploy and how many web requests your application receives. There are no upfront commitments. You can deploy AWS WAF on Amazon CloudFront as part of your CDN solution, the Application Load Balancer that fronts your web servers or origin servers running on EC2, Amazon API Gateway for your REST APIs, or AWS AppSync for your GraphQL APIs. ",
+        "SeeAlso": ""
+    },
+    {
+        "AWSComponent": "Well Architected Framework (WAF)",
+        "URL": "https://aws.amazon.com/blogs/apn/the-5-pillars-of-the-aws-well-architected-framework/",
+        "Module": "General",
+        "Comment": "<u>Operational Excellence</u><br>Perform operations as code<br><br><u>Security</u><br>Implement a strong identity foundation, Enable traceability<br><br><u>Reliability</u><br>Automatically recover from failure. Stop guessing capacity<br><br><u>Performance Efficiency</u><br>Go global in minutes & experiment more often.<br><br><u>Cost Optimization</u><br>Stop spending money running and maintaining data centers<br>",
+        "Blurb": "<u>Operational Excellence</u><br>The Operational Excellence pillar includes the ability to support development and run workloads effectively, gain insight into their operation, and continuously improve supporting processes and procedures to delivery business value. You can find prescriptive guidance on implementation in the Operational Excellence Pillar whitepaper.<br><br><u>Security</u><br>The Security pillar includes the ability to protect data, systems, and assets to take advantage of cloud technologies to improve your security. You can find prescriptive guidance on implementation in the Security Pillar whitepaper.<br><br><u>Reliability</u><br><br>The Reliability pillar encompasses the ability of a workload to perform its intended function correctly and consistently when it’s expected to. This includes the ability to operate and test the workload through its total lifecycle. You can find prescriptive guidance on implementation in the Reliability Pillar whitepaper.<br><br><u>Performance Efficiency</u><br><br>The Performance Efficiency pillar includes the ability to use computing resources efficiently to meet system requirements, and to maintain that efficiency as demand changes and technologies evolve. You can find prescriptive guidance on implementation in the Performance Efficiency Pillar whitepaper.<br><br><u>Cost Optimization</u><br><br>The Cost Optimization pillar includes the ability to run systems to deliver business value at the lowest price point. You can find prescriptive guidance on implementation in the Cost Optimization Pillar whitepaper.",
+        "SeeAlso": ""
+    },
+    {
+        "AWSComponent": "Workspaces",
+        "URL": "https://aws.amazon.com/workspaces/?workspaces-blogs.sort-by=item.additionalFields.createdDate&workspaces-blogs.sort-order=desc",
+        "Module": "General",
+        "Comment": "",
+        "Blurb": "Amazon WorkSpaces is a managed, secure Desktop-as-a-Service (DaaS) solution. You can use Amazon WorkSpaces to provision either Windows or Linux desktops in just a few minutes and quickly scale to provide thousands of desktops to workers across the globe. You can pay either monthly or hourly, just for the WorkSpaces you launch, which helps you save money when compared to traditional desktops and on-premises VDI solutions. Amazon WorkSpaces helps you eliminate the complexity in managing hardware inventory, OS versions and patches, and Virtual Desktop Infrastructure (VDI), which helps simplify your desktop delivery strategy. With Amazon WorkSpaces, your users get a fast, responsive desktop of their choice that they can access anywhere, anytime, from any supported device.",
+        "SeeAlso": ""
+    },
+    {
+        "AWSComponent": "X-Ray",
+        "URL": "https://aws.amazon.com/xray/#:~:text=AWS%20X%2DRay%20helps%20developers,built%20using%20a%20microservices%20architecture.&text=X%2DRay%20provides%20an%20end,of%20your%20application's%20underlying%20components.",
+        "Module": "Cloud Monitoring",
+        "Comment": "helps developers analyze and debug production as well as distributed applications",
+        "Blurb": "AWS X-Ray helps developers analyze and debug production, distributed applications, such as those built using a microservices architecture. With X-Ray, you can understand how your application and its underlying services are performing to identify and troubleshoot the root cause of performance issues and errors. X-Ray provides an end-to-end view of requests as they travel through your application, and shows a map of your application’s underlying components. You can use X-Ray to analyze both applications in development and in production, from simple three-tier applications to complex microservices applications consisting of thousands of services. ",
+        "SeeAlso": ""
+    }
+]

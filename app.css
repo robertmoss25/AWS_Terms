@@ -1,0 +1,48 @@
+.right {
+    text-align: left;
+    float: left;
+    width: 99%;
+    margin-top: 20px;
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container-fluid {
+    font-size: 15px;
+}
+
+.trcolor {
+    background-color: coral;
+}
+
+.odd {
+    background-color: lemonchiffon;
+}
+
+.even {
+    background-color: azure;
+}
+
+.widthsmall {
+    width: 10%;
+}
+
+.widthmedium {
+    width: 15%;
+}
+
+.widthtiny {
+    width: 8%;
+}
+
+.widthlarge {
+    width: 57%;
+}
+
+.colOne {
+    padding-right: 10px;
+}
+
+.colTwo {
+    padding-right: 10px;
+}

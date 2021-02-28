@@ -1,0 +1,214 @@
+[
+    {
+        "Module": "IAM - Identity and Access Management",
+        "Summary": "IAM Section",
+        "Summaries": [
+            {"key1": "Users",         "value1": "mapped to a physical user, has a password for AWS Console"},
+            {"key2": "Groups",        "value2": "contains users only"},
+            {"key3": "Policies",      "value3": "JSON document that outlines permissions for users or groups"},
+            {"key4": "Roles",         "value4": "for EC2 instances or AWS services"},
+            {"key5": "Security",      "value5": "MFA + Password Policy"},
+            {"key6": "Access Keys",   "value6": "access AWS using the CLI or SDK"},
+            {"key7": "Audit",         "value7": "IAM Credential Reports & IAM Access Advisor"}]
+    },
+    {
+        "Module": "EC2 - Elastic Compute Cloud",
+        "Summary": "EC2 Section",
+        "Summaries": [
+            {"key1": "EC2 Instance",      "value1": "AMI (OS) + Instance Size (CPU + RAM) + Storage + security groups + EC2 User Data"},
+            {"key2": "Security Groups",   "value2": "Firewall attached to the EC2 instance"},
+            {"key3": "EC2 User Data",     "value3": "Script launched at the first start of an instance"},
+            {"key4": "SSH",               "value4": "start a terminal into our EC2 Instances (port 22)"},
+            {"key5": "EC2 Instance Role", "value5": "link to IAM roles"},
+            {"key6": "Purchasing Options","value6": "On-Demand, Spot, Reserved (Standard + Convertible + Scheduled), Dedicated Host, Dedicated Instance"}]
+    },
+    {
+        "Module": "EC2 Instance Storage",
+        "Summary": "EC2 Section",
+        "Summaries": [
+            {"key1": "EBS - Elastic Block Store volumes", "value1": "Network drives attached to one EC2 instance at a time<br>Mapped to an Availability Zones<br>Can use EBS Snapshots for backups / transferring EBS volumes across AZ"},
+            {"key2": "AMI - Amazon Machine Images",       "value2": "create ready-to-use EC2 instances with our customizations"},
+            {"key3": "EC2 Instance Store",                "value3": "High performance hardware disk attached to our EC2 instance<br>Lost if our instance is stopped / terminated"},
+            {"key4": "EFS - Elastic File System",         "value4": "network file system, can be attached to 100s of instances in a region"}]
+    },
+    {
+        "Module": "ELB & ASG - Elastic Load Balancing & Auto Scaling Groups",
+        "Summary": "ELB & ASG - Elastic Load Balancing & Auto Scaling Groups Section",
+        "Summaries": [
+            {"key1": "High Availability vs Scalability (vertical and horizontal) vs Elasticity vs Agility",         "value1": "in the Cloud"},
+            {"key2": "ELB - Elastic Load Balancers",   "value2": "Distribute traffic across backend EC2 instances, can be Multi-AZ<br>Supports health checks<br>3 types: Application LB (HTTP – L7), Network LB (TCP – L4), Classic LB (old)"},
+            {"key3": "ASG - Auto Scaling Groups",      "value3": "Implement Elasticity for your application, across multiple AZ<br>Scale EC2 instances based on the demand on your system, replace unhealthy<br>Integrated with the ELB"}]
+    },
+    {
+        "Module": "S3",
+        "Summary": "S3 Section",
+        "Summaries": [
+            {"key1": "Buckets vs Objects"   ,"value1": "Global unique name, tied to a region"},
+            {"key2": "S3 Security" 			,"value2": "IAM policy, S3 Bucket Policy (public access), S3 Encryption"},
+            {"key3": "S3 Websites"			,"value3": "Host a static website on Amazon S3"},
+            {"key4": "S3 Versioning" 		,"value4": "Multiple versions for files, prevent accidental deletes"},
+            {"key5": "S3 Access Logs" 		,"value5": "Log requests made within your S3 bucket"},
+            {"key6": "S3 Replication" 		,"value6": "Same-region or cross-region, must enable versioning"},
+            {"key7": "S3 Storage Classes" 	,"value7": "Standard, IA, 1Z-IA, Intelligent, Glacier, Deep Archive"},
+            {"key8": "S3 Lifecycle Rules" 	,"value8": "Transition objects between classes"},
+            {"key9": "Snowball / Snowmobile","value9": "Import data onto S3 through a physical device"},
+            {"key10": "Storage Gateway" 	,"value10": "Hybrid solution to extend on-premises storage to S3"}]
+    },
+    {
+        "Module": "Databases & Analytics",
+        "Summary": "Databases & Analytics Section",
+        "Summaries": [
+            {"key1": "Relational Databases - OLTP", "value1":"Relational Database Service (RDS) & Aurora (SQL)"},
+            {"key2": "In-memory Database", 			"value2":"ElastiCache"},
+            {"key3": "Key/Value Database", 			"value3":"DynamoDB (serverless)"},
+            {"key4": "Warehouse - OLAP", 			"value4":"Redshift (SQL)"},
+            {"key5": "Hadoop Cluster", 				"value5":"Elastic Map Reduce (EMR)"},
+            {"key6": "Athena", 						"value6":"Query data on Amazon S3 (serverless & SQL)"},
+            {"key7": "Glue", 						"value7":"Managed ETL (Extract Transform Load) and Data Catalog service"},
+            {"key8": "Database Migration", 			"value8":"Database Migration Service (DMS)"}]
+    },
+    {
+        "Module": "Other Compute Services: ECS, Lambda, Batch, Lightsail",
+        "Summary": "Other Compute Services: ECS, Lambda, Batch, Lightsail Section",
+        "Summaries": [
+            {"key1": "Docker", 		                        "value1": "Container technology to run applications"},
+            {"key2": "ECS - Elastic Container Service", 	"value2": "Run Docker containers on EC2 instances"},
+            {"key3": "Fargate",		                        "value3": "Run Docker containers without provisioning the infrastructure<br>Serverless offering (no EC2 instances)"},
+            {"key4": "ECR - Elastic Container Registry", 	"value4": "Private Docker Images Repository"},
+            {"key5": "Batch", 		                        "value5": "Run batch jobs on AWS across managed EC2 instances"},
+            {"key6": "Lightsail", 	                        "value6": "Predictable & low pricing for simple application & DB stacks"},
+            {"key7": "Lambda", 						        "value7": "Lambda is Serverless, Function as a Service, seamless scaling, reactive"},
+            {"key8": "Lambda Billing", 				        "value8": "By the time run x by the RAM provisioned<br>By the number of invocations"},
+            {"key9": "Lambda Language Support", 	        "value9": "Many programming languages except Docker"},
+            {"key10": "Lambda Invocation time", 		    "value10": "Up to 15 minutes"},
+            {"key11": "Lambda Use cases", 			        "value11": "Create Thumbnails for images uploaded onto S3<br>Run a Serverless cron job"}]
+    },
+    {
+        "Module": "Deployments & Managing Infrastructure at Scale",
+        "Summary": "Deployments & Managing Infrastructure at Scale Section",
+        "Summaries": [
+            {"key1": "CloudFormation: (AWS only)", 	"value1": "Infrastructure as Code, works with almost all of AWS resources<br>Repeat across Regions & Accounts"},
+            {"key2": "Beanstalk: (AWS only)", 		"value2": "Platform as a Service (PaaS), limited to certain programming languages or Docker<br>Deploy code consistently with a known architecture: ex, ALB + EC2 + RDS"},
+            {"key3": "CodeDeploy (hybrid)", 		"value3": "deploy & upgrade any application onto servers"},
+            {"key4": "Systems Manager (hybrid)", 	"value4": "patch, configure and run commands at scale"},
+            {"key5": "OpsWorks (hybrid)", 			"value5": "managed Chef and Puppet in AWS"}]
+    },
+    {
+        "Module": "Leveraging the AWS Global Infrastructure",
+        "Summary": "Leveraging the AWS Global Infrastructure Section",
+        "Summaries": [
+            {"key1": "Global DNS Route 53", 			        "value1": "Great to route users to the closest deployment with least latency<br>Great for disaster recovery strategies"},
+            {"key2": "Global Content Delivery Network (CDN)", 	"value2": "CloudFront Replicate part of your application to AWS Edge Locations – decrease latency<br>Cache common requests – improved user experience and decreased latency"},
+            {"key3": "S3 Transfer Acceleration", 				"value3": "Accelerate global uploads & downloads into Amazon S3"},
+            {"key4": "AWS Global Accelerator", 					"value4": "Improve global application availability and performance using the AWS global network"}]
+    },
+    {
+        "Module": "Cloud Monitoring",
+        "Summary": "Cloud Monitoring Section",
+        "Summaries": [
+            {"key1": "CloudWatch Metrics", 		            "value1": "Monitor the performance of AWS services and billing metrics"},
+            {"key2": "CloudWatch Alarms", 					"value2": "Automate notification, perform EC2 action, notify to SNS based on metric"},
+            {"key3": "CloudWatch Logs", 					"value3": "Collect log files from EC2 instances, servers, Lambda functions…"},
+            {"key4": "CloudWatch Events (or EventBridge)", 	"value4": "React to events in AWS, or trigger a rule on a schedule"},
+            {"key5": "CloudTrail", 							"value5": "Audit API calls made within your AWS account"},
+            {"key6": "X-Ray", 								"value6": "Trace requests made through your distributed applications"},
+            {"key7": "Service Health Dashboard", 			"value7": "Status of all AWS services across all regions"},
+            {"key8": "Personal Health Dashboard", 			"value8": "AWS events that impact your infrastructure"}]
+    },
+    {
+        "Module": "VPC & Networking",
+        "Summary": "VPC & Networking Section",
+        "Summaries": [
+            {"key1": "VPC", 					"value1": "Virtual Private Cloud"},
+            {"key2": "Subnets", 				"value2": "Tied to an AZ, network partition of the VPC"},
+            {"key3": "Internet Gateway", 		"value3": "At the VPC level, provide Internet Access"},
+            {"key4": "NAT Gateway / Instances", "value4": "Give internet access to private subnets"},
+            {"key5": "NACL", 					"value5": "Stateless, subnet rules for inbound and outbound"},
+            {"key6": "Security Groups", 		"value6": "Stateful, operate at the EC2 instance level or ENI"},
+            {"key7": "VPC Peering", 			"value7": "Connect two VPC with non overlapping IP ranges, nontransitive"},
+            {"key8": "VPC Endpoints", 			"value8": "Provide private access to AWS Services within VPC"},
+            {"key9": "VPC Flow Logs", 			"value9": "Network traffic logs"},
+            {"key10": "Site to Site VPN", 		"value10": "VPN over public internet between on-premises DC and AWS"},
+            {"key11": "Direct Connect", 		"value11": "Direct private connection to AWS"},
+            {"key12": "Transit Gateway", 		"value12": "Connect thousands of VPC and on-premises networks together"}]
+    },
+    {
+        "Module": "Security and Compliance",
+        "Summary": "Security and Compliance Section",
+        "Summaries": [
+            {"key1": "Shared Responsibility on AWS", 	"value1": ""},
+            {"key2": "Shield", 							"value2": "Automatic DDoS Protection + 24/7 support for advanced"},
+            {"key3": "WAF", 							"value3": "Firewall to filter incoming requests based on rules"},
+            {"key4": "Penetration Testing", 			"value4": ""},
+            {"key5": "KMS", 							"value5": "Encryption keys managed by AWS"},
+            {"key6": "CloudHSM", 						"value6": "Hardware encryption, we manage encryption keys"},
+            {"key7": "Artifact", 						"value7": "Get access to compliance reports such as PCI, ISO, etc…"},
+            {"key8": "GuardDuty", 						"value8": "Find malicious behavior with VPC, DNS & CloudTrail Logs"},
+            {"key9": "Inspector", 						"value9": "For EC2 only, install agent and find vulnerabilities"},
+            {"key10": "Config", 						"value10": "Track config changes and compliance against rules"},
+            {"key11": "Macie", 							"value11": "Find sensitive data (ex: PII data) in Amazon S3 buckets"},
+            {"key12": "CloudTrail", 					"value12": "Track API calls made by users within account"}]
+    },
+    {
+        "Module": "Machine Learning",
+        "Summary": "Machine Learning Section",
+        "Summaries": [
+            {"key1": "Rekognition", 	"value1": "face detection, labeling, celebrity recognition"},
+            {"key2": "Transcribe", 		"value2": "audio to text (ex: subtitles)"},
+            {"key3": "Polly", 			"value3": "text to audio"},
+            {"key4": "Translate", 		"value4": "translations"},
+            {"key5": "Lex", 			"value5": "build conversational bots – chatbots"},
+            {"key6": "Connect", 		"value6": "cloud contact center"},
+            {"key7": "Comprehend", 		"value7": "natural language processing"},
+            {"key8": "SageMaker", 		"value8": "machine learning for every developer and data scientist"}]
+    },
+    {
+        "Module": "Account Management, Billing & Support",
+        "Summary": "Account Management, Billing & Support Section",
+        "Summaries": [
+            {"key1": "Organizations",                                   "value1": "Operate multiple accounts"},
+            {"key2": "Use SCP (service control policies)",              "value2": "Restrict account power"},
+            {"key3": "IAM guidelines",                                  "value3": "MFA, least-privilege, password policy, password rotation"},
+            {"key4": "Config",                                          "value4": "Record all resources configurations & compliance over time"},
+            {"key5": "CloudFormation",                                  "value5": "Deploy stacks across accounts and regions"},
+            {"key6": "Trusted Advisor",                                 "value6": "Get insights, Support Plan adapted to your needs"},
+            {"key7": "S3 or CloudWatch Logs",                           "value7": "Send Service Logs and Access Logs to"},
+            {"key8": "CloudTrail",                                      "value8": "Record API calls made within your account"},
+            {"key9": "If your Account is compromised",                  "value9": "Change the root password, delete and rotate all passwords / keys, contact the AWS support"},
+            {"key10": "TCO Calculator",                                 "value10": "From on-premises to AWS"},
+            {"key11": "Simple Monthly Calculator / Pricing Calculator:","value11": "Cost of services on AWS"},
+            {"key12": "Billing Dashboard:",                             "value12": "High level overview + free tier dashboard"},
+            {"key13": "Cost Allocation Tags:",                          "value13": "Tag resources to create details on reports<br>Easy management & billing"},
+            {"key14": "Cost and Usage Reports:",                        "value14": "Most comprehensive billing dataset"},
+            {"key15": "Cost Explorer:",                                 "value15": "View current usage (detailed) and forecast usage"},
+            {"key16": "Billing Alarms:",                                "value16": "In us-east-1 – track overall and per-service billing"},
+            {"key17": "Budgets:",                                       "value17": "More advanced – track usage, costs, RI, and get alerts"}
+        ]
+    },
+    {
+        "Module": "Advanced Identity",
+        "Summary": "Advanced Identity Section",
+        "Summaries": [
+            {"key1": "IAM",  					"value1": "Identity and Access Management inside your AWS account<br>For users that you trust and belong to your company"},
+            {"key2": "Organizations", 			"value2": "Manage multiple AWS accounts"},
+            {"key3": "Cognito", 				"value3": "Create a database of users for your mobile & web applications"},
+            {"key4": "Directory Services", 		"value4": "Integrate Microsoft Active Directory in AWS"},
+            {"key5": "Single Sign-On (SSO)", 	"value5": "One login for multiple AWS accounts & applications"}]
+    },
+    {
+        "Module": "General",
+        "Summary": "General Section",
+        "Summaries": [
+            {"key1": "AWS Marketplace",  		"value1": "Find a third party's AMI so you can use it to launch your EC2 Instance"},
+            {"key2": "EMS", 					"value2": "EMS implements the Java Message Service (JMS) framework to provide a uniform messaging interface for enterprise applications"},
+            {"key3": "Web Application Firewall","value3": "protect web applications from common web exploits that may affect availability, compromise security, or consume excessive resources"}]
+    },
+    {
+        "Module": "Cloud Computing",
+        "Summary": "Cloud Computing Section",
+        "Summaries": [
+            {"key1": "Availability Zones","value1": "One or more discrete data centers with redundant power, networking, and connectivity, and are used to deploy infrastructure"},
+            {"key2": "Different Types",   "value2": "IAAS - cloud-based services, pay-as-you-go for services such as storage, networking, and virtualization<br>PAAS - hardware and software tools available over the internet<br>SAAS - software that’s available via a third-party over the internet, e.g. salesforce"},
+            {"key3": "Pricing Models",    "value3": "pay as you go<br>Pay less by using more<br>Save when you reserve"}]
+    }
+]
