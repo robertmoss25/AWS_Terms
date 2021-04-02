@@ -40,6 +40,54 @@
         "SeeAlso": "Application Load Balancer (v2), Elastic Load Balancers (ELB), Network Load Balancer (v2)"
     },
     {
+        "AWSComponent": "EBS Encryption",
+        "URL": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html",
+        "Module": "EC2 Storage - EBS & EFS",
+        "Comment": "<li>When you create an encrypted EBS volume, you get the following:</li><ul><li>Data at rest is encrypted inside the volume</li><li>All the data in flight moving between the instance and the volume is encrypted</li><li>All snapshots are encrypted</li><li>All volumes created from the snapshot</li></ul><li>Encryption and decryption are handled transparently (you have nothing to do)</li><li>Encryption has a minimal impact on latency</li><li>EBS Encryption leverages keys from KMS (AES-256)</li><li>Copying an unencrypted snapshot allows encryption</li><li>Snapshots of encrypted volumes are encrypted.<br><li>encrypt an unencrypted EBS volume</li><ul><li>Create an EBS snapshot of the volume</li><li>Encrypt the EBS snapshot ( using copy )</li><li>Create new ebs volume from the snapshot ( the volume will also be encrypted )</li><li>Now you can attach the encrypted volume to the original instance</li>",
+        "Blurb": "Use Amazon EBS encryption as a straight-forward encryption solution for your EBS resources associated with your EC2 instances. With Amazon EBS encryption, you aren't required to build, maintain, and secure your own key management infrastructure. Amazon EBS encryption uses AWS Key Management Service (AWS KMS) customer master keys (CMK) when creating encrypted volumes and snapshots.",
+        "SeeAlso": "Elastic Block Store (EBS)"
+    },
+    {
+        "AWSComponent": "EBS Instance Store",
+        "URL": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/add-instance-store-volumes.html",
+        "Module": "EC2 Storage - EBS & EFS",
+        "Comment": "<li>Some instance do not come with Root EBS volumes</li><li>Instead, they come with “Instance Store” (= ephemeral storage)</li><li>Instance store is physically attached to the machine (EBS is a network drive)</li><li>Pros:</li><ul><li>Better I/O performance (EBS gp2 has an max IOPS of 16000, io1 of 64000)</li><li>Good for buffer / cache / scratch data / temporary content</li><li>Data survives reboots</li></ul><li>Cons:</li><ul><li>On stop or termination, the instance store is lost</li><li>You can’t resize the instance store</li><li>Backups must be operated by the user</li></ul>",
+        "Blurb": "You specify the EBS volumes and instance store volumes for your instance using a block device mapping. Each entry in a block device mapping includes a device name and the volume that it maps to. The default block device mapping is specified by the AMI you use. Alternatively, you can specify a block device mapping for the instance when you launch it.",
+        "SeeAlso": "Elastic Block Store (EBS)"
+    },
+    {
+        "AWSComponent": "EBS RAID Options",
+        "URL": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/raid-config.html#raid-config-options",
+        "Module": "EC2 Storage - EBS & EFS",
+        "Comment": "<li>EBS is already redundant storage (replicated within an AZ)</li><li>But what if you want to increase IOPS to say 100 000 IOPS?</li><li>What if you want to mirror your EBS volumes?</li><li>You would mount volumes in parallel in RAID settings!</li><li>RAID is possible as long as your OS supports it</li><li>Some RAID options are:</li><ul><li>RAID 0 - Increase Performance</li><li>RAID 1 - Increase Fault Tolerance</li><li>RAID 5 (not recommended for EBS – see documentation)</li><li>RAID 6 (not recommended for EBS – see documentation)</li></ul>",
+        "Blurb": "With Amazon EBS, you can use any of the standard RAID configurations that you can use with a traditional bare metal server, as long as that particular RAID configuration is supported by the operating system for your instance",
+        "SeeAlso": "Elastic Block Store (EBS)"
+    },
+    {
+        "AWSComponent": "EBS Migration",
+        "URL": "https://aws.amazon.com/ebs/?ebs-whats-new.sort-by=item.additionalFields.postDateTime&ebs-whats-new.sort-order=desc",
+        "Module": "EC2 Storage - EBS & EFS",
+        "Comment": "<li>EBS Volumes are only locked to a specific AZ</li><li>To migrate it to a different AZ (or region):</li><ul><li>Snapshot the volume</li><li>(optional) Copy the volume to a different region</li><li>Create a volume from the snapshot in the AZ of your choice</li></ul>",
+        "Blurb": "Migrate an EBS Volume",
+        "SeeAlso": "Elastic Block Store (EBS)"
+    },
+    {
+        "AWSComponent": "EBS Snapshot",
+        "URL": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-creating-snapshot.html",
+        "Module": "EC2 Storage - EBS & EFS",
+        "Comment": "<li>Incremental – only backup changed blocks</li><li>EBS backups use IO and you shouldn’t run them while your application is handling a lot of traffic</li><li>Snapshots will be stored in S3 (but you won’t directly see them)</li><li>Not necessary to detach volume to do snapshot, but recommended</li><li>Max 100,000 snapshots</li><li>Can copy snapshots across AZ or Region</li><li>Can make Image (AMI) from Snapshot</li><li>EBS volumes restored by snapshots need to be pre-warmed (using fio or dd command to read the entire volume)</li><li>Snapshots can be automated using Amazon Data Lifecycle Manager</li>",
+        "Blurb": "You can create a point-in-time snapshot of an EBS volume and use it as a baseline for new volumes or for data backup. If you make periodic snapshots of a volume, the snapshots are incremental—the new snapshot saves only the blocks that have changed since your last snapshot.",
+        "SeeAlso": "Elastic Block Store (EBS)"
+    },
+    {
+        "AWSComponent": "EBS - Volume Types",
+        "URL": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html",
+        "Module": "EC2 Storage - EBS & EFS",
+        "Comment": "<li>gp2: General Purpose Volumes (cheap)</li><ul><li>3 IOPS / GiB, minimum 100 IOPS, burst to 3000 IOPS, max 16000 IOPS</li><li>1 GiB – 16 TiB , +1 TB = +3000 IOPS</li></ul><li>io1: Provisioned IOPS (expensive)</li><ul><li>Min 100 IOPS, Max 64000 IOPS (Nitro) or 32000 (other)</li><li>4 GiB - 16 TiB. Size of volume and IOPS are independent</li></ul><li>st1: Throughput Optimized HDD</li><ul><li>500 GiB – 16 TiB , 500 MiB /s throughput</li></ul><li>sc1: Cold HDD, Infrequently accessed data</li><ul><li>500 GiB – 16 TiB , 250 MiB /s throughput</li></ul>",
+        "Blurb": "Amazon EBS provides the following volume types, which differ in performance characteristics and price, so that you can tailor your storage performance and cost to the needs of your applications.",
+        "SeeAlso": "Elastic Block Store (EBS)"
+    },
+    {
         "AWSComponent": "EC2",
         "URL": "https://aws.amazon.com/ec2/?ec2-whats-new.sort-by=item.additionalFields.postDateTime&ec2-whats-new.sort-order=desc",
         "Module": "AWS Fundamentals: IAM & EC2",
@@ -88,12 +136,28 @@
         "SeeAlso": "EC2"
     },
     {
+        "AWSComponent": "EFS",
+        "URL": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AmazonEFS.html",
+        "Module": "EC2 Storage - EBS & EFS",
+        "Comment": "<li>Use cases: content management, web serving, data sharing, Wordpress</li><li>Uses NFSv4.1 protocol</li><li>Uses security group to control access to EFS</li><li>Compatible with Linux based AMI (not Windows)</li><li>Encryption at rest using KMS</li><li>POSIX file system (~Linux) that has a standard file API</li><li>File system scales automatically, pay-per-use, no capacity planning!</li>",
+        "Blurb": "Amazon EFS provides scalable file storage for use with Amazon EC2. You can use an EFS file system as a common data source for workloads and applications running on multiple instances",
+        "SeeAlso": "Elastic Block Store (EBS)"
+    },
+    {
         "AWSComponent": "Elastic Load Balancers (ELB)",
         "URL": "https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/what-is-load-balancing.html",
         "Module": "High Availability and Scalability: ELB & ASG",
         "Comment": "Distribute traffic across backend EC2 instances, can be Multi-AZ. 3 Types Classic, Application and Network. <br><br><strong>Cross-Zone Load Balancing</strong><li>With Cross Zone Load Balancing: each load balancer instance distributes evenly across all registered instances in all AZ</li><li>Otherwise, each load balancer node distributes requests evenly across the registered instances in its Availability Zone only.</li><br><li>Classic Load Balancer</li><ul><li>Disabled by default</li><li>No charges for inter AZ data if enabled</li></ul><li>Application Load Balancer</li><ul><li>Always on (can’t be disabled)</li><li>No charges for inter AZ data</li></ul><li>Network Load Balancer</li><ul><li>Disabled by default</li><li>You pay charges ($) for inter AZ data if enabled</li></ul><strong>Load Balancer Stickiness</strong><li>It is possible to implement stickiness so that the same client is always redirected to the same instance behind a load balancer</li><li>This works for Classic Load Balancers & Application Load Balancers</li>",
         "Blurb": "Elastic Load Balancing automatically distributes your incoming traffic across multiple targets, such as EC2 instances, containers, and IP addresses, in one or more Availability Zones. It monitors the health of its registered targets, and routes traffic only to the healthy targets. Elastic Load Balancing scales your load balancer as your incoming traffic changes over time. It can automatically scale to the vast majority of workloads.",
         "SeeAlso": "Application Load Balancer (v2), Classic Load Balancer (v1), Elastic Load Balancers (ELB)"
+    },
+    {
+        "AWSComponent": "Elastic Block Store (EBS)",
+        "URL": "https://aws.amazon.com/ebs/?ebs-whats-new.sort-by=item.additionalFields.postDateTime&ebs-whats-new.sort-order=desc",
+        "Module": "EC2 Storage - EBS & EFS",
+        "Comment": "EBS Snapshot is an EBS Volume at a point in time. Can be attached to EC2, Disk size can be changed, but not automatically",
+        "Blurb": "Amazon Elastic Block Store (EBS) is an easy to use, high-performance, block-storage service designed for use with Amazon Elastic Compute Cloud (EC2) for both throughput and transaction intensive workloads at any scale. A broad range of workloads, such as relational and non-relational databases, enterprise applications, containerized applications, big data analytics engines, file systems, and media workflows are widely deployed on Amazon EBS. ",
+        "SeeAlso": "EC2"
     },
     {
         "AWSComponent": "Elastic Network Interfaces (ENI)",

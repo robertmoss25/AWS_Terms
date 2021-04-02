@@ -26,5 +26,18 @@
             {"key5": "Elastic Load Balancer (ELB)",         "value5": "A load balancer distributes incoming application traffic across multiple EC2 instances in multiple Availability Zones."},
             {"key6": "Network Load Balancer",               "value6": "Network Load Balancer is best suited for load balancing of TCP, UDP, TLS traffic where extreme performance is required."}
             ]
+    },
+    {
+        "Module": "EC2 Storage - EBS & EFS",
+        "Summary": "EBS and EFS",
+        "Summaries": [
+            {"key1": "EBS - Elastic Block Store volumes",   "value1": "Network drives attached to one EC2 instance at a time<br>Mapped to an Availability Zones<br>Can use EBS Snapshots for backups / transferring EBS volumes across AZ"},
+            {"key2": "EBS Encryption",                      "value2": "Use Amazon EBS encryption as a straight-forward encryption solution for your EBS resources"},
+            {"key3": "EBS Instance Store",                  "value3": "You specify the EBS volumes and instance store volumes for your instance using a block device mapping"},
+            {"key4": "EBS RAID Options",                    "value4": "With Amazon EBS, you can use any of the standard RAID configurations that you can use with a traditional bare metal server"},
+            {"key5": "EBS Snapshot",                        "value5": "Create a point-in-time snapshot of an EBS volume"},
+            {"key6": "EBS Volume Types",                    "value6": "<li>gp2: General Purpose Volumes (cheap)</li><li>io1: Provisioned IOPS (expensive)</li><li>st1: Throughput Optimized HDD</li><li>sc1: Cold HDD, Infrequently accessed data</li>"},
+            {"key7": "EFS",                                 "value7": "Amazon EFS provides scalable file storage for use with Amazon EC2"}
+            ]
     }
 ]
