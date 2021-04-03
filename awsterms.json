@@ -1,5 +1,45 @@
 [
     {
+        "AWSComponent": "Amazon Aurora",
+        "URL": "https://aws.amazon.com/rds/aurora/?aurora-whats-new.sort-by=item.additionalFields.postDateTime&aurora-whats-new.sort-order=desc",
+        "Module": "RDS and Aurora and ElastiCache",
+        "Comment": "<li>Aurora is a proprietary technology from AWS (not open sourced)</li><li>Postgres and MySQL are both supported as Aurora DB (that means your drivers will work as if Aurora was a Postgres or MySQL database)</li><li>Aurora is “AWS cloud optimized” and claims 5x performance improvement over MySQL on RDS, over 3x the performance of Postgres on RDS</li><li>Aurora storage automatically grows in increments of 10GB, up to 64 TB.</li><li>Aurora can have 15 replicas while MySQL has 5, and the replication processis faster (sub 10 ms replica lag)</li><li>Failover in Aurora is instantaneous. It’s HA (High Availability) native.</li><li>Aurora costs more than RDS (20% more) – but is more efficient</li><br><strong>High Availability and Read Scaling</strong><li>6 copies of your data across 3 AZ:</li><ul><li>4 copies out of 6 needed for writes</li><li>3 copies out of 6 need for reads</li><li>Self healing with peer-to-peer replication</li><li>Storage is striped across 100s of volumes</li></ul><li>One Aurora Instance takes writes (master)</li><li>Automated failover for master in less than 30 seconds</li><li>Master + up to 15 Aurora Read Replicas serve reads</li><li>Support for Cross Region Replication</li>",
+        "Blurb": "Amazon Aurora is a MySQL and PostgreSQL-compatible relational database built for the cloud, that combines the performance and availability of traditional enterprise databases with the simplicity and cost-effectiveness of open source databases.",
+        "SeeAlso": ""
+    },
+    {
+        "AWSComponent": "Amazon Aurora Global",
+        "URL": "https://aws.amazon.com/rds/aurora/?aurora-whats-new.sort-by=item.additionalFields.postDateTime&aurora-whats-new.sort-order=desc",
+        "Module": "RDS and Aurora and ElastiCache",
+        "Comment": "<li>Aurora Cross Region Read Replicas:</li><ul><li>Useful for disaster recovery</li><li>Simple to put in place</li></ul><li>Aurora Global Database (recommended):</li><ul><li>1 Primary Region (read / write)</li><li>Up to 5 secondary (read-only) regions, replication lag is less than 1 second</li><li>Up to 16 Read Replicas per secondary region</li><li>Helps for decreasing latency</li><li>Promoting another region (for disaster recovery) has an RTO of < 1 minute</li></ul>",
+        "Blurb": "Amazon Aurora is a MySQL and PostgreSQL-compatible relational database built for the cloud, that combines the performance and availability of traditional enterprise databases with the simplicity and cost-effectiveness of open source databases.",
+        "SeeAlso": "Amazon Aurora"
+    },
+    {
+        "AWSComponent": "Amazon Aurora Security",
+        "URL": "https://aws.amazon.com/rds/aurora/?aurora-whats-new.sort-by=item.additionalFields.postDateTime&aurora-whats-new.sort-order=desc",
+        "Module": "RDS and Aurora and ElastiCache",
+        "Comment": "<li>Similar to RDS because uses the same engines</li><li>Encryption at rest using KMS</li><li>Automated backups, snapshots and replicas are also encrypted</li><li>Encryption in flight using SSL (same process as MySQL or Postgres)</li><li>Possibility to authenticate using IAM token (same method as RDS)</li><li>You are responsible for protecting the instance with security groups</li><li>You can’t SSH</li>",
+        "Blurb": "Amazon Aurora is a MySQL and PostgreSQL-compatible relational database built for the cloud, that combines the performance and availability of traditional enterprise databases with the simplicity and cost-effectiveness of open source databases.",
+        "SeeAlso": "Amazon Aurora"
+    },
+    {
+        "AWSComponent": "Amazon Aurora Serverless",
+        "URL": "https://aws.amazon.com/rds/aurora/?aurora-whats-new.sort-by=item.additionalFields.postDateTime&aurora-whats-new.sort-order=desc",
+        "Module": "RDS and Aurora and ElastiCache",
+        "Comment": "<li>Automated database Client instantiation and autoscaling based on actual usage</li><li>Good for infrequent,intermittent or unpredictable workloads</li><li>No capacity planning needed</li><li>Pay per second, can be more cost-effective</li>",
+        "Blurb": "Amazon Aurora is a MySQL and PostgreSQL-compatible relational database built for the cloud, that combines the performance and availability of traditional enterprise databases with the simplicity and cost-effectiveness of open source databases.",
+        "SeeAlso": "Amazon Aurora"
+    },
+    {
+        "AWSComponent": "Amazon ElastiCache",
+        "URL": "https://aws.amazon.com/elasticache/",
+        "Module": "RDS and Aurora and ElastiCache",
+        "Comment": "<li>The same way RDS is to get managed Relational Databases…</li><li>ElastiCache is to get managed Redis or Memcached</li><li>Caches are in-memory databases with really high performance, low latency</li><li>Helps reduce load off of databases for read intensive workloads</li><li>Helps make your application stateless</li><li>AWS takes care of OS maintenance / patching, optimizations, setup,configuration, monitoring, failure recovery and backups</li><li>Using ElastiCache involves heavy application code changes</li><br><li>Patterns for ElastiCache</li><ul><li>Lazy Loading: all the read data is cached, data can become stale in cache</li><li>Write Through: Adds or update data in the cache when written to a DB (no stale data)</li><li>Session Store: store temporary session data in a cache (using TTL features)</li></ul>",
+        "Blurb": "Amazon ElastiCache allows you to seamlessly set up, run, and scale popular open-source compatible in-memory data stores in the cloud. Build data-intensive apps or boost the performance of your existing databases by retrieving data from high throughput and low latency in-memory data stores. Amazon ElastiCache is a popular choice for real-time use cases like Caching, Session Stores, Gaming, Geospatial Services, Real-Time Analytics, and Queuing.",
+        "SeeAlso": ""
+    },
+    {
         "AWSComponent": "Amazon Machine Images (AMI)",
         "URL": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIs.html",
         "Module": "AWS Fundamentals: IAM & EC2",
@@ -190,6 +230,86 @@
         "Comment": "<li><strong>Cluster</strong> - packs instances close together inside an Availability Zone. This strategy enables workloads to achieve the low-latency network performance necessary for tightly-coupled node-to-node communication that is typical of HPC applications.</li><li><strong>Partition</strong> - spreads your instances across logical partitions such that groups of instances in one partition do not share the underlying hardware with groups of instances in different partitions. This strategy is typically used by large distributed and replicated workloads, such as Hadoop, Cassandra, and Kafka (Scales to 100s of EC2 instances per group, 7 partitions per AZ).</li><li><strong>Spread</strong> - strictly places a small group of instances across distinct underlying hardware to reduce correlated failures. (max 7 instances per group per AZ)</li>",
         "Blurb": "When you launch a new EC2 instance, the EC2 service attempts to place the instance in such a way that all of your instances are spread out across underlying hardware to minimize correlated failures. You can use placement groups to influence the placement of a group of interdependent instances to meet the needs of your workload. Depending on the type of workload, you can create a placement group using one of the following placement strategies:",
         "SeeAlso": "EC2"
+    },
+    {
+        "AWSComponent": "RDS Backups",
+        "URL": "https://aws.amazon.com/redshift/?whats-new-cards.sort-by=item.additionalFields.postDateTime&whats-new-cards.sort-order=desc",
+        "Module": "RDS and Aurora and ElastiCache",
+        "Comment": "<li>Backups are automatically enabled in RDS</li><li>Automated backups:</li><ul><li>Daily full backup of the database (during the maintenance window)</li><li>Transaction logs are backed-up by RDS every 5 minutes</li><li>=> ability to restore to any point in time (from oldest backup to 5 minutes ago)</li><li>7 days retention (can be increased to 35 days)</li></ul><li>DB Snapshots:</li><ul><li>Manually triggered by the user</li><li>Retention of backup for as long as you want</li></ul>",
+        "Blurb": "Amazon Relational Database Service (Amazon RDS) makes it easy to set up, operate, and scale a relational database in the cloud. It provides cost-efficient and resizable capacity while automating time-consuming administration tasks such as hardware provisioning, database setup, patching and backups. It frees you to focus on your applications so you can give them the fast performance, high availability, security and compatibility they need. ",
+        "SeeAlso": "Relational Database Service (RDS)"
+    },
+    {
+        "AWSComponent": "RDS Multi AZ",
+        "URL": "https://aws.amazon.com/rds/features/multi-az/",
+        "Module": "RDS and Aurora and ElastiCache",
+        "Comment": "<li>SYNC replication</li><li>One DNS name – automatic app failover to standby</li><li>Increase availability</li><li>Failover in case of loss of AZ, loss of network, instance or storage failure</li><li>No manual intervention in apps</li><li>Not used for scaling</li><li>Note:The Read Replicas can be setup as Multi AZ for Disaster Recovery (DR)</li>",
+        "Blurb": "Amazon RDS Multi-AZ deployments provide enhanced availability and durability for RDS database (DB) instances, making them a natural fit for production database workloads.",
+        "SeeAlso": "Relational Database Service (RDS)"
+    },
+    {
+        "AWSComponent": "RDS Read Replicas",
+        "URL": "https://aws.amazon.com/rds/features/read-replicas/",
+        "Module": "RDS and Aurora and ElastiCache",
+        "Comment": "<li>Up to 5 Read Replicas</li><li>Within AZ, Cross AZ or Cross Region</li><li>Replication is ASYNC,so reads are eventually consistent</li><li>Replicas can be promoted to their own DB</li><li>Applications must update the connection string to leverage read replicas</li><li>In AWS there’s a network cost when data goes from one AZ to another</li><li>To reduce the cost, you can have your Read Replicas in the same AZ</li>",
+        "Blurb": "Amazon RDS Read Replicas provide enhanced performance and durability for RDS database (DB) instances.",
+        "SeeAlso": "Relational Database Service (RDS)"
+    },
+    {
+        "AWSComponent": "RDS Security",
+        "URL": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.html",
+        "Module": "RDS and Aurora and ElastiCache",
+        "Comment": "<li>Encryption at rest:</li><ul><li>Is done only when you first create the DB instance</li><li>or: unencrypted DB => snapshot => copy snapshot as encrypted => create DB from snapshot</li></ul><li>Your responsibility:</li><ul><li>Check the ports / IP / security group inbound rules in DB’s SG</li><li>In-database user creation and permissions or manage through IAM</li><li>Creating a database with or without public access</li><li>Ensure parameter groups or DB is configured to only allow SSL connections</li></ul><li>AWS responsibility:</li><ul><li>No SSH access</li><li>No manual DB patching</li><li>No manual OS patching</li><li>No way to audit the underlying instance</li></ul>",
+        "Blurb": "Cloud security at AWS is the highest priority. As an AWS customer, you benefit from a data center and network architecture that are built to meet the requirements of the most security-sensitive organizations.",
+        "SeeAlso": "Relational Database Service (RDS)"
+    },
+    {
+        "AWSComponent": "Relational Database Service (RDS)",
+        "URL": "https://aws.amazon.com/redshift/?whats-new-cards.sort-by=item.additionalFields.postDateTime&whats-new-cards.sort-order=desc",
+        "Module": "RDS and Aurora and ElastiCache",
+        "Comment": "Managed service with SQL capability suited for Online Transaction Processing (OLTP).<br><br><strong>Read Replica improves database scalability</strong><br><li>RDS stands for Relational Database Service</li><li>It’s a managed DB service for DB use SQL as a query language.</li><li>It allows you to create databases in the cloud that are managed by AWS</li><ul><li>Postgres, MySQL, MariaDB, Oracle, Microsoft SQL Server, Aurora (AWS Proprietary database)</li></ul>",
+        "Blurb": "Amazon Relational Database Service (Amazon RDS) makes it easy to set up, operate, and scale a relational database in the cloud. It provides cost-efficient and resizable capacity while automating time-consuming administration tasks such as hardware provisioning, database setup, patching and backups. It frees you to focus on your applications so you can give them the fast performance, high availability, security and compatibility they need. ",
+        "SeeAlso": ""
+    },
+    {
+        "AWSComponent": "Route 53",
+        "URL": "https://aws.amazon.com/route53/",
+        "Module": "Route 53",
+        "Comment": "<li>Route53 is a Managed DNS (Domain Name System)</li><li>DNS is a collection of rules and records which helps clients understand how to reach a server through URLs.</li><li>In AWS, the most common records are:</li><ul><li>A: hostname to IPv4</li><li>AAAA: hostname to IPv6</li><li>CNAME: hostname to hostname</li><li>Alias: hostname to AWS resource.</li></ul><br><li>Route53 can use:</li><ul><li>public domain names you own (or buy) application1.mypublicdomain.com</li><li>private domain names that can be resolved by your instances in your VPCs. application1.company.internal</li></ul><li>Route53 has advanced features such as:</li><ul><li>Load balancing (through DNS – also called client load balancing)</li><li>Health checks (although limited…)</li><li>Routing policy: simple, failover, geolocation, latency, weighted, multi value</li></ul><li>You pay $0.50 per month per hosted zone</li>",
+        "Blurb": "Amazon Route 53 is a highly available and scalable cloud Domain Name System (DNS) web service. It is designed to give developers and businesses an extremely reliable and cost effective way to route end users to Internet applications by translating names like www.example.com into the numeric IP addresses like 192.0.2.1 that computers use to connect to each other. Amazon Route 53 is fully compliant with IPv6 as well.",
+        "SeeAlso": ""
+    },
+    {
+        "AWSComponent": "Route 53 CNAME vs Alias",
+        "URL": "https://aws.amazon.com/route53/",
+        "Module": "Route 53",
+        "Comment": "<li>AWS Resources (Load Balancer, CloudFront…) expose an AWS hostname: lb1-1234.us-east-2.elb.amazonaws.com and you want myapp.mydomain.com</li><li>CNAME:</li><ul><li>Points a hostname to any other hostname. (app.mydomain.com => blabla.anything.com)</li><li>ONLY FOR NON ROOT DOMAIN (aka. something.mydomain.com)</li></ul><li>Alias:</li><ul><li>Points a hostname to an AWS Resource (app.mydomain.com => blabla.amazonaws.com)</li><li>Works for ROOT DOMAIN and NON ROOT DOMAIN (aka mydomain.com)</li><li>Free of charge</li><li>Native health check</li></ul>",
+        "Blurb": "Amazon Route 53 is a highly available and scalable cloud Domain Name System (DNS) web service. It is designed to give developers and businesses an extremely reliable and cost effective way to route end users to Internet applications by translating names like www.example.com into the numeric IP addresses like 192.0.2.1 that computers use to connect to each other. Amazon Route 53 is fully compliant with IPv6 as well.",
+        "SeeAlso": "Route 53"
+    },
+    {
+        "AWSComponent": "Route 53 Health Checks",
+        "URL": "https://aws.amazon.com/route53/",
+        "Module": "Route 53",
+        "Comment": "<li>Have X health checks failed => unhealthy (default 3)</li><li>After X health checks passed => health (default 3)</li><li>Default Health Check Interval: 30s (can set to 10s – higher cost)</li><li>About 15 health checkers will check the endpoint health</li><li>=> one request every 2 seconds on average</li><li>Can have HTTP, TCP and HTTPS health checks (no SSL verification)</li><li>Possibility of integrating the health check with CloudWatch</li><li>Health checks can be linked to Route53 DNS queries!</li>",
+        "Blurb": "Amazon Route 53 is a highly available and scalable cloud Domain Name System (DNS) web service. It is designed to give developers and businesses an extremely reliable and cost effective way to route end users to Internet applications by translating names like www.example.com into the numeric IP addresses like 192.0.2.1 that computers use to connect to each other. Amazon Route 53 is fully compliant with IPv6 as well.",
+        "SeeAlso": "Route 53"
+    },
+    {
+        "AWSComponent": "Route 53 Routing Policy",
+        "URL": "https://aws.amazon.com/route53/",
+        "Module": "Route 53",
+        "Comment": "<strong>Simple Routing Policy</strong><li>Maps a hostname to another hostname</li><li>Use when you need to redirect to a single resource</li><li>You can’t attach health checks to simple routing policy</li><li>If multiple values are returned, a random one is chosen by the client</li><strong>Weighted Routing Policy</strong><li>Control the % of the requests that go to specific endpoint</li><li>Helpful to test 1% of traffic on new app version for example</li><li>Helpful to split traffic between two regions</li><li>Can be associated with Health Checks</li><strong>Latency Routing Policy</strong><li>Redirect to the server that has the least latency close to us</li><li>Super helpful when latency of users is a priority</li><li>Latency is evaluated in terms of user to designated AWS Region</li><li>Germany may be directed to the US (if that’s the lowest latency)</li><strong>Failover Routing Policy</strong><li>Redirect to the secondary server when primary goes down</li><strong>Geo Location Routing Policy</strong><li>Different from Latency based!</li><li>This is routing based on user location</li><li>Here we specify: traffic from the UK should go to this specific IP</li><li>Should create a “default” policy (in case there’s no match on location)</li><strong>Multi Value Routing Policy</strong><li>Use when routing traffic to multiple resources</li><li>Want to associate a Route 53 health checks with records</li><li>Up to 8 healthy records are returned for each Multi Value query</li><li>Multi Value is not a substitute for having an ELB</li>",
+        "Blurb": "Amazon Route 53 is a highly available and scalable cloud Domain Name System (DNS) web service. It is designed to give developers and businesses an extremely reliable and cost effective way to route end users to Internet applications by translating names like www.example.com into the numeric IP addresses like 192.0.2.1 that computers use to connect to each other. Amazon Route 53 is fully compliant with IPv6 as well.",
+        "SeeAlso": "Route 53"
+    },
+    {
+        "AWSComponent": "Route 53 TTL",
+        "URL": "https://aws.amazon.com/route53/",
+        "Module": "Route 53",
+        "Comment": "<li>High TTL: (e.g. 24hr)</li><ul><li>Less traffic on DNS</li><li>Possibly outdated records</li></ul><li>Low TTL: (e.g 60 s)</li><ul><li>More traffic on DNS</li><li>Records are outdated for less time</li><li>Easy to change records</li></ul><li>TTL is mandatory for each DNS record</li>",
+        "Blurb": "Amazon Route 53 is a highly available and scalable cloud Domain Name System (DNS) web service. It is designed to give developers and businesses an extremely reliable and cost effective way to route end users to Internet applications by translating names like www.example.com into the numeric IP addresses like 192.0.2.1 that computers use to connect to each other. Amazon Route 53 is fully compliant with IPv6 as well.",
+        "SeeAlso": "Route 53"
     },
     {
         "AWSComponent": "Security Groups",
