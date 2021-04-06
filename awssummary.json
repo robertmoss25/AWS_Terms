@@ -46,5 +46,20 @@
         "Summaries": [
             {"key1": "Route 53",                            "value1": "Highly available and scalable cloud Domain Name System (DNS) web service"}
             ]
+    },
+    {
+        "Module": "S3",
+        "Summary": "S3",
+        "Summaries": [
+            {"key1": "S3",                                  "value1": "Amazon Simple Storage Service (Amazon S3) is an object storage service"},
+            {"key2": "S3 Buckets",                          "value2": "Amazon S3 allows people to store objects (files) in 'buckets'"},
+            {"key3": "S3 Objects",                          "value3": "Objects (files) have a Key, The key is the FULL path:"},
+            {"key4": "S3 Versioning",                       "value4": "Versioning in Amazon S3 is a means of keeping multiple variants of an object in the same bucket"},
+            {"key5": "S3 Encryption",                       "value5": "You can set the default encryption behavior for an S3 bucket so that all new objects are encrypted when they are stored in the bucket"},
+            {"key6": "S3 Security",                         "value6": "To protect your data in Amazon S3, by default, users only have access to the S3 resources they create"},
+            {"key7": "S3 Websites",                         "value7": "You can use Amazon S3 to host a static website"},
+            {"key8": "CORS",                                "value8": "Cross-origin resource sharing (CORS) defines a way for client web applications that are loaded in one domain to interact with resources in a different domain"},
+            {"key9": "S3 Consistency Model",                "value9": "Amazon S3 delivers strong read-after-write consistency automatically for all applications"}
+            ]
     }
 ]
