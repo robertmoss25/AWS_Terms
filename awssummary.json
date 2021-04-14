@@ -61,5 +61,70 @@
             {"key8": "CORS",                                "value8": "Cross-origin resource sharing (CORS) defines a way for client web applications that are loaded in one domain to interact with resources in a different domain"},
             {"key9": "S3 Consistency Model",                "value9": "Amazon S3 delivers strong read-after-write consistency automatically for all applications"}
             ]
+    },
+    {
+        "Module": "AWS CLI SDK IAM Roles & Policies",
+        "Summary": "AWS CLI SDK IAM Roles & Policies",
+        "Summaries": [
+            {"key1": "AWS CLI",                             "value1": "The AWS Command Line Interface (CLI) is a unified tool to manage your AWS services."},
+            {"key2": "AWS EC2 Instance MetaData",           "value2": "Instance metadata is data about your instance that you can use to configure or manage the running instance. Instance metadata is divided into categories, for example, host name, events, and security groups."},
+            {"key3": "AWS SDK",                             "value3": "Easily develop applications on AWS in the programming language of your choice"}
+            ]
+    },
+    {
+        "Module": "S3 Advanced",
+        "Summary": "S3 Advanced",
+        "Summaries": [
+            {"key1": "S3 MFA-Delete",                       "value1": "Amazon Simple Storage Service (Amazon S3) is an object storage service"},
+            {"key2": "S3 Access Logs",                      "value2": "Server access logging provides detailed records for the requests that are made to a bucket"},
+            {"key3": "S3 Replication",                      "value3": "Replication enables automatic, asynchronous copying of objects across Amazon S3 buckets"},
+            {"key4": "S3 Versioning",                       "value4": "Versioning in Amazon S3 is a means of keeping multiple variants of an object in the same bucket"},
+            {"key5": "S3 Pre-Signed",                       "value5": "All objects by default are private. Only the object owner has permission to access these objects."},
+            {"key6": "S3 Storage Classes",                  "value6": "Amazon S3 Standard - General Purpose<br>Amazon S3 Standard-Infrequent Access (IA)<br>Amazon S3 One Zone-Infrequent Access<br>Amazon S3 Intelligent Tiering<br>Amazon Glacier<br>Amazon Glacier Deep Archive<br>Amazon S3 Reduced Redundancy Storage (deprecated - omitted)"},
+            {"key7": "S3 Lifecycle Rules",                  "value7": "To manage your objects so that they are stored cost effectively throughout their lifecycle, configure their Amazon S3 Lifecycle"},
+            {"key8": "S3 Baseline Performance",             "value8": "Amazon S3 automatically scales to high request rates"},
+            {"key9": "S3 Select & Glacier Select",          "value9": "Enables applications to retrieve only a subset of data from an object by using simple SQL expressions"},
+            {"key10": "S3 Event Notifications",             "value10": "You can use the Amazon S3 Event Notifications feature to receive notifications when certain events happen in your S3 bucket"},
+            {"key11": "AWS Athena",                         "value11": "Amazon Athena is an interactive query service that makes it easy to analyze data in Amazon S3 using standard SQL"},
+            {"key12": "S3 Object Lock & Glacier Vault Lock","value12": "You can store objects using a write-once-read-many (WORM) model"}
+            ]
+    },
+    {
+        "Module": "AWS CloudFront",
+        "Summary": "AWS CloudFront",
+        "Summaries": [
+            {"key1": "AWS CloudFront",                      "value1": "Fast content delivery network (CDN) service that securely delivers data, videos, applications, and APIs to customers globally with low latency, high transfer speeds"},
+            {"key2": "AWS CloudFront Signed URLs",          "value2": "Includes additional information, for example, an expiration date and time, that gives you more control over access to your content"},
+            {"key3": "AWS Global Accelerator",              "value3": "Networking service that sends your user’s traffic through Amazon Web Service’s global network infrastructure"}
+            ]
+    },
+    {
+        "Module": "AWS Storage Extras",
+        "Summary": "AWS Storage Extras",
+        "Summaries": [
+            {"key1": "Snowball",                            "value1": "AWS Snowball, a part of the AWS Snow Family, is an edge computing, data migration, and edge storage device."},
+            {"key2": "Storage Gateway",                     "value2": "Hybrid cloud storage service that gives you on-premises access to virtually unlimited cloud storage"},
+            {"key3": "Amazon FSx",                          "value3": "Makes it easy and cost effective to launch and run popular file systems that are fully managed by AWS"}
+            ]
+    },
+    {
+        "Module": "Decoupling applications; SQS, SNS, Kinesis, Active MQ",
+        "Summary": "SQS, SNS, Kinesis, Active MQ",
+        "Summaries": [
+            {"key1": "SQS Standard Queue",                  "value1": "Amazon SQS offers standard as the default queue type"},
+            {"key2": "SQS Message Visibility Timeout",      "value2": "When a consumer receives and processes a message from a queue, the message remains in the queue"},
+            {"key3": "SQS Dead Letter Queue",               "value3": "Makes it easy and cost effective to launch and run popular file systems that are fully managed by AWS"},
+            {"key4": "SQS Delay Queue",                     "value4": "Delay queues let you postpone the delivery of new messages to a queue for a number of seconds"},
+            {"key5": "SQS FIFO Queue",                      "value5": "FIFO (First-In-First-Out) queues are designed to enhance messaging between applications when the order of operations and events is critical"},
+            {"key6": "SNS",                                 "value6": "fully managed messaging service for both application-to-application (A2A) and application-to-person (A2P) communication."},
+            {"key7": "Kinesis",                             "value7": "Easy to collect, process, and analyze real-time, streaming data so you can get timely insights and react quickly to new information"},
+            {"key8": "Kinesis Streams",                     "value8": "Massively scalable and durable real-time data streaming service"},
+            {"key9": "Kinesis API",                         "value9": "Managed service that scales elastically for real-time processing of streaming big data."},
+            {"key10": "Kinesis Firehose",                   "value10": "Easiest way to reliably load streaming data into data lakes, data stores, and analytics services"},
+            {"key11": "Kinesis Data Analytics",             "value11": "Easiest way to transform and analyze streaming data in real time with Apache Flink"},
+            {"key12": "Data Ordering",                      "value12": "Data Ordering between Kinesis and FIFO SQS"},
+            {"key13": "SQS vs SNS vs Kinesis",              "value13": "Choosing between SQS vs SNS vs Kinesis"},
+            {"key14": "Amazon MQ",                          "value14": "Managed message broker service for Apache ActiveMQ and RabbitMQ that makes it easy to set up and operate message brokers on AWS"}
+            ]
     }
 ]

@@ -40,12 +40,28 @@
         "SeeAlso": ""
     },
     {
+        "AWSComponent": "Amazon FSx",
+        "URL": "https://aws.amazon.com/fsx/",
+        "Module": "AWS Storage Extras",
+        "Comment": "<strong>Amazon FSx for Windows (File Server)</strong><li>EFS is a shared POSIX system for Linux systems.</li><li>FSx for Windows is a fully managed Windows file system share drive</li><li>Supports SMB protocol & Windows NTFS</li><li>Microsoft Active Directory integration, ACLs, user quotas</li><li>Built on SSD, scale up to 10s of GB/s, millions of IOPS, 100s PB of data</li><li>Can be accessed from your on-premise infrastructure</li><li>Can be configured to be Multi-AZ (high availability)</li><li>Data is backed-up daily to S3</li><strong>Amazon FSx for Lustre</strong><li>Lustre is a type of parallel distributed file system, for large-scale computing</li><li>The name Lustre is derived from “Linux” and “cluster”</li><li>Machine Learning, High Performance Computing (HPC)</li><li>Video Processing, Financial Modeling, Electronic Design Automation</li><li>Scales up to 100s GB/s, millions of IOPS, sub-ms latencies</li><li>Seamless integration with S3</li><li>Can “read S3” as a file system (through FSx)</li><li>Can write the output of the computations back to S3 (through FSx)</li><li>Can be used from on-premise servers</li>",
+        "Blurb": "Amazon FSx makes it easy and cost effective to launch and run popular file systems that are fully managed by AWS. With Amazon FSx, you can leverage the rich feature sets and fast performance of widely-used open source and commercially-licensed file systems, while avoiding time-consuming administrative tasks such as hardware provisioning, software configuration, patching, and backups. It provides cost-efficient capacity with high levels of reliability, and integrates with a broad portfolio of AWS services to enable faster innovation.",
+        "SeeAlso": ""
+    },
+    {
         "AWSComponent": "Amazon Machine Images (AMI)",
         "URL": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIs.html",
         "Module": "AWS Fundamentals: IAM & EC2",
         "Comment": "You must use an AMI from the same region as that of the EC2 instance. The region of the AMI has no bearing on the performance of the EC2 instance",
         "Blurb": "An Amazon Machine Image (AMI) provides the information required to launch an instance. You must specify an AMI when you launch an instance. You can launch multiple instances from a single AMI when you need multiple instances with the same configuration. You can use different AMIs to launch instances when you need instances with different configurations. An AMI includes the following: One or more Amazon Elastic Block Store (Amazon EBS) snapshots, or, for instance-store-backed AMIs, a template for the root volume of the instance (for example, an operating system, an application server, and applications). Launch permissions that control which AWS accounts can use the AMI to launch instances. A block device mapping that specifies the volumes to attach to the instance when it's launched.",
         "SeeAlso": "Elastic Block Store (EBS)"
+    },
+    {
+        "AWSComponent": "Amazon MQ",
+        "URL": "https://aws.amazon.com/amazon-mq/?amazon-mq.sort-by=item.additionalFields.postDateTime&amazon-mq.sort-order=desc",
+        "Module": "Decoupling applications; SQS, SNS, Kinesis, Active MQ",
+        "Comment": "<li>SQS, SNS are “cloud-native” services, and they’re using proprietary protocols rom AWS.</li><li>Traditional applications running from on-premise may use open protocols such as: MQTT, AMQP, STOMP, Openwire, WSS</li><li>When migrating to the cloud, instead of re-engineering the application to use SQS and SNS, we can use Amazon MQ</li><li>Amazon MQ = managed Apache ActiveMQ</li><li>Amazon MQ doesn’t “scale” as much as SQS / SNS</li><li>Amazon MQ runs on a dedicated machine, can run in HA with failover</li><li>Amazon MQ has both queue feature (~SQS) and topic features (~SNS)</li>",
+        "Blurb": "Amazon MQ is a managed message broker service for Apache ActiveMQ and RabbitMQ that makes it easy to set up and operate message brokers on AWS. Amazon MQ reduces your operational responsibilities by managing the provisioning, setup, and maintenance of message brokers for you. Because Amazon MQ connects to your current applications with industry-standard APIs and protocols, you can easily migrate to AWS without having to rewrite code.",
+        "SeeAlso": "SQS Standard Queue"
     },
     {
         "AWSComponent": "Application Load Balancer (v2)",
@@ -72,6 +88,62 @@
         "SeeAlso": "EC2"
     },
     {
+        "AWSComponent": "AWS Athena",
+        "URL": "https://aws.amazon.com/athena/?whats-new-cards.sort-by=item.additionalFields.postDateTime&whats-new-cards.sort-order=desc",
+        "Module": "S3 Advanced",
+        "Comment": "<li>Serverless service to perform analytics directly against S3 files</li><li>Uses SQL language to query the files</li><li>Has a JDBC / ODBC driver</li><li>Charged per query and amount of data scanned</li><li>Supports CSV, JSON, ORC, Avro, and Parquet (built on Presto)</li><li>Use cases: Business intelligence / analytics / reporting, analyze & query VPC Flow Logs, ELB Logs, CloudTrail trails, etc...</li><li>Exam Tip: Analyze data directly on S3 => use Athena</li>",
+        "Blurb": "Amazon Athena is an interactive query service that makes it easy to analyze data in Amazon S3 using standard SQL. Athena is serverless, so there is no infrastructure to manage, and you pay only for the queries that you run.",
+        "SeeAlso": ""
+    },
+    {
+        "AWSComponent": "AWS CLI",
+        "URL": "https://aws.amazon.com/cli/",
+        "Module": "AWS CLI SDK IAM Roles & Policies",
+        "Comment": "<strong>AWS CLI ON EC2… THE BADWAY</strong><li>We could run `aws configure` on EC2 just like we did (and it’ll work)</li><li>But… it’s SUPER INSECURE</li><li>NEVER EVER EVER PUT YOUR PERSONAL CREDENTIALS ON AN EC2</li><li>Your PERSONAL credentials are PERSONAL and only belong on your PERSONAL computer</li><li>If the EC2 is compromised, so is your personal account</li><li>If the EC2 is shared, other people may perform AWS actions while impersonating you</li><li>For EC2, there’s a better way… it’s called AWS IAM Roles</li><strong>AWS CLI ON EC2… THE RIGHT WAY</strong><li>IAM Roles can be attached to EC2 instances</li><li>IAM Roles can come with a policy authorizing exactly what the EC2 instance should be able to do</li><li>EC2 Instances can then use these profiles automatically without any additional configurations</li><li>This is the best practice on AWS and you should 100% do this.</li>",
+        "Blurb": "The AWS Command Line Interface (CLI) is a unified tool to manage your AWS services. With just one tool to download and configure, you can control multiple AWS services from the command line and automate them through scripts.",
+        "SeeAlso": ""
+    },
+    {
+        "AWSComponent": "AWS CloudFront",
+        "URL": "https://aws.amazon.com/cloudfront/",
+        "Module": "AWS CloudFront",
+        "Comment": "<li>Content Delivery Network (CDN)</li><li>Improves read performance, content is cached at the edge</li><li>216 Point of Presence globally (edge locations)</li><li>DDoS protection, integration with Shield, AWS Web Application Firewall</li><li>Can expose external HTTPS and can talk to internal HTTPS backends</li><strong>CloudFront – Origins</strong><li>S3 bucket</li><li>For distributing files and caching them at the edge</li><li>Enhanced security with CloudFront Origin Access Identity (OAI)</li><li>CloudFront can be used as an ingress (to upload files to S3)</li><li>Custom Origin (HTTP)</li><li>Application Load Balancer</li><li>EC2 instance</li><li>S3 website (must first enable the bucket as a static S3 website)</li><li>Any HTTP backend you want</li><strong>CloudFront Geo Restriction</strong><li>You can restrict who can access your distribution</li><li>Whitelist: Allow your users to access your content only if they're in one of the countries on a list of approved countries.</li><li>Blacklist: Prevent your users from accessing your content if they're in one of the countries on a blacklist of banned countries.</li><li>The “country” is determined using a 3rd party Geo-IP database</li><li>Use case: Copyright Laws to control access to content</li><strong>CloudFront vs S3 Cross Region Replication</strong><li>CloudFront:</li><li>Global Edge network</li><li>Files are cached for a TTL (maybe a day)</li><li>Great for static content that must be available everywhere</li><li>S3 Cross Region Replication:</li><li>Must be setup for each region you want replication to happen</li><li>Files are updated in near real-time</li><li>Read only</li><li>Great for dynamic content that needs to be available at low-latency in few regions</li>",
+        "Blurb": "Amazon CloudFront is a fast content delivery network (CDN) service that securely delivers data, videos, applications, and APIs to customers globally with low latency, high transfer speeds, all within a developer-friendly environment.",
+        "SeeAlso": ""
+    },
+    {
+        "AWSComponent": "AWS CloudFront Signed URLs",
+        "URL": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-signed-urls.html",
+        "Module": "AWS CloudFront",
+        "Comment": "<li>You want to distribute paid shared content to premium users over the world</li><li>We can use CloudFront Signed URL / Cookie. We attach a policy with:</li><li>Includes URL expiration</li><li>Includes IP ranges to access the data from</li><li>Trusted signers (which AWS accounts can create signed URLs)</li><li>How long should the URL be valid for?</li><li>Shared content (movie, music): make it short (a few minutes)</li><li>Private content (private to the user): you can make it last for years</li><li>Signed URL = access to individual files (one signed URL per file)</li><li>Signed Cookies = access to multiple files (one signed cookie for many files)</li><strong>CloudFront Signed URL vs S3 Pre-Signed URL</strong><li><strong>CloudFront Signed URL:</strong></li><ul><li>Allow access to a path, no matter the origin</li><li>Account wide key-pair, only the root can manage it</li><li>Can filter by IP, path, date, expiration • Can leverage caching features</li></ul><li><strong>S3 Pre-Signed URL:</strong></li><ul><li>Issue a request as the person who pre-signed the URL</li><li>Uses the IAM key of the signing IAM principal</li><li>Limited lifetime</li></ul>",
+        "Blurb": "A signed URL includes additional information, for example, an expiration date and time, that gives you more control over access to your content. This additional information appears in a policy statement, which is based on either a canned policy or a custom policy. The differences between canned and custom policies are explained in the next two sections.",
+        "SeeAlso": ""
+    },
+    {
+        "AWSComponent": "AWS EC2 Instance MetaData",
+        "URL": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html",
+        "Module": "AWS CLI SDK IAM Roles & Policies",
+        "Comment": "<strong>AWS EC2 Instance Metadata</strong><li>AWS EC2 Instance Metadata is powerful but one of the least known features to developers</li><li>It allows AWS EC2 instances to ”learn about themselves” without using an IAM Role for that purpose.</li><li>The URL is http://169.254.169.254/latest/meta-data</li><li>You can retrieve the IAM Role name from the metadata, but you CANNOT retrieve the IAM Policy.</li><li>Metadata = Info about the EC2 instance</li><li>Userdata = launch script of the EC2 instance</li>",
+        "Blurb": "Instance metadata is data about your instance that you can use to configure or manage the running instance. Instance metadata is divided into categories, for example, host name, events, and security groups.",
+        "SeeAlso": ""
+    },
+    {
+        "AWSComponent": "AWS Global Accelerator",
+        "URL": "https://aws.amazon.com/global-accelerator/?blogs-global-accelerator.sort-by=item.additionalFields.createdDate&blogs-global-accelerator.sort-order=desc&aws-global-accelerator-wn.sort-by=item.additionalFields.postDateTime&aws-global-accelerator-wn.sort-order=desc",
+        "Module": "AWS CloudFront",
+        "Comment": "<strong>Global users for our application</strong><li>You have deployed an application and have global users who want to access it directly.</li><li>They go over the public internet, which can add a lot of latency due to many hops</li><li>We wish to go as fast as possible through AWS network to minimize latency</li><strong>Unicast IP vs Anycast IP</strong><li>Unicast IP: one server holds one IP address</li><li>Anycast IP: all servers hold the same IP address and the client is routed to the nearest one</li><strong>AWS Global Accelerator</strong><li>Leverage the AWS internal network to route to your application</li><li>2 Anycast IP are created for your application </li><li>The Anycast IP send traffic directly to Edge Locations</li><li>The Edge locations send the traffic to your application</li><li>Works with Elastic IP, EC2 instances, ALB, NLB, public or private</li><li>Consistent Performance</li><li>Intelligent routing to lowest latency and fast regional failover</li><li>No issue with client cache (because the IP doesn’t change)</li><li>Internal AWS network</li><li>Health Checks</li><li>Global Accelerator performs a health check of your applications</li><li>Helps make your application global (failover less than 1 minute for unhealthy)</li><li>Great for disaster recovery (thanks to the health checks)</li><li>Security</li><li>only 2 external IP need to be whitelisted</li><li>DDoS protection thanks to AWS Shield</li><strong>AWS Global Accelerator vs CloudFront</strong><li>They both use the AWS global network and its edge locations around the world</li><li>Both services integrate with AWS Shield for DDoS protection.</li><li>CloudFront</li><li>Improves performance for both cacheable content (such as images and videos)</li><li>Dynamic content (such as API acceleration and dynamic site delivery)</li><li>Content is served at the edge</li><li>Global Accelerator</li><li>Improves performance for a wide range of applications over TCP or UDP</li><li>Proxying packets at the edge to applications running in one or more AWS Regions.</li><li>Good fit for non-HTTP use cases, such as gaming (UDP), IoT (MQTT), or Voice over IP</li><li>Good for HTTP use cases that require static IP addresses</li><li>Good for HTTP use cases that required deterministic, fast regional failover</li>",
+        "Blurb": "AWS Global Accelerator is a networking service that sends your user’s traffic through Amazon Web Service’s global network infrastructure, improving your internet user performance by up to 60%. When the internet is congested, Global Accelerator’s automatic routing optimizations will help keep your packet loss, jitter, and latency consistently low.",
+        "SeeAlso": ""
+    },
+    {
+        "AWSComponent": "AWS SDK",
+        "URL": "https://aws.amazon.com/tools/",
+        "Module": "AWS CLI SDK IAM Roles & Policies",
+        "Comment": "<strong>AWS SDK Overview</strong><li>What if you want to perform actions on AWS directly from your applications code ? (without using the CLI).</li><li>You can use an SDK (software development kit) !</li><li>Official SDKs are…</li><ul><li>Java</li><li>.NET</li><li>Node.js</li><li>PHP</li><li>Python (named boto3 / botocore)</li><li>Go</li><li>Ruby</li><li>C++</li></ul><li>We have to use the AWS SDK when coding against AWS Services such as DynamoDB</li><li>Fun fact… the AWS CLI uses the Python SDK (boto3)</li><li>The exam expects you to know when you should use an SDK</li><li>We’ll practice the AWS SDK when we get to the Lambda functions</li><li>Good to know: if you don’t specify or configure a default region, then us-east-1 will be chosen by default</li><li>It’s recommend to use the default credential provider chain</li><li>The default credential provider chain works seamlessly with:</li><ul><li>AWS credentials at ~/.aws/credentials (only on our computers or on premise)</li><li>Instance Profile Credentials using IAM Roles (for EC2 machines, etc…)</li><li>Environment variables (AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY)</li></ul><li>Overall, NEVER EVER STORE AWS CREDENTIALS IN YOUR CODE.</li><li>Best practice is for credentials to be inherited from mechanisms above, and 100% IAM Roles if working from within AWS Services</li>",
+        "Blurb": "Easily develop applications on AWS in the programming language of your choice",
+        "SeeAlso": ""
+    },
+    {
         "AWSComponent": "Classic Load Balancer (v1)",
         "URL": "https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/introduction.html",
         "Module": "High Availability and Scalability: ELB & ASG",
@@ -86,6 +158,14 @@
         "Comment": "<li>An origin is a scheme (protocol), host (domain) and port</li><ul><li>E.g.: https://www.example.com (implied port is 443 for HTTPS, 80 for HTTP)</li></ul><li>CORS means Cross-Origin Resource Sharing</li><li>Web Browser based mechanism to allow requests to other origins while visiting the main origin</li><li>Same origin: http://example.com/app1 & http://example.com/app2</li><li>Different origins: http://www.example.com & http://other.example.com</li><li>The requests won’t be fulfilled unless the other origin allows for the requests, using CORS Headers (ex: Access-Control-Allow-Origin)</li><li>If a client does a cross-origin request on our S3 bucket, we need to enable the correct CORS headers</li><li>It’s a popular exam question</li><li>You can allow for a specific origin or for * (all origins)</li>",
         "Blurb": "Cross-origin resource sharing (CORS) defines a way for client web applications that are loaded in one domain to interact with resources in a different domain. With CORS support, you can build rich client-side web applications with Amazon S3 and selectively allow cross-origin access to your Amazon S3 resources.",
         "SeeAlso": "S3"
+    },
+    {
+        "AWSComponent": "Data Ordering",
+        "URL": "https://aws.amazon.com/kinesis/data-streams/faqs/",
+        "Module": "Decoupling applications; SQS, SNS, Kinesis, Active MQ",
+        "Comment": "<strong>Ordering data into Kinesis</strong><li>Imagine you have 100 trucks (truck_1, truck_2, … truck_100) on the road sending their GPS positions regularly into AWS.</li><li>You want to consume the data in order for each truck, so that you can track their movement accurately.</li><li>How should you send that data into Kinesis?</li><li>Answer: send using a “Partition Key” value of the “truck_id”</li><li>The same key will always go to the same shard</li><li>For SQS standard, there is no ordering.</li><li>For SQS FIFO, if you don’t use a Group ID, messages are consumed in the order they are sent, with only one consumer</li><li>You want to scale the number of consumers, but you want messages to be “grouped” when they are related to each other</li><li>Then you use a Group ID (similar to Partition Key in Kinesis)</li><strong>Kinesis vs SQS ordering</strong><li>Let’s assume 100 trucks, 5 kinesis shards, 1 SQS FIFO</li><li>Kinesis Data Streams:</li><ul><li>On average you’ll have 20 trucks per shard</li><li>Trucks will have their data ordered within each shard</li><li>The maximum amount of consumers in parallel we can have is 5</li><li>Can receive up to 5 MB/s of data</li></ul><li>SQS FIFO</li><ul><li>You only have one SQS FIFO queue</li><li>You will have 100 Group ID</li><li>You can have up to 100 Consumers (due to the 100 Group ID)</li><li>You have up to 300 messages per second (or 3000 if using batching)</li></ul>",
+        "Blurb": "Data Ordering between Kinesis and FIFO SQS",
+        "SeeAlso": "Kinesis, SQS Standard Queue"
     },
     {
         "AWSComponent": "EBS Encryption",
@@ -224,6 +304,46 @@
         "SeeAlso": "Security Groups"
     },
     {
+        "AWSComponent": "Kinesis",
+        "URL": "https://aws.amazon.com/kinesis/",
+        "Module": "Decoupling applications; SQS, SNS, Kinesis, Active MQ",
+        "Comment": "<li>Kinesis is a managed alternative to Apache Kafka</li><li>Great for application logs, metrics, IoT, clickstreams</li><li>Great for “real-time” big data</li><li>Great for streaming processing frameworks (Spark, NiFi, etc…)</li><li>Data is automatically replicated to 3 AZ</li><li>Kinesis Streams: low latency streaming ingest at scale</li><li>Kinesis Analytics: perform real-time analytics on streams using SQL</li><li>Kinesis Firehose: load streams into S3, Redshift, ElasticSearch…</li>",
+        "Blurb": "Amazon Kinesis makes it easy to collect, process, and analyze real-time, streaming data so you can get timely insights and react quickly to new information. Amazon Kinesis offers key capabilities to cost-effectively process streaming data at any scale, along with the flexibility to choose the tools that best suit the requirements of your application. With Amazon Kinesis, you can ingest real-time data such as video, audio, application logs, website clickstreams, and IoT telemetry data for machine learning, analytics, and other applications. Amazon Kinesis enables you to process and analyze data as it arrives and respond instantly instead of having to wait until all your data is collected before the processing can begin.",
+        "SeeAlso": ""
+    },
+    {
+        "AWSComponent": "Kinesis API",
+        "URL": "https://docs.aws.amazon.com/kinesis/latest/APIReference/Welcome.html",
+        "Module": "Decoupling applications; SQS, SNS, Kinesis, Active MQ",
+        "Comment": "<strong>Put records</strong><li>PutRecord API + Partition key that gets hashed</li><li>The same key goes to the same partition (helps with ordering for a specific key)</li><li>Messages sent get a “sequence number”</li><li>Choose a partition key that is highly distributed (helps prevent “hot partition”)</li><ul><li>user_id if many users</li><li>Not country_id if 90% of the users are in one country</li></ul><li>Use Batching with PutRecords to reduce costs and increase throughput</li><li>ProvisionedThroughputExceeded if we go over the limits</li><li>Can use CLI, AWS SDK, or producer libraries from various frameworks</li><strong>Exceptions</strong><li>ProvisionedThroughputExceeded Exceptions</li><ul><li>Happens when sending more data (exceeding MB/s or TPS for any shard)</li><li>Make sure you don’t have a hot shard (such as your partition key is bad and too much data goes to that partition)</li></ul><li>Solution:</li><ul><li>Retries with backoff</li><li>Increase shards (scaling)</li><li>Ensure your partition key is a good one</li></ul><strong>Consumers</strong><li>Can use a normal consumer (CLI, SDK, etc…)</li><li>Can use Kinesis Client Library (in Java, Node, Python, Ruby, .Net)</li><li>KCL uses DynamoDB to checkpoint offsets</li><li>KCL uses DynamoDB to track other workers and share the work amongst shards Amazon</li>",
+        "Blurb": "Amazon Kinesis Data Streams is a managed service that scales elastically for real-time processing of streaming big data.",
+        "SeeAlso": "Kinesis"
+    },
+    {
+        "AWSComponent": "Kinesis Data Analytics",
+        "URL": "https://aws.amazon.com/kinesis/data-analytics/",
+        "Module": "Decoupling applications; SQS, SNS, Kinesis, Active MQ",
+        "Comment": "<li>Perform real-time analytics on Kinesis Streams using SQL</li><li>Kinesis Data Analytics:</li><ul><li>Auto Scaling</li><li>Managed: no servers to provision</li><li>Continuous: real time</li></ul><li>Pay for actual consumption rate</li><li>Can create streams out of the real-time queries</li>",
+        "Blurb": "Amazon Kinesis Data Analytics is the easiest way to transform and analyze streaming data in real time with Apache Flink. Apache Flink is an open source framework and engine for processing data streams. Amazon Kinesis Data Analytics reduces the complexity of building, managing, and integrating Apache Flink applications with other AWS services.",
+        "SeeAlso": "Kinesis"
+    },
+    {
+        "AWSComponent": "Kinesis Firehose",
+        "URL": "https://aws.amazon.com/kinesis/data-firehose/?kinesis-blogs.sort-by=item.additionalFields.createdDate&kinesis-blogs.sort-order=desc",
+        "Module": "Decoupling applications; SQS, SNS, Kinesis, Active MQ",
+        "Comment": "<li>Fully Managed Service, no administration, automatic scaling, serverless</li><li>Load data into Redshift / Amazon S3 / ElasticSearch / Splunk</li><li>Near Real Time</li><ul><li>60 seconds latency minimum for non full batches</li><li>Or minimum 32 MB of data at a time</li></ul><li>Supports many data formats, conversions, transformations, compression</li><li>Pay for the amount of data going through Firehose</li><strong>Kinesis Data Streams vs Firehose</strong><li>Streams</li><ul><li>Going to write custom code (producer / consumer)</li><li>Real time (~200 ms)</li><li>Must manage scaling (shard splitting / merging)</li><li>Data Storage for 1 to 7 days, replay capability, multi consumers</li></ul><li>Firehose</li><ul><li>Fully managed, send to S3, Splunk, Redshift, ElasticSearch</li><li>Serverless data transformations with Lambda</li><li>Near real time (lowest buffer time is 1 minute)</li><li>Automated Scaling</li><li>No data storage</li></ul>",
+        "Blurb": "Amazon Kinesis Data Firehose is the easiest way to reliably load streaming data into data lakes, data stores, and analytics services. It can capture, transform, and deliver streaming data to Amazon S3, Amazon Redshift, Amazon Elasticsearch Service, generic HTTP endpoints, and service providers like Datadog, New Relic, MongoDB, and Splunk. It is a fully managed service that automatically scales to match the throughput of your data and requires no ongoing administration. It can also batch, compress, transform, and encrypt your data streams before loading, minimizing the amount of storage used and increasing security.",
+        "SeeAlso": "Kinesis"
+    },
+    {
+        "AWSComponent": "Kinesis Streams",
+        "URL": "https://aws.amazon.com/kinesis/data-streams/",
+        "Module": "Decoupling applications; SQS, SNS, Kinesis, Active MQ",
+        "Comment": "<li>Streams are divided in ordered Shards / Partitions</li><li>Data retention is 1 day by default, can go up to 7 days</li><li>Ability to reprocess / replay data</li><li>Multiple applications can consume the same stream</li><li>Real-time processing with scale of throughput</li><li>Once data is inserted in Kinesis, it can’t be deleted (immutability)</li><strong>Shards</strong><li>One stream is made of many different shards</li><li>1MB/s or 1000 messages/s at write PER SHARD</li><li>2MB/s at read PER SHARD</li><li>Billing is per shard provisioned, can have as many shards as you want</li><li>Batching available or per message calls.</li><li>The number of shards can evolve over time (reshard / merge)</li><li>Records are ordered per shard</li>",
+        "Blurb": "Amazon Kinesis Data Streams (KDS) is a massively scalable and durable real-time data streaming service. KDS can continuously capture gigabytes of data per second from hundreds of thousands of sources such as website clickstreams, database event streams, financial transactions, social media feeds, IT logs, and location-tracking events. The data collected is available in milliseconds to enable real-time analytics use cases such as real-time dashboards, real-time anomaly detection, dynamic pricing, and more.",
+        "SeeAlso": "Kinesis"
+    },
+    {
         "AWSComponent": "Network Load Balancer (v2)",
         "URL": "https://docs.aws.amazon.com/whitepapers/latest/fault-tolerant-components/network-load-balancer.html",
         "Module": "High Availability and Scalability: ELB & ASG",
@@ -328,6 +448,22 @@
         "SeeAlso": ""
     },
     {
+        "AWSComponent": "S3 Access Logs",
+        "URL": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/ServerLogs.html",
+        "Module": "S3 Advanced",
+        "Comment": "<li>For audit purpose, you may want to log all access to S3 buckets</li><li>Any request made to S3, from any account, authorized or denied, will be logged into another S3 bucket</li><li>That data can be analyzed using data analysis tools…</li><li>Or Amazon Athena as we’ll see later in this section!</li><li>The log format is at: https://docs.aws.amazon.com/AmazonS3/latest/dev/LogFormat.html</li><strong>S3 Access Logs: Warning</strong><li>Do not set your logging bucket to be the monitored bucket</li><li>It will create a logging loop, and your bucket will grow in size exponentially</li>",
+        "Blurb": "Server access logging provides detailed records for the requests that are made to a bucket. Server access logs are useful for many applications. For example, access log information can be useful in security and access audits.",
+        "SeeAlso": ""
+    },
+    {
+        "AWSComponent": "S3 Baseline Performance",
+        "URL": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/optimizing-performance-guidelines.html",
+        "Module": "S3 Advanced",
+        "Comment": "<li>Amazon S3 automatically scales to high request rates, latency 100-200 ms</li><li>Your application can achieve at least 3,500 PUT/COPY/POST/DELETE and 5,500 GET/HEAD requests per second per prefix in a bucket.</li><li>There are no limits to the number of prefixes in a bucket.</li><li>Example (object path => prefix):</li><ul><li>bucket/folder1/sub1/file => /folder1/sub1/</li><li>bucket/folder1/sub2/file => /folder1/sub2/</li><li>bucket/1/file => /1/</li><li>bucket/2/file => /2/</li></ul><li>If you spread reads across all four prefixes evenly, you can achieve 22,000 requests per second for GET and HEAD</li><strong>S3 – KMS Limitation</strong><li>If you use SSE-KMS, you may be impacted by the KMS limits</li><li>When you upload, it calls the GenerateDataKey KMS API</li><li>When you download, it calls the Decrypt KMS API</li><li>Count towards the KMS quota per second (5500, 10000, 30000 req/s based on region)</li><li>As of today, you cannot request a quota increase for KMS</li><strong>S3 Performance</strong><li><strong>Multi-Part upload:</strong></li><ul><li>recommended for files > 100MB, must use for files > 5GB</li><li>Can help parallelize uploads (speed up transfers)</li></ul><li><strong>S3 Transfer Acceleration (upload only)</li></strong><ul><li>Increase transfer speed by transferring file to an AWS edge location which will forward the data to the S3 bucket in the target region</li><li>Compatible with multi-part upload</li></ul>",
+        "Blurb": "When optimizing performance, look at network throughput, CPU, and DRAM requirements",
+        "SeeAlso": ""
+    },
+    {
         "AWSComponent": "S3 Buckets",
         "URL": "https://aws.amazon.com/s3/",
         "Module": "S3",
@@ -352,12 +488,76 @@
         "SeeAlso": "S3, S3 Objects, S3 Versioning"
     },
     {
+        "AWSComponent": "S3 Event Notifications",
+        "URL": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/NotificationHowTo.html",
+        "Module": "S3 Advanced",
+        "Comment": "<li>S3:ObjectCreated, S3:ObjectRemoved, S3:ObjectRestore, S3:Replication…</li><li>Object name filtering possible (*.jpg)</li><li>Use case: generate thumbnails of images uploaded to S3</li><li>Can create as many “S3 events” as desired</li><li>S3 event notifications typically deliver events in seconds but can sometimes take a minute or longer</li><li>If two writes are made to a single non-versioned object at the same time, it is possible that only a single event notification will be sent</li><li>If you want to ensure that an event notification is sent for every successful write, you can enable versioning on your bucket.</li>",
+        "Blurb": "You can use the Amazon S3 Event Notifications feature to receive notifications when certain events happen in your S3 bucket. To enable notifications, you must first add a notification configuration that identifies the events you want Amazon S3 to publish and the destinations where you want Amazon S3 to send the notifications. You store this configuration in the notification subresource that is associated with a bucket.",
+        "SeeAlso": ""
+    },
+    {
+        "AWSComponent": "S3 Lifecycle Rules",
+        "URL": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lifecycle-mgmt.html",
+        "Module": "S3 Advanced",
+        "Comment": "<strong>S3 – Moving between storage classes</strong><li>You can transition objects between storage classes</li><li>For infrequently accessed object, move them to STANDARD_IA</li><li>For archive objects you don’t need in real-time, GLACIER or DEEP_ARCHIVE</li><li>Moving objects can be automated using a lifecycle configuration</li><strong>S3 Lifecycle Rules</strong><li>Transition actions: It defines when objects are transitioned to another storage class.</li><ul><li>Move objects to Standard IA class 60 days after creation</li><li>Move to Glacier for archiving after 6 months</li></ul><li>Expiration actions: configure objects to expire (delete) after some time</li><ul><li>Access log files can be set to delete after a 365 days</li><li>Can be used to delete old versions of files (if versioning is enabled)</li><li>Can be used to delete incomplete multi-part uploads</li></ul><li>Rules can be created for a certain prefix (ex - s3://mybucket/mp3/*)</li><li>Rules can be created for certain objects tags (ex - Department: Finance)</li><strong>S3 Lifecycle Rules – Scenario 1</strong><li>Your application on EC2 creates images thumbnails after profile photos are uploaded to Amazon S3. These thumbnails can be easily recreated, and only need to be kept for 45 days. The source images should be able to be immediately retrieved for these 45 days, and afterwards, the user can wait up to 6 hours. How would you design this?</li><li>S3 source images can be on STANDARD, with a lifecycle configuration to transition them to GLACIER after 45 days.</li><li>S3 thumbnails can be on ONEZONE_IA, with a lifecycle configuration to expire them (delete them) after 45 days.</li><strong>S3 Lifecycle Rules – Scenario 2</strong><li>A rule in your company states that you should be able to recover your deleted S3 objects immediately for 15 days, although this may happen rarely. After this time, and for up to 365 days, deleted objects should be recoverable within 48 hours.</li><li>You need to enable S3 versioning in order to have object versions, so that “deleted objects” are in fact hidden by a “delete marker” and can be recovered</li><li>You can transition these “noncurrent versions” of the object to S3_IA</li><li>You can transition afterwards these “noncurrent versions” to DEEP_ARCHIVE</li>",
+        "Blurb": "To manage your objects so that they are stored cost effectively throughout their lifecycle, configure their Amazon S3 Lifecycle. An S3 Lifecycle configuration is a set of rules that define actions that Amazon S3 applies to a group of objects. ",
+        "SeeAlso": ""
+    },
+    {
+        "AWSComponent": "S3 Object Lock & Glacier Vault Lock",
+        "URL": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock.html",
+        "Module": "S3 Advanced",
+        "Comment": "<strong>S3 Object Lock</strong><li>Adopt a WORM (Write Once Read Many) model</li><li>Block an object version deletion for a specified amount of time</li><strong>Glacier Vault Lock</strong><li>Adopt a WORM (Write Once Read Many) model</li><li>Lock the policy for future edits (can no longer be changed)</li><li>Helpful for compliance and data retention</li>",
+        "Blurb": "With S3 Object Lock, you can store objects using a write-once-read-many (WORM) model. Object Lock can help prevent objects from being deleted or overwritten for a fixed amount of time or indefinitely. You can use Object Lock to help meet regulatory requirements that require WORM storage, or to simply add another layer of protection against object changes and deletion.",
+        "SeeAlso": ""
+    },
+    {
+        "AWSComponent": "S3 MFA-Delete",
+        "URL": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/MultiFactorAuthenticationDelete.html",
+        "Module": "S3 Advanced",
+        "Comment": "<li>MFA (multi factor authentication) forces user to generate a code on a device (usually a mobile phone or hardware) before doing important operations on S3</li><li>To use MFA-Delete, enable Versioning on the S3 bucket</li><li>You will need MFA to</li><ul><li>permanently delete an object version</li><li>suspend versioning on the bucket</li></ul><li>You won’t need MFA for</li><ul><li>enabling versioning</li><li>listing deleted versions</li></ul><li>Only the bucket owner (root account) can enable/disable MFA-Delete</li><li>MFA-Delete currently can only be enabled using the CLI</li>",
+        "Blurb": "When working with S3 Versioning in Amazon S3 buckets, you can optionally add another layer of security by configuring a bucket to enable MFA (multi-factor authentication) delete. When you do this, the bucket owner must include two forms of authentication in any request to delete a version or change the versioning state of the bucket.",
+        "SeeAlso": ""
+    },
+    {
         "AWSComponent": "S3 Objects",
         "URL": "https://aws.amazon.com/s3/",
         "Module": "S3",
         "Comment": "<li>Objects (files) have a Key</li><li>The key is the FULL path:</li><ul><li>s3://my-bucket/my_file.txt</li><li>s3://my-bucket/my_folder1/another_folder/my_file.txt</li></ul><li>The key is composed of prefix + object name</li><ul><li>s3://my-bucket/my_folder1/another_folder/my_file.txt</li></ul><li>There’s no concept of “directories” within buckets (although the UI will trick you to think otherwise)</li><li>Just keys with very long names that contain slashes (“/”)</li><li>Object values are the content of the body:</li><ul><li>Max Object Size is 5TB (5000GB)</li><li>If uploading more than 5GB, must use “multi-part upload”</li></ul><li>Metadata (list of text key / value pairs – system or user metadata)</li><li>Tags (Unicode key / value pair – up to 10) – useful for security / lifecycle</li><li>Version ID (if versioning is enabled)</li>",
         "Blurb": "Amazon Simple Storage Service (Amazon S3) is an object storage service that offers industry-leading scalability, data availability, security, and performance. This means customers of all sizes and industries can use it to store and protect any amount of data for a range of use cases, such as data lakes, websites, mobile applications, backup and restore, archive, enterprise applications, IoT devices, and big data analytics. Amazon S3 provides easy-to-use management features so you can organize your data and configure finely-tuned access controls to meet your specific business, organizational, and compliance requirements. Amazon S3 is designed for 99.999999999% (11 9's) of durability, and stores data for millions of applications for companies all around the world.",
         "SeeAlso": "S3, S3 Buckets, S3 Versioning"
+    },
+    {
+        "AWSComponent": "S3 Pre-Signed URL",
+        "URL": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/ShareObjectPreSignedURL.html",
+        "Module": "S3 Advanced",
+        "Comment": "<li>Can generate pre-signed URLs using SDK or CLI</li><ul><li>For downloads (easy, can use the CLI)</li><li>For uploads (harder, must use the SDK)</li></ul><li>Valid for a default of 3600 seconds, can change timeout with --expires-in [TIME_BY_SECONDS] argument</li><li>Users given a pre-signed URL inherit the permissions of the person who generated the URL for GET / PUT</li><li>Examples :</li><ul><li>Allow only logged-in users to download a premium video on your S3 bucket</li><li>Allow an ever changing list of users to download files by generating URLs dynamically</li><li>Allow temporarily a user to upload a file to a precise location in our bucket</li></ul>",
+        "Blurb": "All objects by default are private. Only the object owner has permission to access these objects. However, the object owner can optionally share objects with others by creating a presigned URL, using their own security credentials, to grant time-limited permission to download the objects.",
+        "SeeAlso": ""
+    },
+    {
+        "AWSComponent": "S3 Replication",
+        "URL": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/replication.html",
+        "Module": "S3 Advanced",
+        "Comment": "<li>Must enable versioning in source and destination</li><li>Cross Region Replication (CRR)</li><li>Same Region Replication (SRR)</li><li>Buckets can be in different accounts</li><li>Copying is asynchronous</li><li>Must give proper IAM permissions to S3</li><li>CRR - Use cases: compliance, lower latency access, replication across accounts</li><li>SRR – Use cases: log aggregation, live replication between production and test accounts</li><li><strong>Notes</strong></li><li>After activating, only new objects are replicated (not retroactive)</li><li>For DELETE operations:</li><ul><li>If you delete without a version ID, it adds a delete marker, not replicated</li><li>If you delete with a version ID, it deletes in the source, not replicated</li></ul><li>There is no “chaining” of replication</li><ul><li>If bucket 1 has replication into bucket 2, which has replication into bucket 3</li><li>Then objects created in bucket 1 are not replicated to bucket 3</li></ul>",
+        "Blurb": "Replication enables automatic, asynchronous copying of objects across Amazon S3 buckets. Buckets that are configured for object replication can be owned by the same AWS account or by different accounts. Object may be replicated to a single destination bucket or multiple destination buckets. Destination buckets can be in different AWS Regions or within the same Region as the source bucket.",
+        "SeeAlso": ""
+    },
+    {
+        "AWSComponent": "S3 Select & Glacier Select",
+        "URL": "https://aws.amazon.com/blogs/aws/s3-glacier-select/",
+        "Module": "S3 Advanced",
+        "Comment": "<li>Retrieve less data using SQL by performing server side filtering</li><li>Can filter by rows & columns (simple SQL statements)</li><li>Less network transfer, less CPU cost client-side</li>",
+        "Blurb": "Enables applications to retrieve only a subset of data from an object by using simple SQL expressions. By using S3 Select to retrieve only the data needed by your application, you can achieve drastic performance increases – in many cases you can get as much as a 400% improvement.",
+        "SeeAlso": ""
+    },
+    {
+        "AWSComponent": "S3 Storage Classes",
+        "URL": "https://aws.amazon.com/s3/storage-classes/",
+        "Module": "S3 Advanced",
+        "Comment": "<strong>S3 Standard – General Purpose</strong><li>High durability (99.999999999%) of objects across multiple AZ</li><li>If you store 10,000,000 objects with Amazon S3, you can on average expect to incur a loss of a single object once every 10,000 years</li><li>99.99% Availability over a given year</li><li>Sustain 2 concurrent facility failures</li><li>Use Cases: Big Data analytics, mobile & gaming applications, content distribution…</li><strong>S3 Standard – Infrequent Access (IA)</strong><li>Suitable for data that is less frequently accessed, but requires rapid access when needed</li><li>High durability (99.999999999%) of objects across multiple AZs</li><li>99.9% Availability</li><li>Low cost compared to Amazon S3 Standard</li><li>Sustain 2 concurrent facility failures</li><li>Use Cases: As a data store for disaster recovery, backups…</li><strong>S3 One Zone - Infrequent Access (IA)</strong><li>Same as IA but data is stored in a single AZ</li><li>High durability (99.999999999%) of objects in a single AZ; data lost when AZ is destroyed</li><li>99.5% Availability</li><li>Low latency and high throughput performance</li><li>Supports SSL for data at transit and encryption at rest</li><li>Low cost compared to IA (by 20%)</li><li>Use Cases: Storing secondary backup copies of on-premise data, or storing data you can recreate</li><strong>S3 Intelligent Tiering</strong><li>Same low latency and high throughput performance of S3 Standard</li><li>Small monthly monitoring and auto-tiering fee</li><li>Automatically moves objects between two access tiers based on changing access patterns</li><li>Designed for durability of 99.999999999% of objects across multiple Availability Zones</li><li>Resilient against events that impact an entire Availability Zone</li><li>Designed for 99.9% availability over a given year</li><strong>Amazon Glacier</strong><li>Low cost object storage meant for archiving / backup</li><li>Data is retained for the longer term (10s of years)</li><li>Alternative to on-premise magnetic tape storage</li><li>Average annual durability is 99.999999999%</li><li>Cost per storage per month ($0.004 / GB) + retrieval cost</li><li>Each item in Glacier is called “Archive” (up to 40TB)</li><li>Archives are stored in ”Vaults”</li><strong>Amazon Glacier & Glacier Deep Archive</strong><li>Amazon Glacier – 3 retrieval options:</li><ul><li>Expedited (1 to 5 minutes)</li><li>Standard (3 to 5 hours)</li><li>Bulk (5 to 12 hours)</li><li>Minimum storage duration of 90 days</li></ul><li>Amazon Glacier Deep Archive – for long term storage – cheaper:</li><ul><li>Standard (12 hours)</li><li>Bulk (48 hours)</li><li>Minimum storage duration of 180 days</li></ul>",
+        "Blurb": "Amazon S3 offers a range of storage classes designed for different use cases. These include S3 Standard for general-purpose storage of frequently accessed data; S3 Intelligent-Tiering for data with unknown or changing access patterns; S3 Standard-Infrequent Access (S3 Standard-IA) and S3 One Zone-Infrequent Access (S3 One Zone-IA) for long-lived, but less frequently accessed data; and Amazon S3 Glacier (S3 Glacier) and Amazon S3 Glacier Deep Archive (S3 Glacier Deep Archive) for long-term archive and digital preservation. If you have data residency requirements that can’t be met by an existing AWS Region, you can use the S3 Outposts storage class to store your S3 data on-premises. Amazon S3 also offers capabilities to manage your data throughout its lifecycle. Once an S3 Lifecycle policy is set, your data will automatically transfer to a different storage class without any changes to your application.  ",
+        "SeeAlso": ""
     },
     {
         "AWSComponent": "S3 Security",
@@ -392,11 +592,91 @@
         "SeeAlso": "EC2, IAM"
     },
     {
+        "AWSComponent": "Snowball",
+        "URL": "https://aws.amazon.com/snowball/?whats-new-cards.sort-by=item.additionalFields.postDateTime&whats-new-cards.sort-order=desc",
+        "Module": "AWS Storage Extras",
+        "Comment": "<li>Physical data transport solution that helps moving TBs or PBs of data in or out of AWS</li><li>Alternative to moving data over the network (and paying network fees)</li><li>Secure, tamper resistant, uses KMS 256 bit encryption</li><li>Tracking using SNS and text messages. E-ink shipping label</li><li>Pay per data transfer job</li><li>Use cases: large data cloud migrations, DC decommission, disaster recovery</li><li>If it takes more than a week to transfer over the network, use Snowball devices!</li><strong>Snowball Process</strong><li>1. Request snowball devices from the AWS console for delivery</li><li>2. Install the snowball client on your servers</li><li>3. Connect the snowball to your servers and copy files using the client</li><li>4. Ship back the device when you’re done (goes to the right AWS facility)</li><li>5. Data will be loaded into an S3 bucket</li><li>6. Snowball is completely wiped</li><li>7. Tracking is done using SNS, text messages and the AWS console</li><strong>Snowball Edge</strong><li>Snowball Edges add computational capability to the device</li><li>100 TB capacity with either:</li><ul><li>Storage optimized – 24 vCPU</li><li>Compute optimized – 52 vCPU & optional GPU</li></ul><li>Supports a custom EC2 AMI so you can perform processing on the go</li><li>Supports custom Lambda functions</li><li>Very useful to pre-process the data while moving</li><li>Use case: data migration, image collation, IoT capture, machine learning </li><strong>AWS Snowmobile</strong><li>Transfer exabytes of data (1 EB = 1,000 PB = 1,000,000 TBs)</li><li>Each Snowmobile has 100 PB of capacity (use multiple in parallel)</li><li>Better than Snowball if you transfer more than 10 PB</li><strong>Solution Architecture: Snowball into Glacier</strong><li>Snowball cannot import to Glacier directly</li><li>You have to use Amazon S3 first, and an S3 lifecycle policy</li>",
+        "Blurb": "AWS Snowball, a part of the AWS Snow Family, is an edge computing, data migration, and edge storage device that comes in two options. Snowball Edge Storage Optimized devices provide both block storage and Amazon S3-compatible object storage, and 40 vCPUs. They are well suited for local storage and large scale-data transfer. Snowball Edge Compute Optimized devices provide 52 vCPUs, block and object storage, and an optional GPU for use cases like advanced machine learning and full motion video analysis in disconnected environments. You can use these devices for data collection, machine learning and processing, and storage in environments with intermittent connectivity (like manufacturing, industrial, and transportation) or in extremely remote locations (like military or maritime operations) before shipping them back to AWS. These devices may also be rack mounted and clustered together to build larger temporary installations.",
+        "SeeAlso": ""
+    },
+    {
+        "AWSComponent": "SNS",
+        "URL": "https://aws.amazon.com/sns/?whats-new-cards.sort-by=item.additionalFields.postDateTime&whats-new-cards.sort-order=desc",
+        "Module": "Decoupling applications; SQS, SNS, Kinesis, Active MQ",
+        "Comment": "<strong>SNS integrates with a lot of AWS services</strong><li>Many AWS services can send data directly to SNS for notifications</li><li>CloudWatch (for alarms)</li><li>Auto Scaling Groups notifications</li><li>Amazon S3 (on bucket events)</li><li>CloudFormation (upon state changes => failed to build, etc)</li><li>Etc…</li><strong>How to publish</strong><li>Topic Publish (using the SDK)</li><ul><li>Create a topic</li><li>Create a subscription (or many)</li><li>Publish to the topic</li></ul><li>Direct Publish (for mobile apps SDK)</li><ul><li>Create a platform application</li><li>Create a platform endpoint</li><li>Publish to the platform endpoint</li><li>Works with Google GCM, Apple APNS, Amazon ADM…</li></ul><strong>Security</strong><li>Encryption:</li><ul><li>In-flight encryption using HTTPS API</li><li>At-rest encryption using KMS keys</li><li>Client-side encryption if the client wants to perform encryption/decryption itself</li></ul><li>Access Controls: IAM policies to regulate access to the SNS API</li><li>SNS Access Policies (similar to S3 bucket policies)</li><ul><li>Useful for cross-account access to SNS topics</li><li>Useful for allowing other services ( S3…) to write to an SNS topic</li></ul><strong>SNS + SQS: Fan Out</strong><li>Push once in SNS, receive in all SQS queues that are subscribers</li><li>Fully decoupled, no data loss</li><li>SQS allows for: data persistence, delayed processing and retries of work</li><li>Ability to add more SQS subscribers over time</li><li>SNS cannot send messages to SQS FIFO queues (AWS limitation)</li><strong>Application: S3 Events to multiple queues</strong><li>For the same combination of: event type (e.g. object create) and prefix (e.g. images/) you can only have one S3 Event rule</li><li>If you want to send the same S3 event to many SQS queues, use fan-out</li>",
+        "Blurb": "Amazon Simple Notification Service (Amazon SNS) is a fully managed messaging service for both application-to-application (A2A) and application-to-person (A2P) communication.",
+        "SeeAlso": ""
+    },
+    {
+        "AWSComponent": "SQS Dead Letter Queue",
+        "URL": "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html",
+        "Module": "Decoupling applications; SQS, SNS, Kinesis, Active MQ",
+        "Comment": "<li>If a consumer fails to process a message within the Visibility Timeout… the message goes back to the queue!</li><li>We can set a threshold of how many times a message can go back to the queue</li><li>After the MaximumReceives threshold is exceeded, the message goes into a dead letter queue (DLQ)</li><li>Useful for debugging!</li><li>Make sure to process the messages in the DLQ before they expire:</li><ul><li>Good to set a retention of 14 days in the DLQ</li></ul>",
+        "Blurb": "Amazon SQS supports dead-letter queues, which other queues (source queues) can target for messages that can't be processed (consumed) successfully. Dead-letter queues are useful for debugging your application or messaging system because they let you isolate problematic messages to determine why their processing doesn't succeed.",
+        "SeeAlso": ""
+    },
+    {
+        "AWSComponent": "SQS Delay Queue",
+        "URL": "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-delay-queues.html",
+        "Module": "Decoupling applications; SQS, SNS, Kinesis, Active MQ",
+        "Comment": "<li>Delay a message (consumers don’t see it immediately) up to 15 minutes</li><li>Default is 0 seconds (message is available right away)</li><li>Can set a default at queue level</li><li>Can override the default on send using the DelaySeconds parameter</li>",
+        "Blurb": "Delay queues let you postpone the delivery of new messages to a queue for a number of seconds, for example, when your consumer application needs additional time to process messages. If you create a delay queue, any messages that you send to the queue remain invisible to consumers for the duration of the delay period. The default (minimum) delay for a queue is 0 seconds. The maximum is 15 minutes.",
+        "SeeAlso": ""
+    },
+    {
+        "AWSComponent": "SQS FIFO Queue",
+        "URL": "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html",
+        "Module": "Decoupling applications; SQS, SNS, Kinesis, Active MQ",
+        "Comment": "<li>FIFO = First In First Out (ordering of messages in the queue)</li><li>Limited throughput: 300 msg/s without batching, 3000 msg/s with</li><li>Exactly-once send capability (by removing duplicates)</li><li>Messages are processed in order by the consumer</li>",
+        "Blurb": "FIFO (First-In-First-Out) queues are designed to enhance messaging between applications when the order of operations and events is critical, or where duplicates can't be tolerated",
+        "SeeAlso": ""
+    },
+    {
+        "AWSComponent": "SQS Message Visibility Timeout",
+        "URL": "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html",
+        "Module": "Decoupling applications; SQS, SNS, Kinesis, Active MQ",
+        "Comment": "<li>After a message is polled by a consumer, it becomes invisible to other consumers</li><li>By default, the “message visibility timeout” is 30 seconds</li><li>That means the message has 30 seconds to be processed</li><li>After the message visibility timeout is over, the message is “visible” in SQS</li><li>If a message is not processed within the visibility timeout, it will be processed twice</li><li>A consumer could call the ChangeMessageVisibility API to get more time</li><li>If visibility timeout is high (hours), and consumer crashes, re-processing will take time</li><li>If visibility timeout is too low (seconds), we may get duplicates</li>",
+        "Blurb": "When a consumer receives and processes a message from a queue, the message remains in the queue. Amazon SQS doesn't automatically delete the message. Because Amazon SQS is a distributed system, there's no guarantee that the consumer actually receives the message (for example, due to a connectivity issue, or due to an issue in the consumer application). Thus, the consumer must delete the message from the queue after receiving and processing it.",
+        "SeeAlso": ""
+    },
+    {
+        "AWSComponent": "SQS Standard Queue",
+        "URL": "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/standard-queues.html",
+        "Module": "Decoupling applications; SQS, SNS, Kinesis, Active MQ",
+        "Comment": "<li>Oldest offering (over 10 years old)</li><li>Fully managed service, used to decouple applications</li><li>Attributes:</li><ul><li>Unlimited throughput, unlimited number of messages in queue</li><li>Default retention of messages: 4 days, maximum of 14 days</li><li>Low latency (<10 ms on publish and receive)</li><li>Limitation of 256KB per message sent</li></ul><li>Can have duplicate messages (at least once delivery, occasionally)</li><li>Can have out of order messages (best effort ordering)</li><strong>SQS – Producing Messages</strong><li>Produced to SQS using the SDK (SendMessage API)</li><li>The message is persisted in SQS until a consumer deletes it</li><li>Message retention: default 4 days, up to 14 days</li><li>Example: send an order to be processed</li><ul><li>Order id</li><li>Customer id</li><li>Any attributes you want</li></ul><li>SQS standard: unlimited throughput</li><strong>SQS – Consuming Messages</strong><li>Consumers (running on EC2 instances, servers, or AWS Lambda)…</li><li>Poll SQS for messages (receive up to 10 messages at a time)</li><li>Process the messages (example: insert the message into an RDS database)</li><li>Delete the messages using the DeleteMessage API</li><strong>SQS – Multiple EC2 Instances Consumers</strong><li>Consumers receive and process messages in parallel</li><li>At least once delivery</li><li>Best-effort message ordering</li><li>Consumers delete messages after processing them</li><li>We can scale consumers horizontally to improve throughput of processing</li><strong>Amazon SQS - Security</strong><li>Encryption:</li><ul><li>In-flight encryption using HTTPS API</li><li>At-rest encryption using KMS keys</li><li>Client-side encryption if the client wants to perform encryption/decryption itself</li></ul><li>Access Controls: IAM policies to regulate access to the SQS API</li><li>SQS Access Policies (similar to S3 bucket policies)</li><ul><li>Useful for cross-account access to SQS queues</li><li>Useful for allowing other services (SNS, S3…) to write to an SQS queue</li></ul>",
+        "Blurb": "Amazon SQS offers standard as the default queue type. Standard queues support a nearly unlimited number of API calls per second, per API action (SendMessage, ReceiveMessage, or DeleteMessage). Standard queues support at-least-once message delivery. However, occasionally (because of the highly distributed architecture that allows nearly unlimited throughput), more than one copy of a message might be delivered out of order. Standard queues provide best-effort ordering which ensures that messages are generally delivered in the same order as they're sent.",
+        "SeeAlso": ""
+    },
+    {
+        "AWSComponent": "SQS vs SNS vs Kinesis",
+        "URL": "https://aws.amazon.com/blogs/compute/choosing-between-messaging-services-for-serverless-applications/",
+        "Module": "Decoupling applications; SQS, SNS, Kinesis, Active MQ",
+        "Comment": "<strong>SQS:</strong><li>Consumer “pull data”</li><li>Data is deleted after beingconsumed</li><li>Can have as many workers (consumers) as we want</li><li>No need to provision throughput</li><li>No ordering guarantee (except FIFO queues)</li><li>Individual message delay capability</li><strong>SNS:</strong><li>Push data to many subscribers</li><li>Up to 10,000,000 subscribers</li><li>Data is not persisted (lost if not delivered)</li><li>Pub/Sub</li><li>Up to 100,000 topics</li><li>No need to provision throughput</li><li>Integrates with SQS for fanout architecture pattern</li><strong>Kinesis:</strong><li>Consumers “pull data”</li><li>As many consumers as we want</li><li>Possibility to replay data</li><li>Meant for real-time big data, analytics and ETL</li><li>Ordering at the shard level</li><li>Data expires after X days</li><li>Must provision throughput</li>",
+        "Blurb": "Choosing between SQS vs SNS vs Kinesis",
+        "SeeAlso": "Kinesis, SQS Standard Queue, SNS"
+    },
+    {
         "AWSComponent": "SSH",
         "URL": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstances.html",
         "Module": "AWS Fundamentals: IAM & EC2",
         "Comment": "<li>Use SSH application</li><li>Use Putty</li><li>Use EC2 Instance Connect</li>",
         "Blurb": "SSH can be used by Mac, Linux and Windows 10, Putty is used by Windows, EC2 Instance connect is a web base interface",
         "SeeAlso": "EC2"
+    },
+    {
+        "AWSComponent": "Storage Comparison",
+        "URL": "https://aws.amazon.com/storagegateway/?whats-new-cards.sort-by=item.additionalFields.postDateTime&whats-new-cards.sort-order=desc",
+        "Module": "AWS Storage Extras",
+        "Comment": "<li>S3: Object Storage</li><li>Glacier: Object Archival</li><li>EFS: Network File System for Linux instances, POSIX filesystem</li><li>FSx for Windows: Network File System for Windows servers</li><li>FSx for Lustre: High Performance Computing Linux file system</li><li>EBS volumes: Network storage for one EC2 instance at a time</li><li>Instance Storage: Physical storage for your EC2 instance (high IOPS)</li><li>Storage Gateway: File Gateway, Volume Gateway (cache & stored), Tape Gateway</li><li>Snowball / Snowmobile: to move large amount of data to the cloud, physically</li><li>Database: for specific workloads, usually with indexing and querying</li>",
+        "Blurb": "Storage Comparison",
+        "SeeAlso": ""
+    },
+    {
+        "AWSComponent": "Storage Gateway",
+        "URL": "https://aws.amazon.com/storagegateway/?whats-new-cards.sort-by=item.additionalFields.postDateTime&whats-new-cards.sort-order=desc",
+        "Module": "AWS Storage Extras",
+        "Comment": "<li>Physical data transport solution that helps moving TBs or PBs of data in or out of AWS</li><li>Alternative to moving data over the network (and paying network fees)</li><li>Secure, tamper resistant, uses KMS 256 bit encryption</li><li>Tracking using SNS and text messages. E-ink shipping label</li><li>Pay per data transfer job</li><li>Use cases: large data cloud migrations, DC decommission, disaster recovery</li><li>If it takes more than a week to transfer over the network, use Snowball devices!</li><strong>Snowball Process</strong><li>1. Request snowball devices from the AWS console for delivery</li><li>2. Install the snowball client on your servers</li><li>3. Connect the snowball to your servers and copy files using the client</li><li>4. Ship back the device when you’re done (goes to the right AWS facility)</li><li>5. Data will be loaded into an S3 bucket</li><li>6. Snowball is completely wiped</li><li>7. Tracking is done using SNS, text messages and the AWS console</li><strong>Snowball Edge</strong><li>Snowball Edges add computational capability to the device</li><li>100 TB capacity with either:</li><ul><li>Storage optimized – 24 vCPU</li><li>Compute optimized – 52 vCPU & optional GPU</li></ul><li>Supports a custom EC2 AMI so you can perform processing on the go</li><li>Supports custom Lambda functions</li><li>Very useful to pre-process the data while moving</li><li>Use case: data migration, image collation, IoT capture, machine learning </li><strong>AWS Snowmobile</strong><li>Transfer exabytes of data (1 EB = 1,000 PB = 1,000,000 TBs)</li><li>Each Snowmobile has 100 PB of capacity (use multiple in parallel)</li><li>Better than Snowball if you transfer more than 10 PB</li><strong>Solution Architecture: Snowball into Glacier</strong><li>Snowball cannot import to Glacier directly</li><li>You have to use Amazon S3 first, and an S3 lifecycle policy</li>",
+        "Blurb": "AWS Storage Gateway is a hybrid cloud storage service that gives you on-premises access to virtually unlimited cloud storage. Customers use Storage Gateway to simplify storage management and reduce costs for key hybrid cloud storage use cases. These include moving backups to the cloud, using on-premises file shares backed by cloud storage, and providing low latency access to data in AWS for on-premises applications.",
+        "SeeAlso": ""
     }
 ]
